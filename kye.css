@@ -37,7 +37,7 @@ body {
     color: #4253f0;
     font-size: 24px;
     margin: 0 10px;
-    text-decoration: none;
+    text-decoration: chartreuse;
 }
 .social-icons a :hover {
 color: #f53404;
@@ -58,20 +58,11 @@ footer {
     right: 20px;
     width: 100px; 
   }
-  form {
-    background-color: #fff;
-    padding: 50px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(8, 8, 8, 0.938);
-    width: 300px;
-    text-align: left;
-  }
-  body {
-    font-family: Arial, sans-serif;
-}
+  
 
 
 /* Menu */
+/* Default styles for desktop */
 .menu {
     position: absolute;
     top: 80px; /* Adjust based on your header height */
@@ -110,12 +101,77 @@ footer {
     color: #007bff;
 }
 
-/* Menu Toggle Button */
 .menu-toggle {
     position: relative;
     cursor: pointer;
     z-index: 2;
 }
+
+.menu-toggle .icon {
+    position: relative;
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333333;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle .icon:before,
+.menu-toggle .icon:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: #333333;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle .icon:before {
+    top: -8px;
+}
+
+.menu-toggle .icon:after {
+    bottom: -8px;
+}
+
+.menu-toggle.active .icon {
+    transform: rotate(45deg);
+}
+
+.menu-toggle.active .icon:before {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.menu-toggle.active .icon:after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+.menu-toggle.active + .menu {
+    display: block;
+}
+
+/* Media query for phones */
+@media (max-width: 767px) {
+    .menu {
+        position: static;
+        background-color: rgb(107, 234, 238);
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        display: block;
+    }
+
+    .menu ul li {
+        margin-bottom: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
 
 .menu-toggle .icon {
     position: relative;
@@ -207,3 +263,136 @@ footer {
 .horizontal-header .search-bar .search-btn :hover {
 color: #0b2ff8;
 }
+
+@media only screen and (max-width: 767px) {
+    .menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: transparent;
+        z-index: 1000;
+        transition: left 0.3s ease;
+    }
+    .menu.open {
+        left: 0;
+    }
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8; /* Example background color */
+}
+
+.content {
+    padding: 50px;
+    text-align: center;
+}
+
+.bg-image {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.feature {
+    text-align: center;
+}
+
+.subscribe-form {
+    text-align: center;
+    padding: 50px;
+}
+
+
+
+.subscribe-form .subscribe-btn:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+h2 {
+    align-items: center;
+    color: #0b2ff8;
+}
+h4 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* Style for the service sections */
+.services-1 {
+    color: #fcf8f8;
+    background-color: #f31a0a;
+    background-image: url("https://th.bing.com/th/id/OIP.zZbYIjyZLsB9MAXb07Z0GgHaDt?w=312&h=175&c=7&r=0&o=5&pid=1.7");
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.services-1 .icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.services-1 h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.services-1 :hover {
+color:  #6ec8fc;
+
+}
+
+
+.btn {
+    color: #040a00;
+    background-color: #0cb5f8;
+}
+/* Adjusting the size of the image */
+.img-container img {
+    width: 100%; /* Set the width of the image to 100% */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Style for the text container */
+.text-container {
+    padding: 20px; /* Add padding to the text container */
+}
+
+/* Style for the heading */
+.text-container h2 {
+    font-size: 24px; /* Set the font size of the heading */
+    margin-bottom: 10px; /* Add some margin at the bottom of the heading */
+}
+
+/* Style for the paragraph */
+.text-container p {
+    font-size: 16px; /* Set the font size of the paragraph */
+    line-height: 1.5; /* Set the line height for better readability */
+}
+@keyframes flipInX {
+    from {
+      transform: perspective(400px) rotateY(90deg);
+      opacity: 0;
+    }
+    to {
+      transform: perspective(400px) rotateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .flip-in-x {
+    animation-name: flipInX;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+  }
+  
+

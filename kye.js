@@ -1,5 +1,30 @@
+// JavaScript
+document.addEventListener("DOMContentLoaded", function() {
+    window.addEventListener("scroll", function() {
+        var textContent = document.getElementById("text-content");
+        var positionFromTop = textContent.getBoundingClientRect().top;
+
+        var screenHeight = window.innerHeight;
+
+        if (positionFromTop - screenHeight <= 0) {
+            textContent.classList.add("flip-in-x");
+        } else {
+            textContent.classList.remove("flip-in-x"); // Remove the class if the element is not in view
+        }
+    });
+});
+
+
+// Your existing JavaScript code
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+
+menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+});
+
 document.querySelector('.menu-toggle').addEventListener('click', function() {
-	this.classList.toggle('active');
+    this.classList.toggle('active');
 });
 
 document.addEventListener("DOMContentLoaded", function() {
