@@ -1,0 +1,209 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 60%;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+header {
+    position: fixed;
+    color: #040a00;
+    width: 100%; /* Ensure the header is full width */
+    top: 0; /* Align the header at the top of the viewport */
+    left: 0; /* Align the header to the left of the viewport */
+    z-index: 1000; /* Ensure the header is above other content */
+    background: rgba(243, 241, 241, 0.9); /* Optional: Make background slightly transparent */
+    padding: 10px 0; /* Optional: Adjust according to your design */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Adds shadow for better visibility */
+}
+
+body {
+    padding-top: 70px; /* Add top padding to body to avoid content being hidden behind the fixed header */
+}
+
+
+.social-icons {
+    margin-top: 10px;
+    text-align: center;
+}
+.social-icons a {
+    color: #4253f0;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.social-icons a :hover {
+color: #f53404;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+#logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px; 
+  }
+  form {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(8, 8, 8, 0.938);
+    width: 300px;
+    text-align: left;
+  }
+  body {
+    font-family: Arial, sans-serif;
+}
+
+
+/* Menu */
+.menu {
+    position: absolute;
+    top: 80px; /* Adjust based on your header height */
+    left: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    display: none;
+    z-index: 1;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    margin-bottom: 15px;
+}
+
+.menu ul li:last-child {
+    margin-bottom: 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: #007bff;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle .icon {
+    position: relative;
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #020201;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle .icon:before,
+.menu-toggle .icon:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: #f50b0b;
+    transition: transform 0.1s ease;
+}
+
+.menu-toggle .icon:before {
+    top: -8px;
+}
+
+.menu-toggle .icon:after {
+    bottom: -8px;
+}
+
+/* Animation Styles */
+.menu-toggle.active .icon {
+    transform: rotate(360deg);
+}
+
+.menu-toggle.active .icon:before {
+    top: 0;
+    transform: rotate(-360deg);
+}
+
+.menu-toggle.active .icon:after {
+    bottom: 0;
+    transform: rotate(-360deg);
+}
+
+.menu-toggle.active + .menu {
+    display: block;
+}
+
+
+  .horizontal-header {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    padding: 20px;
+    background-color: #f8f8f8; /* Example background color */
+}
+
+.horizontal-header .logo img {
+    max-height: 50px; /* Adjust height as needed */
+    }
+.horizontal-header .menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.horizontal-header .menu ul li {
+    display: inline-block;
+    margin-right: 20px; /* Adjust spacing between menu items */
+}
+
+.horizontal-header .search-bar input[type="text"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.horizontal-header .search-bar .search-btn {
+    padding: 8px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.horizontal-header .user-actions button {
+    margin-left: 10px; /* Adjust spacing between buttons */
+    color: #007bff;
+}
+
+.horizontal-header .search-bar .search-btn :hover {
+color: #0b2ff8;
+}
