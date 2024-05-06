@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyekyeku-tech.com</title>
+    <!-- Add Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
+    <link rel="stylesheet" href="kye.css">
+    <link rel="stylesheet" href="play.css">
+</head>
+<body>
+    <header class="horizontal-header">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="https://telegra.ph/file/30c032ee516d51ceb456a.jpg" alt="Kyekyeku-Tech Logo">
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button class="search-btn" onclick="searchContent()"><i class="fas fa-search"></i></button>
+        </div>
+        <label style="color: rgb(1, 10, 10);">Choose your preferred color:
+            <input type="color" id="colorPicker">
+        </label>
+        
+        <button class="menu-toggle" aria-label="Menu Toggle">
+            <span class="icon"><i class="fas fa-bars"></i></span>
+        </button>
+        
+        <!-- Menu -->
+        <nav class="menu">
+            <ul>
+                <li><a href="#" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
+                <li><a href="#" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
+                <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
+                <li><a href="contact.html" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
+            </ul>
+        </nav>
+    </header>
+</head>
+<body>
+    <form class="container">
+        <h2 class="title" style="color: blue;">Code Playground</h2>
+        <form class="code-container" id="htmlForm" class="code-form">
+            <h3 class="code-title">HTML Code</h3>
+            <textarea id="htmlCode" class="code-input" placeholder="Enter your HTML code here"></textarea>
+        </form>
+        <form class="container">
+            <form class="code-container" id="cssForm" class="code-form">
+                <h3 class="code-title">CSS Code</h3>
+                <textarea id="cssCode" class="code-input" placeholder="Enter your CSS code here"></textarea>
+            </form>
+            <form class="container">
+                <form class="code-container" id="jsForm" class="code-form">
+                    <h3 class="code-title">JavaScript Code</h3>
+                    <textarea id="jscode" class="code-input" placeholder="Enter your JavaScript code here"></textarea>
+                </form>
+        </div>
+        <button type="button" id="runButton" class="run-button">Run Code</button>
+        <div id="resultForm" class="code-form">
+          <h3 class="code-title">Result</h3>
+          <iframe id="resultFrame" class="result-frame"></iframe>
+        </div>
+      </div>
+  <script src="play.js"></script>
+</body>
+</html>

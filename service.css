@@ -1,0 +1,89 @@
+
+.page-banner {
+    background-color: #0b7ff3; /* Change this color as needed */
+    padding: 60px 0;
+    text-align: center;
+    font-style: italic;
+   
+  }
+  
+  .page-banner h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333; /* Adjust text color as needed */
+  }
+  
+  .title-section {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333; /* Adjust text color as needed */
+  }
+  
+  .divider {
+    width: 50px;
+    height: 3px;
+    background-color: #4015fc; /* Adjust divider color as needed */
+    margin: 20px auto;
+  }
+  
+  .card-pricing {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card-pricing:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-pricing .header {
+    padding: 20px;
+  }
+  
+  .card-pricing .price-icon img {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .card-pricing .price-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Adjust text color as needed */
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .card-pricing .body {
+    padding: 20px;
+  }
+  
+  .card-pricing .price-tag {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Adjust text color as needed */
+    text-align: center;
+  }
+  
+  .card-pricing .price-info {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .card-pricing .footer {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card-pricing .btn {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333; /* Adjust button text color as needed */
+    border-color: #333; /* Adjust button border color as needed */
+  }
+  
+  .card-pricing .btn:hover {
+    background-color: #333; /* Adjust button hover background color as needed */
+    color: #fff; /* Adjust button hover text color as needed */
+  }
+  

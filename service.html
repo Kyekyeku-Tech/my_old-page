@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyekyeku-tech.com</title>
+    <!-- Add Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
+    <link rel="stylesheet" href="kye.css">
+    <link rel="stylesheet" href="service.css">
+</head>
+<body>
+    <header class="horizontal-header">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="https://telegra.ph/file/30c032ee516d51ceb456a.jpg" alt="Kyekyeku-Tech Logo">
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button class="search-btn" onclick="searchContent()"><i class="fas fa-search"></i></button>
+        </div>
+        <label style="color: rgb(1, 10, 10);">Choose your preferred color:
+            <input type="color" id="colorPicker">
+        </label>
+        
+        <button class="menu-toggle" aria-label="Menu Toggle">
+            <span class="icon"><i class="fas fa-bars"></i></span>
+        </button>
+        
+        <!-- Menu -->
+        <nav class="menu">
+            <ul>
+                <li><a href="#" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
+                <li><a href="#" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
+                <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
+                <li><a href="contact.html" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="page-section" id="services">
+      <div class="container">
+          <div class="text-center">
+              <h2 class="title-section">Our Services</h2>
+              <div class="divider mx-auto"></div>
+          </div>
+         <div class="row justify-content-center">
+       <div class="col-12 col-lg-auto py-3 wow fadeInLeft">
+         <div class="card-pricing">
+           <div class="header">
+             <div class="price-icon my-1">
+               <img width="100px" src="https://telegra.ph/file/c60e2d545ef8c1293b0c5.jpg" alt="">
+<!--               <i class="fa-solid fa-signal"></i>-->
+             </div>
+             <div class="price-title">TEST YOUR CODE</div>
+           </div>
+           <div class="body py-3">
+             <div class="price-tag">
+               HTML,CSS & JAVA SCRIPT
+             </div>
+             <div class="price-info">
+               <p>Test Your html,Css and Java script code here to view the result.</p>
+             </div>
+           </div>
+           <div class="footer">
+             <a href="play.html" class="btn btn-outline rounded-pill">Test Now</a>
+           </div>
+         </div>
+       </div>
+
+       <div class="col-12 col-lg-auto py-3 wow fadeInLeft">
+         <div class="card-pricing">
+           <div class="header">
+             <div class="price-icon my-1">
+               <img width="100px" src="https://cedisroom.com/assets/A19.png" alt="">
+<!--               <i class="fa-solid fa-signal"></i>-->
+             </div>
+             <div class="price-title">AT Big Time</div>
+           </div>
+           <div class="body py-3">
+             <div class="price-tag">
+               AT Big Time Bundles
+             </div>
+             <div class="price-info">
+               <p>Choose the plan that is right for you</p>
+             </div>
+           </div>
+           <div class="footer">
+             <a href="/services/big_time/" class="btn btn-outline rounded-pill">Buy Now</a>
+           </div>
+         </div>
+       </div>
+
+       <div class="col-12 col-lg-auto py-3 wow fadeInUp">
+         <div class="card-pricing">
+           <div class="header">
+             <div class="price-icon my-1">
+               <img width="100px" src="https://seeklogo.com/images/M/mtn-logo-40644FC8B0-seeklogo.com.png" alt="">
+<!--               <i class="fa-solid fa-signal"></i>-->
+             </div>
+             <div class="price-title">MTN</div>
+           </div>
+           <div class="body py-3">
+             <div class="price-tag">
+               Offers made for You
+             </div>
+             <div class="price-info">
+               <p>Choose the plan that's right for you</p>
+             </div>
+           </div>
+           <div class="footer">
+             <a href="index.html" class="btn btn-outline rounded-pill">Buy Now</a>
+           </div>
+         </div>
+       </div>
+
+       <div class="col-12 col-lg-auto py-3 wow fadeInUp">
+         <div class="card-pricing">
+           <div class="header">
+             <div class="price-icon my-1">
+               <img width="100px" src="https://seeklogo.com/images/M/mtn-logo-40644FC8B0-seeklogo.com.png" alt="">
+<!--               <i class="fa-solid fa-signal"></i>-->
+             </div>
+             <div class="price-title">AFA Registration</div>
+           </div>
+           <div class="body py-3">
+             <div class="price-tag">
+               AFA Registration
+             </div>
+             <div class="price-info">
+               <p>For MTN Users</p>
+             </div>
+           </div>
+           <div class="footer">
+             <a href="afa.html" class="btn btn-outline rounded-pill">Register</a>
+           </div>
+         </div>
+       </div>
+     </div>
+      </div>
+  </div> 
+  <script src="play.js"></script>
+  </main>
+  
+</body>
+</html>
