@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function() {
         header.style.backgroundColor = selectedColor;
 
         // Set the background color of the footer
-        var footer = document.querySelector('footer');
-        footer.style.backgroundColor = selectedColor;
+        
     });
 });
