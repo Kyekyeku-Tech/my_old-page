@@ -5,12 +5,28 @@ html {
 body {
     margin: 0;
     height: 60%;
-    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     text-align: center;
 }
+html, body {
+    height: 100%; /* Ensure HTML and body take up full height of viewport */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+body {
+    margin: 0; /* Remove default body margin */
+}
+
+/* Add media query for smaller screens */
+@media only screen and (max-width: 767px) {
+    body {
+        height: auto; /* Allow body to adjust its height as needed */
+    }
+}
+
+
 
 header {
     position: fixed;
@@ -33,14 +49,28 @@ body {
     margin-top: 10px;
     text-align: center;
 }
-.social-icons a {
-    color: #4253f0;
-    font-size: 24px;
+
+.fa-facebook-f,.fa-linkedin {
+    color: #2009f5;
     margin: 0 10px;
-    text-decoration: chartreuse;
+    text-decoration: rgb(11, 230, 238);
+}
+.fa-twitter {
+    color: #0cb5f8;
+    margin: 0 10px;
+    text-decoration: rgb(11, 230, 238);
+}
+
+.fa-envelope {
+    color: #007bff;
+    margin: 0 10px;
+    text-decoration: rgb(11, 230, 238);
+}
+.fa-whatsapp {
+    color: #04f538;
 }
 .social-icons a :hover {
-color: #04f538;
+color: #f55004;
 }
 
 footer {
@@ -48,7 +78,7 @@ footer {
     color: #fff;
     padding: 20px;
     text-align: center;
-    position: fixed;
+    position: flex;
     bottom: 0;
     width: 100%;
 }
@@ -313,12 +343,7 @@ body {
     background-color: #0056b3;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
+
 h2 {
     align-items: center;
     color: #0b2ff8;
