@@ -9,41 +9,26 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     text-align: center;
+    overflow-x: hidden; /* Remove horizontal scrollbar */
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8; /* Example background color */
 }
-html, body {
-    height: 100%; /* Ensure HTML and body take up full height of viewport */
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-}
-
-body {
-    margin: 0; /* Remove default body margin */
-}
-
-/* Add media query for smaller screens */
-@media only screen and (max-width: 767px) {
-    body {
-        height: auto; /* Allow body to adjust its height as needed */
-    }
-}
-
-
 
 header {
     position: fixed;
     color: #040a00;
-    width: 100%; /* Ensure the header is full width */
-    top: 0; /* Align the header at the top of the viewport */
-    left: 0; /* Align the header to the left of the viewport */
-    z-index: 1000; /* Ensure the header is above other content */
-    background: rgba(243, 241, 241, 0.9); /* Optional: Make background slightly transparent */
-    padding: 10px 0; /* Optional: Adjust according to your design */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Adds shadow for better visibility */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(243, 241, 241, 0.9);
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 body {
-    padding-top: 70px; /* Add top padding to body to avoid content being hidden behind the fixed header */
+    padding-top: 70px;
 }
-
 
 .social-icons {
     margin-top: 10px;
@@ -68,9 +53,18 @@ body {
 }
 .fa-whatsapp {
     color: #04f538;
+    margin: 0 10px;
+    text-decoration: rgb(11, 230, 238);
+}
+.fa-instagram {
+    color: #f86d2c;
+    margin: 0 10px;
+    text-decoration: rgb(11, 230, 238);
 }
 .social-icons a :hover {
-color: #f55004;
+    color: #f55004;
+    margin: 0 10px;
+    text-decoration: rgb(11, 230, 238);
 }
 
 footer {
@@ -87,15 +81,12 @@ footer {
     top: 20px;
     right: 20px;
     width: 100px; 
-  }
-  
-
+}
 
 /* Menu */
-/* Default styles for desktop */
 .menu {
     position: absolute;
-    top: 80px; /* Adjust based on your header height */
+    top: 80px;
     left: 20px;
     background-color: #ffffff;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
@@ -202,7 +193,6 @@ footer {
     }
 }
 
-
 .menu-toggle .icon {
     position: relative;
     display: block;
@@ -230,7 +220,6 @@ footer {
     bottom: -8px;
 }
 
-/* Animation Styles */
 .menu-toggle.active .icon {
     transform: rotate(360deg);
 }
@@ -249,18 +238,19 @@ footer {
     display: block;
 }
 
-
-  .horizontal-header {
+.horizontal-header {
     display: flex;
-    align-items: center; /* Align items vertically in the center */
-    justify-content: space-between; /* Distribute items evenly along the main axis */
+    align-items: center;
+    justify-content: space-between;
     padding: 20px;
-    background-color: #f8f8f8; /* Example background color */
+    background-color: #f8f8f8;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .horizontal-header .logo img {
     max-height: 50px; /* Adjust height as needed */
-    }
+}
+
 .horizontal-header .menu ul {
     list-style-type: none;
     margin: 0;
@@ -291,7 +281,7 @@ footer {
 }
 
 .horizontal-header .search-bar .search-btn :hover {
-color: #0b2ff8;
+    color: #0b2ff8;
 }
 
 @media only screen and (max-width: 767px) {
@@ -311,11 +301,6 @@ color: #0b2ff8;
     }
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f8f8; /* Example background color */
-}
-
 .content {
     padding: 50px;
     text-align: center;
@@ -327,7 +312,6 @@ body {
     background-position: center;
 }
 
-
 .feature {
     text-align: center;
 }
@@ -337,21 +321,19 @@ body {
     padding: 50px;
 }
 
-
-
 .subscribe-form .subscribe-btn:hover {
     background-color: #0056b3;
 }
-
 
 h2 {
     align-items: center;
     color: #0b2ff8;
 }
+
 h4 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-/* Style for the service sections */
+
 .services-1 {
     color: #fcf8f8;
     background-color: #f31a0a;
@@ -371,38 +353,35 @@ h4 {
     font-size: 20px;
     margin-bottom: 10px;
 }
-.services-1 :hover {
-color:  #6ec8fc;
 
+.services-1:hover {
+    color: #6ec8fc;
 }
-
 
 .btn {
     color: #040a00;
     background-color: #0cb5f8;
 }
-/* Adjusting the size of the image */
+
 .img-container img {
-    width: 100%; /* Set the width of the image to 100% */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    height: auto;
 }
 
-/* Style for the text container */
 .text-container {
-    padding: 20px; /* Add padding to the text container */
+    padding: 20px;
 }
 
-/* Style for the heading */
 .text-container h2 {
-    font-size: 24px; /* Set the font size of the heading */
-    margin-bottom: 10px; /* Add some margin at the bottom of the heading */
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-/* Style for the paragraph */
 .text-container p {
-    font-size: 16px; /* Set the font size of the paragraph */
-    line-height: 1.5; /* Set the line height for better readability */
+    font-size: 16px;
+    line-height: 1.5;
 }
+
 @keyframes flipInX {
     from {
       transform: perspective(400px) rotateY(90deg);
@@ -412,14 +391,15 @@ color:  #6ec8fc;
       transform: perspective(400px) rotateY(0);
       opacity: 1;
     }
-  }
-  
-  .flip-in-x {
+}
+
+.flip-in-x {
     animation-name: flipInX;
     animation-duration: 2s;
     animation-fill-mode: both;
-  }
-  .bg-image-container {
+}
+
+.bg-image-container {
     position: relative;
     height: 600px;
 }
@@ -439,38 +419,37 @@ color:  #6ec8fc;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity here */
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     color: rgb(92, 191, 248);
-    font-size: 36px; /* Adjust the font size here */
+    font-size: 36px;
     font-weight: bold;
     text-align: center;
 }
+
 .slideshow-container {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
-  }
-  
-  /* Styling for images */
-  .mySlides {
+}
+
+.mySlides {
     display: none;
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
     animation: fade 6s infinite;
-    position: relative; /* Ensure position context for absolute positioning */
-  }
-  
-  /* Styling for quotes container */
-  .quote-container {
+    position: relative;
+}
+
+.quote-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(12, 4, 78, 0.5); /* Transparent black background */
+    background-color: rgba(12, 4, 78, 0.5);
     padding: 20px;
     border-radius: 10px;
     border-color: #f31a0a;
@@ -480,12 +459,11 @@ color:  #6ec8fc;
     font-size: 34px;
     font-style: italic;
     width: 80%;
-  }
+}
 
-  /* Animation for fading images */
-  @keyframes fade {
+@keyframes fade {
     0% {opacity: 0;}
     10% {opacity: 1;}
     90% {opacity: 1;}
     100% {opacity: 0;}
-  }
+}
