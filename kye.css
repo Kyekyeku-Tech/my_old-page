@@ -241,14 +241,14 @@ footer {
 .horizontal-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px;
+    justify-content: space-between; /* Added missing value */
+    padding: 10px; /* Reduced padding */
     background-color: #f8f8f8;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .horizontal-header .logo img {
-    max-height: 50px; /* Adjust height as needed */
+    max-height: 40px; /* Reduced height */
 }
 
 .horizontal-header .menu ul {
@@ -259,28 +259,28 @@ footer {
 
 .horizontal-header .menu ul li {
     display: inline-block;
-    margin-right: 20px; /* Adjust spacing between menu items */
+    margin-right: 15px; /* Reduced spacing between menu items */
 }
 
 .horizontal-header .search-bar input[type="text"] {
-    padding: 8px;
+    padding: 6px; /* Reduced padding */
     border-radius: 5px;
     border: 1px solid #ccc;
 }
 
 .horizontal-header .search-bar .search-btn {
-    padding: 8px;
+    padding: 6px; /* Reduced padding */
     border: none;
     background: transparent;
     cursor: pointer;
 }
 
 .horizontal-header .user-actions button {
-    margin-left: 10px; /* Adjust spacing between buttons */
+    margin-left: 8px; /* Reduced spacing between buttons */
     color: #007bff;
 }
 
-.horizontal-header .search-bar .search-btn :hover {
+.horizontal-header .search-bar .search-btn:hover { /* Fixed hover selector */
     color: #0b2ff8;
 }
 
