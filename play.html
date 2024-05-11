@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyekyeku-tech.com</title>
+    <title>Kyekyeku-Tech.com</title>
     <!-- Add Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet"/>
-    <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
-    <link rel="stylesheet" href="kye.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
     <link rel="stylesheet" href="play.css">
+    <link rel="stylesheet" href="kye.css">
 </head>
 <body>
     <header class="horizontal-header">
@@ -25,7 +22,7 @@
             <input type="text" id="searchInput" placeholder="Search...">
             <button class="search-btn" onclick="searchContent()"><i class="fas fa-search"></i></button>
         </div>
-        <label style="color: rgb(1, 10, 10);">Choose your preferred color:
+        <label style="color: rgb(1, 10, 10);">color:
             <input type="color" id="colorPicker">
         </label>
         
@@ -43,31 +40,31 @@
             </ul>
         </nav>
     </header>
-</head>
-<body>
-    <form class="container">
+
+    <div class="container">
         <h2 class="title" style="color: blue;">Code Playground</h2>
-        <form class="code-container" id="htmlForm" class="code-form">
+        <button class="tab-button" id="htmlButton">HTML</button>
+        <button class="tab-button" id="cssButton">CSS</button>
+        <button class="tab-button" id="jsButton">JavaScript</button>
+        <div class="code-container" id="htmlForm">
             <h3 class="code-title">HTML Code</h3>
             <textarea id="htmlCode" class="code-input" placeholder="Enter your HTML code here"></textarea>
-        </form>
-        <form class="container">
-            <form class="code-container" id="cssForm" class="code-form">
-                <h3 class="code-title">CSS Code</h3>
-                <textarea id="cssCode" class="code-input" placeholder="Enter your CSS code here"></textarea>
-            </form>
-            <form class="container">
-                <form class="code-container" id="jsForm" class="code-form">
-                    <h3 class="code-title">JavaScript Code</h3>
-                    <textarea id="jscode" class="code-input" placeholder="Enter your JavaScript code here"></textarea>
-                </form>
+        </div>
+        <div class="code-container" id="cssForm" style="display:none;">
+            <h3 class="code-title">CSS Code</h3>
+            <textarea id="cssCode" class="code-input" placeholder="Enter your CSS code here"></textarea>
+        </div>
+        <div class="code-container" id="jsForm" style="display:none;">
+            <h3 class="code-title">JavaScript Code</h3>
+            <textarea id="jsCode" class="code-input" placeholder="Enter your JavaScript code here"></textarea>
         </div>
         <button type="button" id="runButton" class="run-button">Run Code</button>
         <div id="resultForm" class="code-form">
-          <h3 class="code-title">Result</h3>
+          <h3 class="code-title">RESULT</h3>
           <iframe id="resultFrame" class="result-frame"></iframe>
         </div>
-      </div>
-  <script src="play.js"></script>
+        <p><a href="https://telegra.ph/file/342a4ce6c24cb5e5033ff.jpg">BUY ME A COFFEE HERE</a></p>
+    </div>
+    <script src="play.js"></script>
 </body>
 </html>

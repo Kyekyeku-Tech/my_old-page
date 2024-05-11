@@ -91,7 +91,7 @@
              </div>
            </div>
            <div class="footer">
-             <a href="/services/big_time/" class="btn btn-outline rounded-pill">Buy Now</a>
+             <a href="Airteltigo.html" class="btn btn-outline rounded-pill">Buy Now</a>
            </div>
          </div>
        </div>
@@ -114,7 +114,7 @@
              </div>
            </div>
            <div class="footer">
-             <a href="index.html" class="btn btn-outline rounded-pill">Buy Now</a>
+             <a href="mtn.html" class="btn btn-outline rounded-pill">Buy Now</a>
            </div>
          </div>
        </div>
@@ -144,8 +144,34 @@
      </div>
       </div>
   </div> 
-  <script src="play.js"></script>
   </main>
-  
+  <script>
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+
+menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+});
+
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    this.classList.toggle('active');
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    var colorPicker = document.getElementById('colorPicker');
+
+    colorPicker.addEventListener('change', function() {
+        var selectedColor = colorPicker.value;
+
+        // Set the background color of the header
+        var header = document.querySelector('header');
+        header.style.backgroundColor = selectedColor;
+
+        // Set the background color of the footer
+        
+    });
+});
+
+  </script>
 </body>
 </html>

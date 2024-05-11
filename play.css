@@ -1,4 +1,5 @@
 body {
+  background-image: url('https://telegra.ph/file/ddf9087dae1e826d8b986.jpg');
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -8,7 +9,7 @@ body {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #f8f8f8;
+    background-color: #0a0a0a transparent;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   }
@@ -25,13 +26,13 @@ body {
   .code-form {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #0a06f5;
     border-radius: 5px;
 }
 
   
   .code-title {
-    color: #333;
+    color: #f80606;
   }
   
   .code-input {
@@ -68,4 +69,28 @@ body {
   .run-button:hover {
     background-color: #79f079;
   }
-  
+  /* play.css */
+.tab-button {
+  background-color: #0b022b;
+  border: none;
+  color: #f8f2f2;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.tab-button:hover {
+  background-color: #6cc6fa;
+}
+
+/* Additional styles if needed */
+.buttons-container {
+  text-align: center;
+  margin-bottom: 20px;
+}

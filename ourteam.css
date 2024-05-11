@@ -1,8 +1,10 @@
 body {
+    background-image: url('https://telegra.ph/file/23c369c54214c2df8ab0d.jpg');
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background-color: #070000;
+    color: #3611f1;
 }
 
 .founder {
@@ -16,8 +18,8 @@ body {
     width: 200px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
     border-radius: 50%; /* Make the image circular */
-    border: 5px solid #fff; /* Add a white border */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    border: 5px solid #fa0505; /* Add a white border */
+    box-shadow: 0 0 10px rgba(245, 3, 3, 0.027); /* Add a subtle shadow */
     transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
 }
 
@@ -38,4 +40,16 @@ h1 {
 p {
     font-size: 16px;
     margin: 5px 0;
+    color: #0505fa;
 }
+button {
+    background-color: #1d0ef0;
+    color: #f1f1f7;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    letter-spacing: 9px;
+    font-size: 20px;
+    }
+button:hover {
+        background: linear-gradient(red, green, blue);
+    }
