@@ -173,25 +173,6 @@ footer {
     display: block;
 }
 
-/* Media query for phones */
-@media (max-width: 767px) {
-    .menu {
-        position: static;
-        background-color: rgb(107, 234, 238);
-        box-shadow: none;
-        border-radius: 0;
-        padding: 0;
-        display: block;
-    }
-
-    .menu ul li {
-        margin-bottom: 10px;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-}
 
 .menu-toggle .icon {
     position: relative;
@@ -284,22 +265,6 @@ footer {
     color: #0b2ff8;
 }
 
-@media only screen and (max-width: 767px) {
-    .menu {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: -250px;
-        width: 250px;
-        height: 100%;
-        background-color: transparent;
-        z-index: 1000;
-        transition: left 0.3s ease;
-    }
-    .menu.open {
-        left: 0;
-    }
-}
 
 .content {
     padding: 50px;
