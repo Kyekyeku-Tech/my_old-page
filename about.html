@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyekyeku-Tech</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Kyekyeku-tech.com</title>
+    <!-- Add Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
+    
+    <link rel="stylesheet" href="kye.css">
+</head>
+<body>
+    <button class="menu-toggle" aria-label="Menu Toggle">
+        <span class="text">MENU</span>
+        <span class="icon"><i class="fas fa-bars"></i></span>
+    </button>
+        <!-- Menu -->
+        <nav class="menu">
+            <ul>
+                <li><a href="tech.html" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
+                <li><a href="about.html" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
+                <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
+                <li><a href="mailto:safooppong121@gmail.com" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
+            </ul>
+        </nav>
+    
     <link rel="stylesheet" href="ourteam.css">
     <style>
         body {
@@ -27,7 +50,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             animation: fadeIn 1s ease-in-out;
             display: flex;
-            flex-direction: row; /* Align items horizontally */
+            
         }
         .founder {
             margin-left: 20px; /* Add space between container and founder */
@@ -60,6 +83,7 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
+        
         .service-links a:hover {
             background-color: #04e016; /* Change background color on hover */
         }
@@ -78,9 +102,8 @@
 <body>
     
     <form id="about">
-        <i class="fas fa-info-circle"></i><h1 style="color: #0703fc;">ABOUT KYEKYEKU-TECH</h1>
-        <p style="color: #fff;">Welcome to Kyekyeku-Tech, where technology meets strategy and creativity knows no bounds. At our IT company, we're more than just service providers; we're architects of digital transformation. From our comprehensive Bundle Solutions, crafted to seamlessly integrate cutting-edge technologies tailored to your unique needs, to our strategic Information Technology Consultancy services, guiding businesses through the complexities of the digital landscape, we're your partners in progress. Our Product Design Strategy team brings ideas to life, sculpting intuitive digital experiences that captivate and resonate with your audience. And with our Web Development expertise, we craft digital masterpieces that serve as the cornerstone of your online presence, blending form and function seamlessly. Together, we navigate the digital realm with confidence, unlocking new horizons and shaping the future of your success.</p>
-    <div class="container">
+        <i class="fas fa-info-circle"></i><h3 style="color: #0703fc;">ABOUT KYEKYEKU-TECH</h3>
+        <div class="container">
         <div class="founder">
             <img src="https://telegra.ph/file/7bc2c08d3b722da63e2b6.jpg" alt="oppong">
             <div class="founder-info">
@@ -97,7 +120,7 @@
             </div>
         </div>
         <div class="service-links">
-            <i class="fas fa-info-circle"></i><h2>HERE ARE SOME OF OUR SERVICE</h2>
+            <i class="fas fa-info-circle"></i><h1>HERE ARE SOME OF OUR SERVICE</h1>
             <p><a href="service.html">MTN AFA REGISTRATION</a></p>
             <p><a href="service.html">INTERNET BUNDLE</a></p>
             <p><a href="play.html">HTML CODE TEST</a></p>
@@ -107,5 +130,36 @@
     </div>
     </form>
     
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+
+menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+});
+
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    this.classList.toggle('active');
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    var colorPicker = document.getElementById('colorPicker');
+
+    colorPicker.addEventListener('change', function() {
+        var selectedColor = colorPicker.value;
+
+        // Set the background color of the header
+        var header = document.querySelector('header');
+        header.style.backgroundColor = selectedColor;
+
+        // Set the background color of the footer
+        var footer = document.querySelector('footer');
+        footer.style.backgroundColor = selectedColor;
+    });
+});
+
+    </script>
+    
 </body>
+
 </html>

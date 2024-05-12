@@ -48,7 +48,7 @@ body {
 
 .fa-envelope {
     color: #007bff;
-    margin: 0 10px;
+    
     text-decoration: rgb(11, 230, 238);
 }
 .fa-whatsapp {
@@ -66,6 +66,15 @@ body {
     margin: 0 10px;
     text-decoration: rgb(11, 230, 238);
 }
+.fa-cogs {
+    color: #007bff;
+      }
+      .fa-info-circle {
+        color: #007bff;
+      }
+    .fa-home {
+      color: #007bff;
+    }
 
 footer {
     background-color: #333;
@@ -85,7 +94,7 @@ footer {
 
 /* Menu */
 .menu {
-    position: absolute;
+    position: fixed;
     top: 80px;
     left: 20px;
     background-color: #ffffff;
@@ -94,20 +103,35 @@ footer {
     padding: 20px;
     display: none;
     z-index: 1;
+    
 }
 
 .menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .menu ul li {
-    margin-bottom: 15px;
+    margin-left: 10px;
 }
 
-.menu ul li:last-child {
-    margin-bottom: 0;
+.menu ul li:first-child {
+    margin-left: 0;
+}
+
+/* Vertical menu for smaller screens (e.g., phones) */
+@media (max-width: 768px) {
+    .menu ul {
+        display: block; /* Change display to block for smaller screens */
+        text-align: center; /* Center align menu items */
+    }
+
+    .menu ul li {
+        margin: 10px 0; /* Add spacing between menu items */
+    }
 }
 
 .menu ul li a {
@@ -122,18 +146,25 @@ footer {
     color: #007bff;
 }
 
+/* Menu toggle button */
 .menu-toggle {
-    position: relative;
+    color: rgb(40, 17, 252);
+    position: fixed;
+    top: 30px;
+    right: 50px; /* Adjusted to top right corner */
+    z-index: 1000;
     cursor: pointer;
-    z-index: 2;
+    background: transparent;
+    border: none;
 }
+
 
 .menu-toggle .icon {
     position: relative;
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #333333;
+    background-color: #041dff;
     transition: transform 0.3s ease;
 }
 
@@ -181,6 +212,7 @@ footer {
     height: 3px;
     background-color: #020201;
     transition: transform 0.3s ease;
+    
 }
 
 .menu-toggle .icon:before,
@@ -219,52 +251,6 @@ footer {
     display: block;
 }
 
-.horizontal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Added missing value */
-    padding: 10px; /* Reduced padding */
-    background-color: #f8f8f8;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.horizontal-header .logo img {
-    max-height: 40px; /* Reduced height */
-}
-
-.horizontal-header .menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.horizontal-header .menu ul li {
-    display: inline-block;
-    margin-right: 15px; /* Reduced spacing between menu items */
-}
-
-.horizontal-header .search-bar input[type="text"] {
-    padding: 6px; /* Reduced padding */
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.horizontal-header .search-bar .search-btn {
-    padding: 6px; /* Reduced padding */
-    border: none;
-    background: transparent;
-    cursor: pointer;
-}
-
-.horizontal-header .user-actions button {
-    margin-left: 8px; /* Reduced spacing between buttons */
-    color: #007bff;
-}
-
-.horizontal-header .search-bar .search-btn:hover { /* Fixed hover selector */
-    color: #0b2ff8;
-}
-
 
 .content {
     padding: 50px;
@@ -292,7 +278,7 @@ footer {
 
 h2 {
     align-items: center;
-    color: #0b2ff8;
+    color: #03115e;
 }
 
 h4 {
@@ -431,4 +417,28 @@ h4 {
     10% {opacity: 1;}
     90% {opacity: 1;}
     100% {opacity: 0;}
+}
+.menu-toggle .text {
+    /* Style for the "MENU" text */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px; /* Adjust the font size as needed */
+    color: #fc0404; 
+}
+#preview, #submitBtn {
+    background-color: #eef4f7;
+}
+button:hover, #preview:hover {
+    background-color: #5053ec;
+}
+h1#mtn-heading, h1.form-text {
+    display: inline; /* Display on the same line */
+}
+h1#mtn-heading {
+    color: blue;
+}
+h1.form-text {
+    color: rgb(253, 7, 7); /* Color for Form */
 }

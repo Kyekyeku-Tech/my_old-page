@@ -10,35 +10,25 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
     <link rel="stylesheet" href="kye.css">
 </head>
 <body>
-    <header class="horizontal-header">
-        <!-- Logo -->
-        <div class="logo">
-            <img src="https://telegra.ph/file/30c032ee516d51ceb456a.jpg" alt="Kyekyeku-Tech Logo">
-        </div>
-        
-        <!-- Search Bar -->
-        </div>
-        <label style="color: rgb(1, 10, 10);">Choose your preferred color:
-            <input type="color" id="colorPicker">
-        </label>
-        
-        <button class="menu-toggle" aria-label="Menu Toggle">
-            <span class="icon"><i class="fas fa-bars"></i></span>
-        </button>
+    <button class="menu-toggle" aria-label="Menu Toggle">
+        <span class="text">MENU</span>
+        <span class="icon"><i class="fas fa-bars"></i></span>
+    </button>
         
         <!-- Menu -->
         <nav class="menu">
             <ul>
                 <li><a href="tech.html" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
-                <li><a href="#" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
+                <li><a href="about.html" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
                 <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
-                <li><a href="contact.html" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
+                <li><a href="https://wa.me/+233545454000" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
             </ul>
         </nav>
-    </header>
+    
     <link rel="stylesheet" href="ourteam.css">
 </head>
 <body>
@@ -92,22 +82,6 @@ menuToggle.addEventListener('click', () => {
 document.querySelector('.menu-toggle').addEventListener('click', function() {
     this.classList.toggle('active');
 });
-
-document.addEventListener("DOMContentLoaded", function() {
-    var colorPicker = document.getElementById('colorPicker');
-
-    colorPicker.addEventListener('change', function() {
-        var selectedColor = colorPicker.value;
-
-        // Set the background color of the header
-        var header = document.querySelector('header');
-        header.style.backgroundColor = selectedColor;
-
-        // Set the background color of the footer
-        
-    });
-});
-
         </script>
       </body>
         </html>
