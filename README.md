@@ -3,7 +3,7 @@
 <p align="center"> At Kyekyeku-Tech, we're the architects of your digital success. From comprehensive Bundle Solutions to strategic Information Technology Consultancy, innovative Product Design Strategy, and flawless Web Development, we're your trusted partners in navigating the digital landscape. Let's sculpt your digital future together.. </p>
 
  
-<h3 align="center"> WEBSITE TEMPLETE! </h3> 
+<h3 align="center"> OUR PROGRAMMER! </h3> 
 
 
 
