@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyekyeku-tech.com</title>
+    <!-- Add Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
+    <link rel="stylesheet" href="kye.css">
+</head>
+<body>
+    <header class="horizontal-header">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="https://telegra.ph/file/30c032ee516d51ceb456a.jpg" alt="Kyekyeku-Tech Logo">
+        </div>
+        
+        <!-- Search Bar -->
+        </div>
+        <label style="color: rgb(1, 10, 10);">Choose your preferred color:
+            <input type="color" id="colorPicker">
+        </label>
+        
+        <button class="menu-toggle" aria-label="Menu Toggle">
+            <span class="icon"><i class="fas fa-bars"></i></span>
+        </button>
+        
+        <!-- Menu -->
+        <nav class="menu">
+            <ul>
+                <li><a href="tech.html" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
+                <li><a href="#" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
+                <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
+                <li><a href="contact.html" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <link rel="stylesheet" href="ourteam.css">
+</head>
+<body>
+    <div>
+        <h1 style="color: blue; background-color: black;">OUR ULTIMATE TEAM</h1>
+    </div>
+    <div class="founder">
+        <img src="https://telegra.ph/file/7bc2c08d3b722da63e2b6.jpg" alt="oppong">
+            
+            <div class="founder-info">
+                <h1>Oppong Safo</h1>
+                <p style="color: red;">Ultimate Programmer</p>
+                <p style="color: yellow;">Leading the way in digital innovation and internet accessibility.</p>
+                <p style="color: rgb(8, 250, 8);">To use our Whatsapp bot scan or pair code</p>
+                <form class="social-icons">
+                    <a href="https://www.facebook.com/oppong.safo.35"><i class="fab fa-facebook-f"></i></a>
+                <a href="mailto:safo.oppong@hotmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://twitter.com/safo_oppong"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/oppong-safo-259a35205"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/+233545454000"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/kyekyekutek"><i class="fab fa-instagram"></i></a>
+                </form>
+        </div>
+    </div>
+    
+        <meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"></head><body><div class="items">  
+            <div class="container">
+            <button type="button" onclick="window.location.href='https://suhail-md-vtsf.onrender.com/scan'">SCAN QR</button>    
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="items">  
+          <div class="container">
+          <button type="button" onclick="window.location.href='https://suhail-md-vtsf.onrender.com/code'">PAIR CODE</button>    
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+      
+        <ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-1737874207490861&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;abgtt=6&amp;lmt=1713386875&amp;plat=1%3A8%2C2%3A8%2C3%3A2162688%2C4%3A2162688%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=https%3A%2F%2Fsuhail-md-vtsf.onrender.com%2F&amp;pra=5&amp;wgl=1&amp;easpi=0&amp;aihb=0&amp;asro=0&amp;aslmct=0.7&amp;asamct=0.7&amp;uach=WyJXaW5kb3dzIiwiMTkuMC4wIiwieDg2IiwiIiwiMTI1LjAuMjUzNS4yOSIsbnVsbCwwLG51bGwsIjY0IixbWyJNaWNyb3NvZnQgRWRnZSIsIjEyNS4wLjI1MzUuMjkiXSxbIkNocm9taXVtIiwiMTI1LjAuNjQyMi4yNiJdLFsiTm90LkEvQnJhbmQiLCIyNC4wLjAuMCJdXSwwXQ..&amp;dt=1715293878774&amp;bpp=4&amp;bdt=195&amp;idt=67&amp;shv=r20240508&amp;mjsv=m202405060101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;nras=1&amp;correlator=8750613555654&amp;frm=20&amp;pv=2&amp;ga_vid=1419109657.1715293879&amp;ga_sid=1715293879&amp;ga_hid=128628574&amp;ga_fc=0&amp;u_tz=0&amp;u_his=5&amp;u_h=768&amp;u_w=1366&amp;u_ah=720&amp;u_aw=1366&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=763&amp;bih=612&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759837%2C95331689%2C95331983%2C31083400%2C95331042%2C95332402%2C31078668&amp;oid=2&amp;pvsid=3197450136674702&amp;tmod=1665217439&amp;wsm=1&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;ref=https%3A%2F%2Fgithub.com%2FKyekyeku%2FSuhail-Md%3Ftab%3Dreadme-ov-file&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1366%2C0%2C1366%2C720%2C763%2C612&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1.79&amp;psd=W251bGwsbnVsbCwiY29udHJvbF8xLjEiLDFd&amp;nt=1&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=102" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20240508/r20110914/zrt_lookup_fy2021.html" style="display: none;"></iframe>
+        <script>
+            const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+
+menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+});
+
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    this.classList.toggle('active');
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    var colorPicker = document.getElementById('colorPicker');
+
+    colorPicker.addEventListener('change', function() {
+        var selectedColor = colorPicker.value;
+
+        // Set the background color of the header
+        var header = document.querySelector('header');
+        header.style.backgroundColor = selectedColor;
+
+        // Set the background color of the footer
+        
+    });
+});
+
+        </script>
+      </body>
+        </html>
+</body>
+</html>
