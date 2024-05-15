@@ -69,9 +69,10 @@ body {
   background-color: #79f079;
 }
 .sab-button {
-  background-color: #3c07fc;
-  border: none;
-  color: #f8f2f2;
+  background-color: #f1f0f5;
+  border: 1px solid;
+  border-color: blue;
+  color: #3306fa;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -82,11 +83,16 @@ body {
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
+.sab-button:hover {
+  background-color: #2f02fa;
+  color: white;
+}
 
 .tab-button {
   background-color: #0b022b;
-  border: none;
-  color: #f8f2f2;
+  border: 1px solid;
+  border-color: red;
+  color: #fa0404;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -99,7 +105,8 @@ body {
 }
 
 .tab-button:hover {
-  background-color: #6cc6fa;
+  background-color: red;
+  color: rgb(250, 249, 249);
 }
 
 .buttons-container {
@@ -174,4 +181,19 @@ body {
   color: #f55004;
   margin: 0 10px;
   text-decoration: rgb(11, 230, 238);
+}
+.buy {
+  background-color: #3b05ff;
+  border: 1px solid;
+  border-color: rgb(248, 246, 246);
+  color: #f7f3f3;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
