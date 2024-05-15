@@ -22,7 +22,7 @@
   </a>
   </a>
   <a aria-label="kyekyeku-tech" href="https://youtube.com/@codingmidset" target="_blank">
-    <img alt="SuhailTechInfo Yt" src="https://img.shields.io/youtube/channel/subscribers/UC-1I2UvMzF5DHaGK_c8iJcw" target="_blank" />
+    <img alt="kyekyeku-tech" src="https://img.shields.io/youtube/channel/subscribers/UC-1I2UvMzF5DHaGK_c8iJcw" target="_blank" />
   </a>
 
 </p>

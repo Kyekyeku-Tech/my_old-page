@@ -38,3 +38,27 @@ menuToggle.addEventListener('click', () => {
 document.querySelector('.menu-toggle').addEventListener('click', function() {
     this.classList.toggle('active');
 });
+document.getElementById('fileInput').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const fileContent = e.target.result;
+            const fileType = file.name.split('.').pop().toLowerCase();
+            
+            if (fileType === 'html') {
+                document.getElementById('htmlCode').value = fileContent;
+                document.getElementById('htmlButton').click(); // Show HTML tab
+            } else if (fileType === 'css') {
+                document.getElementById('cssCode').value = fileContent;
+                document.getElementById('cssButton').click(); // Show CSS tab
+            } else if (fileType === 'js') {
+                document.getElementById('jsCode').value = fileContent;
+                document.getElementById('jsButton').click(); // Show JS tab
+            } else {
+                alert('Unsupported file type. Please upload an HTML, CSS, or JS file.');
+            }
+        }
+        reader.readAsText(file);
+    }
+});

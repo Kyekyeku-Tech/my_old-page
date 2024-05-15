@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
     <link rel="stylesheet" href="play.css">
     <link rel="stylesheet" href="kye.css">
+    
 </head>
 <body>
         
@@ -17,22 +18,25 @@
         <span class="icon"><i class="fas fa-bars"></i></span>
     </button>
         
-        <!-- Menu -->
-        <nav class="menu">
-            <ul>
-                <li><a href="tech.html" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
-                <li><a href="about.html" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
-                <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
-                <li><a href="contact.html" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
-            </ul>
-        </nav>
+    <!-- Menu -->
+    <nav class="menu">
+        <ul>
+            <li><a href="tech.html" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
+            <li><a href="about.html" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
+            <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
+            <li><a href="contact.html" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
+        </ul>
+    </nav>
     
-
     <div class="container">
         <h2 class="title" style="color: blue;">Code Playground</h2>
-        <button class="tab-button" id="htmlButton">HTML</button>
-        <button class="tab-button" id="cssButton">CSS</button>
-        <button class="tab-button" id="jsButton">JavaScript</button>
+        <div class="buttons-container">
+            <button class="tab-button" id="htmlButton">HTML</button>
+            <button class="tab-button" id="cssButton">CSS</button>
+            <button class="tab-button" id="jsButton">JavaScript</button>
+            <!-- Label for file input styled as a button -->
+            <label for="fileInput" class="sab-button">Upload File</label>
+        </div>
         <div class="code-container" id="htmlForm">
             <h3 class="code-title">HTML Code</h3>
             <textarea id="htmlCode" class="code-input" placeholder="Enter your HTML code here"></textarea>
@@ -51,6 +55,9 @@
           <iframe id="resultFrame" class="result-frame"></iframe>
         </div>
         <p><a href="https://telegra.ph/file/342a4ce6c24cb5e5033ff.jpg">BUY ME A COFFEE HERE</a></p>
+
+        <!-- Hidden File Input -->
+        <input type="file" id="fileInput" class="file-input" style="display: none;">
     </div>
     <script src="play.js"></script>
 </body>
