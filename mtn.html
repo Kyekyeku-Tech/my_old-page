@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="kye.css">
     <style>
         body {
-            background-image: url('https://mymtnngnxtgen-shop-staging.mtnnigeria.net/media/auth0/autho-img.png');
+           background-color: white;
             color: black;
         }
 
@@ -98,7 +98,7 @@
 
 </head>
 
-<body>
+<body onload="setInitialDate(); initializeStockQuantities();">
     <button class="menu-toggle" aria-label="Menu Toggle">
         <span class="text">MENU</span>
         <span class="icon"><i class="fas fa-bars"></i></span>
@@ -114,8 +114,13 @@
         </ul>
     </nav>
 
-    <form id="paymentForm" action="#" method="post" onsubmit="generatePaymentLink(); return false;">
-        <img src="https://seeklogo.com/images/M/mtn-logo-40644FC8B0-seeklogo.com.png">
+    <form id="paymentForm" action="https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC" method="POST" enctype="multipart/form-data">
+        
+        <input 
+    type="hidden"
+    name="x-sheetmonkey-insert-worksheet"
+    value="MTN"
+    />
 
         <h2 id="mtn-heading">KYEKYEKU</h2>
         <h2 class="form-text">-TECH</h2>
@@ -147,8 +152,10 @@
             <input type="text" id="amount" name="amount" readonly><br>
 
             <input type="submit" value="Buy Here">
+            <a href="login.html" class="btn">Login as Agent</a>
         </div>
     </form>
+    <p id="submissionTime"></p>
 
     <script>
         var prices = {
@@ -173,7 +180,6 @@
         function updateAmount() {
             var bundleSelect = document.getElementById("bundle");
             var amountInput = document.getElementById("amount");
-
             var selectedValue = bundleSelect.value;
 
             if (selectedValue in prices) {
@@ -181,15 +187,37 @@
             }
         }
 
-        async function generatePaymentLink() {
-            var phoneNumber = document.getElementById("phoneNumber").value;
-            var selectedBundle = document.getElementById("bundle").value;
-            var amount = parseFloat(prices[selectedBundle]);
+        document.getElementById("paymentForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
 
-        
-            // Redirect to the specified URL
-            window.location.href = "https://telegra.ph/file/342a4ce6c24cb5e5033ff.jpg";
-        }
+            var form = event.target;
+            var formData = new FormData(form);
+
+            // Send form data to SheetMonkey
+            fetch(form.action, {
+                method: "POST",
+                body: formData
+            }).then(function(response) {
+                if (response.ok) {
+                    // Capture the current time
+                    var currentTime = new Date();
+                    var formattedTime = currentTime.toLocaleString();
+
+                    // Display the submission time
+                    document.getElementById("submissionTime").textContent = "Form submitted at: " + formattedTime;
+
+                    // Redirect to the specified URL after displaying the time
+                    setTimeout(function() {
+                        window.location.href = "https://telegra.ph/file/342a4ce6c24cb5e5033ff.jpg";
+                    }, 3000);
+                } else {
+                    alert("There was an error with your submission.");
+                }
+            }).catch(function(error) {
+                console.error("Error:", error);
+                alert("There was an error with your submission.");
+            });
+        });
 
         const menuToggle = document.querySelector('.menu-toggle');
         const menu = document.querySelector('.menu');

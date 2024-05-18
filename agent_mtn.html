@@ -12,78 +12,93 @@
     <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
     <link rel="stylesheet" href="kye.css">
-
     <style>
+        body {
+           background-color: white;
+            color: black;
+        }
+
         .container {
             color: #0a0101;
             width: 80%;
             max-width: 800px;
-            background-color: #f7f4f4;
+            background-color: rgb(252, 187, 10);
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px red;
+            box-shadow: 0 0 10px black;
             animation: fadeIn 1s ease-in-out;
         }
-        select, input {
+
+        h2 {
+            color: rgb(255, 217, 0);
+        }
+
+        p {
+            color: #0a0101;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        select,
+        input {
             width: 70%;
             padding: 10px;
             margin-top: 10px;
             background-color: white;
             color: black;
             border: 2px solid;
-            border-color: #0703fc;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-        h2 {
-            color: #0703fc;
-        }
-        p {
-            color: #0a0101;
-        }
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+
         input[type="submit"] {
             width: 30%;
             padding: 10px;
             margin-top: 10px;
-            background-color: blue;
-            color: red;
+            background-color: black;
+            color: yellow;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+
         input[type="submit"]:hover {
-            background-color: red;
-            color: blue;
+            background-color: white;
+            color: black;
         }
-        h2#mtn-heading, h2.form-text {
-            display: inline; /* Display on the same line */
-        }
-        h2#mtn-heading {
-            color: blue; /* Color for AFA REGISTRATION */
-        }
+
+        h2#mtn-heading,
         h2.form-text {
-            color: red; /* Color for Form */
+            display: inline;
+            /* Display on the same line */
         }
-        #submissionTime {
-            margin-top: 10px;
-            font-weight: bold;
+
+        h2#mtn-heading {
+            color: rgb(255, 208, 0);
+            /* Color for AFA REGISTRATION */
+        }
+
+        h2.form-text {
+            color: black;
+            /* Color for Form */
         }
     </style>
+
 </head>
 
-<body>
+<body onload="setInitialDate(); initializeStockQuantities();">
     <button class="menu-toggle" aria-label="Menu Toggle">
         <span class="text">MENU</span>
         <span class="icon"><i class="fas fa-bars"></i></span>
@@ -102,13 +117,14 @@
     <form id="paymentForm" action="https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC" method="POST" enctype="multipart/form-data">
         
         <input 
-            type="hidden"
-            name="x-sheetmonkey-insert-worksheet"
-            value="TIGO"
-        />
+    type="hidden"
+    name="x-sheetmonkey-insert-worksheet"
+    value="MTN"
+    />
 
         <h2 id="mtn-heading">KYEKYEKU</h2>
         <h2 class="form-text">-TECH</h2>
+        <h4>WELCOME TO AGENT PORTAL</h4>
         <div class="container">
             <label for="phoneNumber">PHONE:</label>
             <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="e.g., 0234567890"><br>
@@ -127,8 +143,9 @@
                 <option value="10">10GB</option>
                 <option value="12">12GB</option>
                 <option value="15">15GB</option>
+                <option value="25">25GB</option>
                 <option value="20">20GB</option>
-                <option value="50">50GB</option>
+                <option value="50">50GB </option>
                 <option value="100">100GB</option>
                 <option value="200">200GB</option>
             </select><br>
@@ -137,30 +154,29 @@
             <input type="text" id="amount" name="amount" readonly><br>
 
             <input type="submit" value="Buy Here">
-            <a href="login_tigo.html" class="btn">Login as Agent</a>
         </div>
     </form>
-
     <p id="submissionTime"></p>
 
     <script>
         var prices = {
             "0": 0,
-            "1": 4,
-            "2": 8,
-            "3": 12,
-            "4": 15,
-            "5": 19,
-            "6": 22,
-            "7": 25,
-            "8": 28,
-            "10": 36,
-            "12": 40,
-            "15": 50,
-            "20": 68,
-            "50": 120,
-            "100": 250,
-            "200": 490
+            "1": 4.6,
+            "2": 9,
+            "3": 13.5,
+            "4": 18,
+            "5": 21.5,
+            "6": 26,
+            "7": 29,
+            "8": 33,
+            "10": 38.9,
+            "12": 47.4,
+            "15": 55,
+            "20": 69,
+            "25": 85,
+            "50": 156,
+            "100": 300,
+            "200": 600
         };
 
         function updateAmount() {

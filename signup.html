@@ -119,24 +119,29 @@ button:hover {
   <div class="text">
     SIGNUP
   </div>
-  <form>
+  <form action="https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC" method="POST" enctype="multipart/form-data">
+    <input 
+    type="hidden"
+    name="x-sheetmonkey-insert-worksheet"
+    value="NEW"
+    />
     <div class="field">
       <div class="fas fa-envelope"></div>
-      <input type="text" placeholder="Email">
+      <input type="text" name="EMAIL" placeholder="Email">
     </div>
     <div class="field">
         <div class="fas fa-phone"></div>
-        <input type="number" placeholder="Phone Number">
+        <input type="number" name="PHONE_NUMBER" placeholder="Phone Number">
       </div>
     <div class="field">
       <div class="fas fa-lock"></div>
-      <input type="password" placeholder="Password">
+      <input type="password" name="PASSWORD" placeholder="Password">
     </div>
     <div class="field">
         <div class="fas fa-lock"></div>
-        <input type="password" placeholder=" Confirm Password">
+        <input type="password" name="confirm_password" placeholder="Confirm Password">
       </div>
-    <button>SIGNUP</button>
+    <button type="submit">SIGNUP</button>
     <div class="link">
       Are you a member?
       <a href="login.html">Login now</a>

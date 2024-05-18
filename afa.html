@@ -29,83 +29,77 @@
             </ul>
         </nav>
         <style>
-                body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('https://mymtnngnxtgen-shop-staging.mtnnigeria.net/media/auth0/autho-img.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .form-container {
-            background-color: rgba(22, 1, 1, 0.582);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(250, 204, 1, 0.925);
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-            margin-top: 50px; /* Adjusted margin */
-            margin-bottom: 50px; /* Adjusted margin */
-            position: flex;
-        }
-        h2 {
-            font: bold;
-            color: yellow;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: yellow;
-        }
-        input[type="text"],
-        input[type="date"],
-        input[type="tel"] {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            outline: none;
-        }
-        
-        input[type="submit"] {
-           width: 30%;
-           padding: 10px;
-           margin-top: 10px;
-           background-color: yellow;
-           color: black;
-           border: none;
-           border-radius: 5px;
-           cursor: pointer;
-           transition: background-color 0.3s ease;
-       }
-       input[type="submit"]:hover {
-           background-color: black;
-           color: yellow;
-       }
-    </style>
+            body {
+                margin: 0;
+                padding: 20px;
+                font-family: Arial, sans-serif;
+                background-image: url('https://mymtnngnxtgen-shop-staging.mtnnigeria.net/media/auth0/autho-img.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+            }
+            .form-container {
+                background-color: rgba(22, 1, 1, 0.582);
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(250, 204, 1, 0.925);
+                max-width: 400px;
+                width: 100%;
+                text-align: center;
+            }
+            h2 {
+                font-weight: bold;
+                color: yellow;
+            }
+            label {
+                display: block;
+                margin-bottom: 5px;
+                color: yellow;
+            }
+            input[type="text"],
+            input[type="date"],
+            input[type="tel"] {
+                width: calc(100% - 22px);
+                padding: 10px;
+                margin: 5px 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                outline: none;
+            }
+            p {
+                color: white;
+            }
+            input[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                margin-top: 10px;
+                background-color: yellow;
+                color: black;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            input[type="submit"]:hover {
+                background-color: black;
+                color: yellow;
+            }
+        </style>
             <div class="form-container">
                 <h2>Registration Form</h2>
+                <p>AFA Registration is GHC 10.00</p>
                 <form action="https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC" method="POST" enctype="multipart/form-data">
-                    <label for="Recipient_Name"> CUSTOMER NAME:</label>
-                    <input type="text" id="Recipient_Name" name="Recipient_Name" placeholder="Customer Name" required><br>
+                    <input type="text" id="Recipient_Name" name="Recipient_Name" placeholder="Customer Name" required>
+                    <input type="tel" id="Phone_Number" name="Phone_Number" placeholder="Phone Number" required>
+
+                    <input type="text" id="ID_Number" name="ID_Number" placeholder="Ghana Card ID_Number" required>
         
-                    <label for="ID_Number">GHANA CARD:</label>
-                    <input type="text" id="ID_Number" name="ID_Number" placeholder="Customer Ghana Card ID_Number" required><br>
-        
-                    <label for="Occupation">OCCUPATION:</label>
-                    <input type="text" id="Occupation" name="Occupation" placeholder="Customer Work" required><br>
-        
-                    <label for="Date_of_Birth">DATE OF BIRTH:</label>
+                    <input type="text" id="Occupation" name="Occupation" placeholder="Occupation" required>
+                    <label for="DOB">Date of Birth:</label>
                     <input type="date" id="Date_of_Birth" name="Date_of_Birth" required><br>
-        
-                    <label for="Phone_Number">PHONE NUMBER:</label>
-                    <input type="tel" id="Phone_Number" name="Phone_Number" placeholder="Customer phone Number" required><br>
         
                     <input type="submit" value="Submit">
                 </form>
@@ -120,21 +114,6 @@ menuToggle.addEventListener('click', () => {
 
 document.querySelector('.menu-toggle').addEventListener('click', function() {
     this.classList.toggle('active');
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    var colorPicker = document.getElementById('colorPicker');
-
-    colorPicker.addEventListener('change', function() {
-        var selectedColor = colorPicker.value;
-
-        // Set the background color of the header
-        var header = document.querySelector('header');
-        header.style.backgroundColor = selectedColor;
-
-        // Set the background color of the footer
-        
-    });
 });
 
     </script>

@@ -51,6 +51,11 @@ body {
     
     text-decoration: rgb(11, 230, 238);
 }
+    .fa-lock {
+        color: #007bff;
+        
+        text-decoration: rgb(11, 230, 238);
+}
 .fa-whatsapp {
     color: #04f538;
     margin: 0 10px;
