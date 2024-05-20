@@ -119,7 +119,7 @@ button:hover {
   <div class="text">
     SIGNUP
   </div>
-  <form action="https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC" method="POST" enctype="multipart/form-data">
+  <form id="signupForm" enctype="multipart/form-data">
     <input 
     type="hidden"
     name="x-sheetmonkey-insert-worksheet"
@@ -127,19 +127,19 @@ button:hover {
     />
     <div class="field">
       <div class="fas fa-envelope"></div>
-      <input type="text" name="EMAIL" placeholder="Email">
+      <input type="text" name="EMAIL" placeholder="Email" required>
     </div>
     <div class="field">
         <div class="fas fa-phone"></div>
-        <input type="number" name="PHONE_NUMBER" placeholder="Phone Number">
+        <input type="number" name="PHONE_NUMBER" placeholder="Phone Number" required>
       </div>
     <div class="field">
       <div class="fas fa-lock"></div>
-      <input type="password" name="PASSWORD" placeholder="Password">
+      <input type="password" name="PASSWORD" placeholder="Password" required>
     </div>
     <div class="field">
         <div class="fas fa-lock"></div>
-        <input type="password" name="confirm_password" placeholder="Confirm Password">
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
       </div>
     <button type="submit">SIGNUP</button>
     <div class="link">
@@ -149,6 +149,30 @@ button:hover {
   </form>
 </div>
 <!-- partial -->
-  
+
+<script>
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        var form = event.target;
+        var formData = new FormData(form);
+
+        // Send form data to SheetMonkey
+        fetch('https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC', {
+            method: "POST",
+            body: formData
+        }).then(function(response) {
+            if (response.ok) {
+                // Redirect to the specified URL after submission
+                window.location.href = "https://paystack.com/pay/signu";
+            } else {
+                alert("There was an error with your submission.");
+            }
+        }).catch(function(error) {
+            console.error("Error:", error);
+            alert("There was an error with your submission.");
+        });
+    });
+</script>
 </body>
 </html>

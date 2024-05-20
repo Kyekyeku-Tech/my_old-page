@@ -34,7 +34,7 @@
 
 
 <p align="center"> KYEKYEKU-TECH INTERNET BUNDLE:
-  <a href="https://kyekyeku.github.io/service.html">OUR SERVICE.</a>
+  <a href="https://kyekyeku-tech.github.io/Kyekyeku.github.io/service.html">OUR SERVICE.</a>
 </p>
 <p align="center">
   <img title="Whatsapp-Bot-Javascript" src="https://img.shields.io/badge/Javascript-363303?style=for-the-badge&logo=javascript&logoColor=c6c631"></img>
