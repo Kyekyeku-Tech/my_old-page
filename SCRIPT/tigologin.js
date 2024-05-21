@@ -1,6 +1,6 @@
 const validCredentials = [
     { username: 'user1@example.com', password: 'password1' },
-    { username: 'user2@example.com', password: 'password2' },
+    { username: 'abrahamkessey@gmail.com', password: '5050' },
     { username: 'user3@example.com', password: 'password3' },
     { username: 'safo.oppong@hotmail.com', password: 'Oppong1' }
   ];

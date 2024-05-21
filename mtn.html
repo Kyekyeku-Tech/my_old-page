@@ -11,7 +11,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
-    <link rel="stylesheet" href="kye.css">
+    <link rel="stylesheet" href="CSS/kye.css">
     <style>
         body {
            background-color: white;
@@ -98,7 +98,6 @@
 
 </head>
 
-<body onload="setInitialDate(); initializeStockQuantities();">
     <button class="menu-toggle" aria-label="Menu Toggle">
         <span class="text">MENU</span>
         <span class="icon"><i class="fas fa-bars"></i></span>
@@ -151,7 +150,7 @@
             <label for="amount">AMOUNT:</label><br>
             <input type="text" id="amount" name="AMOUNT" readonly><br>
 
-            <input type="submit" value="Buy Here">
+            <button  onclick="payWithPaystack()">Buy here </button>
             <a href="login.html" class="btn">Login as Agent</a>
         </div>
     </form>
