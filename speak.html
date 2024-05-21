@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyekyeku-tech.com</title>
+    <!-- Add Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
+    <link rel="stylesheet" href="kye.css">
+    <style>
+        body {
+            display: flex;
+            background-image: url('https://telegra.ph/file/ddf9087dae1e826d8b986.jpg');
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+        .container {
+            background: #fff;
+            border: 2px solid blue;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+            margin-top: 50px; /* Added margin to account for marquee */
+        }
+        input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #2009f1;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #00b336;
+        }
+        .definition {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .definition p {
+            margin: 0;
+            padding: 5px 0;
+            border-bottom: 1px solid #160101;
+        }
+        .marquee-container {
+            color: white;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            background-color: #0606f5; /* Optional background color for better visibility */
+            z-index: 1000;
+            padding: 5px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .menu-toggle {
+            margin-top: 10px; /* Ensure this is below the marquee */
+        }
+    </style>
+</head>
+<body>
+    <div class="marquee-container">
+        <marquee>
+            <h3>Welcome to Kyekyeku-Tech English Learning Page!</h3>
+        </marquee>
+    </div>
+    <button class="menu-toggle" aria-label="Menu Toggle">
+        <span class="text">MENU</span>
+        <span class="icon"><i class="fas fa-bars"></i></span>
+    </button>
+        
+    <!-- Menu -->
+    <nav class="menu">
+        <ul>
+            <li><a href="tech.html" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
+            <li><a href="about.html" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
+            <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
+            <li><a href="mailto:kyekyeku.tech@hotmail.com" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <input id="word" type="text" placeholder="Type a word">
+        <button onclick="getDefinition()">Get Definition</button>
+        <div class="definition" id="definition"></div>
+        <button onclick="speak()">Get Pronounce</button>
+    </div>
+    <script>
+        function speak() {
+            var text = document.getElementById("word").value;
+            var utterance = new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(utterance);
+        }
+
+        async function getDefinition() {
+            const word = document.getElementById("word").value;
+            const definitionDiv = document.getElementById("definition");
+            definitionDiv.innerHTML = ''; // Clear previous definition
+
+            if (!word) {
+                definitionDiv.innerHTML = '<p>Please enter a word.</p>';
+                return;
+            }
+
+            try {
+                const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+                if (!response.ok) {
+                    throw new Error('Word not found');
+                }
+                const data = await response.json();
+                const definitions = data[0].meanings[0].definitions;
+
+                definitions.forEach(def => {
+                    const p = document.createElement('p');
+                    p.textContent = def.definition;
+                    definitionDiv.appendChild(p);
+                });
+            } catch (error) {
+                definitionDiv.innerHTML = `<p>${error.message}</p>`;
+            }
+        }
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('open');
+        });
+
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
