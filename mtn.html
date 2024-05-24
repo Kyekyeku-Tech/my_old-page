@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="CSS/kye.css">
     <style>
         body {
-           background-color: white;
+            background-color: white;
             color: black;
         }
 
@@ -98,6 +98,7 @@
 
 </head>
 
+<body>
     <button class="menu-toggle" aria-label="Menu Toggle">
         <span class="text">MENU</span>
         <span class="icon"><i class="fas fa-bars"></i></span>
@@ -114,12 +115,8 @@
     </nav>
 
     <form id="paymentForm" action="https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC" method="POST" enctype="multipart/form-data">
-        
-        <input 
-    type="hidden"
-    name="x-sheetmonkey-insert-worksheet"
-    value="MTN"
-    />
+
+        <input type="hidden" name="x-sheetmonkey-insert-worksheet" value="MTN" />
 
         <h2 id="mtn-heading">KYEKYEKU</h2>
         <h2 class="form-text">-TECH</h2>
@@ -150,7 +147,7 @@
             <label for="amount">AMOUNT:</label><br>
             <input type="text" id="amount" name="AMOUNT" readonly><br>
 
-            <button  onclick="payWithPaystack()">Buy here </button>
+            <input type="submit" value="Buy here">
             <a href="login.html" class="btn">Login as Agent</a>
         </div>
     </form>
@@ -159,11 +156,11 @@
     <script>
         var prices = {
             "0": 0,
-            "1": 5,
-            "2": 10,
-            "3": 15,
-            "4": 20,
-            "5": 25,
+            "1": 5.5,
+            "2": 11,
+            "3": 17,
+            "4": 22,
+            "5": 27,
             "6": 30,
             "7": 35,
             "8": 40,
@@ -176,6 +173,15 @@
             "200": 630
         };
 
+        var paymentLinks = {
+            "1": "https://paystack.com/pay/1gbo",
+            "2": "https://paystack.com/pay/2gb",
+            "3": "https://paystack.com/pay/3gb",
+            "4": "https://paystack.com/pay/4gbo",
+            "5": "https://paystack.com/pay/5gbo",
+            "6": "https://paystack.com/pay/6gb"
+        };
+
         function updateAmount() {
             var bundleSelect = document.getElementById("bundle");
             var amountInput = document.getElementById("amount");
@@ -186,17 +192,18 @@
             }
         }
 
-        document.getElementById("paymentForm").addEventListener("submit", async function(event) {
+        document.getElementById("paymentForm").addEventListener("submit", async function (event) {
             event.preventDefault();
 
             var form = event.target;
             var formData = new FormData(form);
+            var selectedBundle = document.getElementById("bundle").value;
 
             // Send form data to SheetMonkey
             fetch(form.action, {
                 method: "POST",
                 body: formData
-            }).then(function(response) {
+            }).then(function (response) {
                 if (response.ok) {
                     // Capture the current time
                     var currentTime = new Date();
@@ -206,13 +213,17 @@
                     document.getElementById("submissionTime").textContent = "Form submitted at: " + formattedTime;
 
                     // Redirect to the specified URL after displaying the time
-                    setTimeout(function() {
-                        window.location.href = "https://paystack.com/pay/kyekyeku";
+                    setTimeout(function () {
+                        if (selectedBundle in paymentLinks) {
+                            window.location.href = paymentLinks[selectedBundle];
+                        } else {
+                            window.location.href="https://paystack.com/pay/kyekyeku";
+                        }
                     }, 3000);
                 } else {
                     alert("There was an error with your submission.");
                 }
-            }).catch(function(error) {
+            }).catch(function (error) {
                 console.error("Error:", error);
                 alert("There was an error with your submission.");
             });
