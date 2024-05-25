@@ -52,7 +52,7 @@
             width: 100%;
             text-align: center;
         }
-        h2 {
+        h4 {
             font-weight: bold;
             color: yellow;
         }
@@ -89,32 +89,13 @@
             background-color: black;
             color: yellow;
         }
-        .btm {
-        margin-bottom: 10px;
-        width: 100%; /* Set input width to 100% */
-        padding: 10px;
-        box-sizing: border-box; /* Include padding and border in width */
-        border-radius: 5px;
-        border: 1px solid #f1f1ee;
-        text-align: center; /* Center text */
-    }
-    .btm {
-        background-color: #0616ec;
-        color: #fcc307;
-        border: none;
-        cursor: pointer;
-        text-decoration: none; /* Remove underline from link */
-        display: inline-block; /* Make link behave like a button */
-    }
-    .btm:hover {
-        color: #ccc;
-        background-color: #0ed107ce;
-    }
     </style>
 
     <div class="form-container">
-        <h2>Registration Form</h2>
-        <p>AFA Registration is GHC 10.00</p>
+        <marquee>
+        <h4>Welcome to AFA Agent Portal</h4>
+    </marquee>
+        <p>AFA Registration is GHC 7.00</p>
         <form id="registrationForm" enctype="multipart/form-data">
             <input type="text" id="Recipient_Name" name="Recipient_Name" placeholder="Customer Name" required>
             <input type="tel" id="Phone_Number" name="Phone_Number" placeholder="Phone Number" required>
@@ -122,8 +103,7 @@
             <input type="text" id="Occupation" name="Occupation" placeholder="Occupation" required>
             <label for="DOB">Date of Birth:</label>
             <input type="date" id="Date_of_Birth" name="Date_of_Birth" required><br>
-            <input type="submit" value="Submit"><br><br>
-            <a href="afa_login.html" class="btm">Login as Agent</a>
+            <input type="submit" value="Submit">
         </form>
         <p id="submissionTime"></p>
     </div>
@@ -150,7 +130,7 @@
 
                     // Redirect to the specified URL after displaying the time
                     setTimeout(function() {
-                        window.location.href = "https://paystack.com/pay/kyekyeku-tech";
+                        window.location.href = "https://paystack.com/pay/afaagent";
                     }, 3000);
                 } else {
                     alert("There was an error with your submission.");

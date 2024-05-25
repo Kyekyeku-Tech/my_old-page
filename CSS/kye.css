@@ -297,7 +297,6 @@ h4 {
 
 .services-1 {
     color: #fcf8f8;
-    background-color: #f31a0a;
     background-image: url("https://th.bing.com/th/id/OIP.zZbYIjyZLsB9MAXb07Z0GgHaDt?w=312&h=175&c=7&r=0&o=5&pid=1.7");
     border-radius: 10px;
     padding: 20px;
@@ -316,12 +315,16 @@ h4 {
 }
 
 .services-1:hover {
-    color: #6ec8fc;
+    color: #70f503;
 }
 
 .btn {
-    color: #040a00;
-    background-color: #0cb5f8;
+    color: #f9faf8;
+    background-color: #1707fc;
+}
+.btn:hover {
+    color: #f8d405;
+    background-color: #02010f;
 }
 
 .img-container img {
@@ -443,12 +446,15 @@ h4 {
 button:hover, #preview:hover {
     background-color: #5053ec;
 }
-h1#mtn-heading, h1.form-text {
-    display: inline; /* Display on the same line */
-}
-h1#mtn-heading {
+
+h2#mtn-heading {
     color: blue;
 }
-h1.form-text {
+h2.form-text {
     color: rgb(253, 7, 7); /* Color for Form */
+}
+h2#mtn-heading,
+h2.form-text {
+    display: inline;
+    /* Display on the same line */
 }
