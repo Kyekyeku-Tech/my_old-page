@@ -1,13 +1,5 @@
 
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6558e086d600b968d314926f/1hfief3bo';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+
 
 // JavaScript for slideshow functionality
 let slideIndex = 0;
@@ -41,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-// Your existing JavaScript code
 const menuToggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.menu');
 
