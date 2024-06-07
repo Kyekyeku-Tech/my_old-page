@@ -12,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
     <link rel="stylesheet" href="CSS/kye.css">
+    <link rel="stylesheet" href="CSS/afa_agent.css">
 </head>
 <body>
     <button class="menu-toggle" aria-label="Menu Toggle">
@@ -30,67 +31,6 @@
             </ul>
     </nav>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            background-image: url('https://mymtnngnxtgen-shop-staging.mtnnigeria.net/media/auth0/autho-img.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .form-container {
-            background-color: rgba(22, 1, 1, 0.582);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(250, 204, 1, 0.925);
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-        }
-        h4 {
-            font-weight: bold;
-            color: yellow;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: yellow;
-        }
-        input[type="text"],
-        input[type="date"],
-        input[type="tel"] {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            outline: none;
-        }
-        p {
-            color: white;
-        }
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: yellow;
-            color: black;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        input[type="submit"]:hover {
-            background-color: black;
-            color: yellow;
-        }
-    </style>
-
     <div class="form-container">
         <marquee>
         <h4>Welcome to AFA Agent Portal</h4>
@@ -108,49 +48,6 @@
         <p id="submissionTime"></p>
     </div>
 
-    <script>
-        document.getElementById('registrationForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            var form = event.target;
-            var formData = new FormData(form);
-
-            // Send form data to SheetMonkey
-            fetch('https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC', {
-                method: "POST",
-                body: formData
-            }).then(function(response) {
-                if (response.ok) {
-                    // Capture the current time
-                    var currentTime = new Date();
-                    var formattedTime = currentTime.toLocaleString();
-
-                    // Display the submission time
-                    document.getElementById("submissionTime").textContent = "Form submitted at: " + formattedTime;
-
-                    // Redirect to the specified URL after displaying the time
-                    setTimeout(function() {
-                        window.location.href = "https://paystack.com/pay/afaagent";
-                    }, 3000);
-                } else {
-                    alert("There was an error with your submission.");
-                }
-            }).catch(function(error) {
-                console.error("Error:", error);
-                alert("There was an error with your submission.");
-            });
-        });
-
-        const menuToggle = document.querySelector('.menu-toggle');
-        const menu = document.querySelector('.menu');
-
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('open');
-        });
-
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            this.classList.toggle('active');
-        });
-    </script>
+    <script src="SCRIPT/afa_agent.js"></script>
 </body>
 </html>

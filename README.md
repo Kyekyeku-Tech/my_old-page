@@ -42,8 +42,8 @@
 
 
 
-<p align="center"> OUR WEBSITE:
-  <a href="https://kyekyeku-tech.site">SERVICES.</a>
+<p align="center">
+  <a href="https://kyekyeku-tech.github.io/tech.html">https://kyekyeku-tech.com</a>
 </p>
 <p align="center">
   <img title="kyekyeku-tech" src="https://img.shields.io/badge/Javascript-363303?style=for-the-badge&logo=javascript&logoColor=c6c631"></img>

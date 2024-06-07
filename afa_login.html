@@ -55,7 +55,7 @@
 <body>
 
 <script>
-function checkAccess() {
+    function checkAccess() {
     var agentID = document.getElementById("agentID").value.toUpperCase(); // Convert to uppercase for case-insensitive comparison
     var allowedIDs = ["AFA1411", "AFA0253", "AFA7103", "AFA0064", "AFA0915", "AFA8106", "AFA0907", "AFA2308", "AFA7009", "AFA0710", "AFA1720", "AFA7124", "AFA9803", "AFA9921"];
     var usernames = {
@@ -76,22 +76,13 @@ function checkAccess() {
     };
     if (allowedIDs.includes(agentID)) {
         var username = usernames[agentID];
-        var confirmation = confirm("Make sure you are an Agent");
-        if (confirmation) {
-            var agentIDEntered = prompt("Please re-enter your Agent ID");
-            if (agentIDEntered.toUpperCase() === agentID) { // Convert to uppercase for case-insensitive comparison
-                alert("Oh Okay " + username + ", you're a Afa Agent! Enjoy the Access.");
+        
+                alert("Welcome !! " + username + ", you're an Agent! Enjoy the best prices.");
                 window.location.href = "afa_agent.html"; // Redirect to the link
             } else {
                 alert("Invalid Agent ID. Access denied.");
             }
-        } else {
-            alert("Access denied.");
-        }
-    } else {
-        alert("Access denied.");
-    }
-}
+          };
 </script>
 
 <div class="container">
@@ -101,7 +92,7 @@ function checkAccess() {
 </marquee>
     <input type="text" id="agentID" placeholder="Enter Your AFA Agent ID">
     <button onclick="checkAccess()">LOGIN</button>
-    <a href="whatsapp://send?text=message_text&phone=233545454000" class="btm">Request ID</a>
+    <a href="signup.html" class="btm">Request ID</a>
 </div>
 </body>
 </html>

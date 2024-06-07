@@ -1,0 +1,81 @@
+body {
+    background-color: white;
+     color: black;
+ }
+
+ .container {
+     color: #0a0101;
+     width: 80%;
+     max-width: 800px;
+     background-color: rgb(252, 187, 10);
+     padding: 20px;
+     border-radius: 8px;
+     box-shadow: 0 0 10px black;
+     animation: fadeIn 1s ease-in-out;
+ }
+
+ h2 {
+     color: rgb(255, 217, 0);
+ }
+
+ p {
+     color: #0a0101;
+ }
+
+ @keyframes fadeIn {
+     0% {
+         opacity: 0;
+         transform: translateY(-20px);
+     }
+
+     100% {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ select,
+ input {
+     width: 70%;
+     padding: 10px;
+     margin-top: 10px;
+     background-color: white;
+     color: black;
+     border: 2px solid;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+ }
+
+ input[type="submit"] {
+     width: 30%;
+     padding: 10px;
+     margin-top: 10px;
+     background-color: black;
+     color: yellow;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+ }
+
+ input[type="submit"]:hover {
+     background-color: white;
+     color: black;
+ }
+
+ h2#mtn-heading,
+ h2.form-text {
+     display: inline;
+     /* Display on the same line */
+ }
+
+ h2#mtn-heading {
+     color: rgb(255, 208, 0);
+     /* Color for AFA REGISTRATION */
+ }
+
+ h2.form-text {
+     color: black;
+     /* Color for Form */
+ }

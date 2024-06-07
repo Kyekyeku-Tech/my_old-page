@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fffdfd;
+}
+.container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(27, 2, 252, 0.966);
+    animation: fadeIn 1s ease-in-out;
+    display: flex;
+    
+}
+.founder {
+    margin-left: 20px; /* Add space between container and founder */
+    display: flex;
+    align-items: center;
+}
+.founder img {
+    width: 150px; /* Adjust image size as needed */
+    border-radius: 50%; /* Make the image round */
+}
+.founder-info {
+    margin-left: 20px; /* Add space between image and text */
+}
+h2 {
+    color: #fc3503;
+}
+p {
+    color: #666;
+}
+.service-links {
+    margin-left: 20px; /* Add space between founder and service links */
+}
+.service-links a {
+    display: inline-block;
+    margin-bottom: 10px; /* Add space between service links */
+    padding: 10px 20px; /* Adjust padding */
+    background-color: #0703fc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.service-links a:hover {
+    background-color: #04e016; /* Change background color on hover */
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+body {
+background-image: url('https://telegra.ph/file/23c369c54214c2df8ad.jpg');
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+
+color: #3611f1;
+}
+
+.founder {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 50px;
+}
+
+.founder img {
+width: 100px; /* Adjust the width as needed */
+height: auto; /* Maintain aspect ratio */
+border-radius: 50%; /* Make the image circular */
+border: 5px solid #fa0505; /* Add a white border */
+box-shadow: 0 0 10px rgba(245, 3, 3, 0.027); /* Add a subtle shadow */
+transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+.founder img:hover {
+transform: scale(1.1); /* Scale up the image on hover */
+}
+
+
+.founder-info {
+text-align: left;
+}
+
+h1 {
+font-size: 24px;
+margin-bottom: 5px;
+}
+
+p {
+font-size: 16px;
+margin: 5px 0;
+color: #0505fa;
+}
+button {
+background-color: #1d0ef0;
+color: #f1f1f7;
+border: 2px solid transparent;
+border-radius: 50px;
+letter-spacing: 9px;
+font-size: 20px;
+}
+button:hover {
+background: linear-gradient(red, green, blue);
+}

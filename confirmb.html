@@ -1,74 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>kyekyeku-tech.site</title>
-        <style>
-            body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('https://mymtnngnxtgen-shop-staging.mtnnigeria.net/media/auth0/autho-img.png');
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyekyeku-tech.com</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
+    <link rel="stylesheet" href="CSS/kye.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
 
-            }
-            marquee {
-                color: rgb(255, 230, 0);
-            }
-            #container {
-                color: white;
+        .container {
+            color: #0a0101;
             width: 80%;
             max-width: 800px;
-            background-color: #110202;
+            background-color: rgb(252, 187, 10);
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(252, 194, 2, 0.404);
+            box-shadow: 0 0 10px black;
             animation: fadeIn 1s ease-in-out;
-            text-align: center;
-            }
-            #container:hover {
-                transform: scale(1.1);
-            }
-            .btn {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: rgb(255, 238, 0);
-            color: black;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            }
-            .btn:hover{
-                color: rgb(255, 208, 0);
-                background-color: black;
-            }
-            @keyframes fadeIn {
+        }
+
+        h2 {
+            color: rgb(255, 217, 0);
+        }
+
+        p {
+            color: #0a0101;
+        }
+
+        @keyframes fadeIn {
             0% {
                 opacity: 0;
                 transform: translateY(-20px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        </style>
-    </head>
-    <body>
-<div id="container">
-    <h2>Y'ello Cherished Customer !!</h2>
-    <marquee>
-    <h3>WELCOME TO MTN NON EXPIRING BUNDLE ZONE</h3>
-</marquee>
-<p>ARE YOU AGENT ?</p>
-<a href="login.html" class="btn">YES</a>
-<a href="mtn.html" class="btn">NO</a>
-</div>
-    </body>
+        select,
+        input {
+            width: 70%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+            color: black;
+            border: 2px solid;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"] {
+            width: 30%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: black;
+            color: yellow;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: white;
+            color: black;
+        }
+
+        h2#mtn-heading,
+        h2.form-text {
+            display: inline;
+            /* Display on the same line */
+        }
+
+        h2#mtn-heading {
+            color: rgb(255, 208, 0);
+            /* Color for AFA REGISTRATION */
+        }
+
+        h2.form-text {
+            color: black;
+            /* Color for Form */
+        }
+        p {
+            color: white;
+        }
+        .make {
+            color: rgb(8, 6, 0);
+            background-color: rgb(250, 247, 247);
+        }
+    </style>
+
+</head>
+
+<body>
+    <button class="menu-toggle" aria-label="Menu Toggle">
+        <span class="text">MENU</span>
+        <span class="icon"><i class="fas fa-bars"></i></span>
+    </button>
+
+    <!-- Menu -->
+    <nav class="menu">
+        <ul>
+            <li><a href="tech.html" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
+            <li><a href="about.html" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
+            <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
+            <li><a href="mailto:kyekyeku.tech@hotmail.com" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
+        </ul>
+    </nav>
+
+    <form id="paymentForm" action="https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC" method="POST" enctype="multipart/form-data">
+
+        <input type="hidden" name="x-sheetmonkey-insert-worksheet" value="MTN" />
+
+        <h2 id="mtn-heading">KYEKYEKU</h2>
+        <h2 class="form-text">-TECH</h2>
+        <div class="container">
+            <h3>Y'ello Cherished Customer !!</h3>
+            <i class="fas fa-handshake"></i>
+
+            <marquee>
+                <h5>WELCOME TO MTN <mark>NON EXPIRING BUNDLE</mark> ZONE</h5>
+            </marquee>
+
+            <p><mark class="make">PLEASE ARE YOU AN AGENT ?</mark></p>
+
+            <a href="mtn_login.html" class="btn">YES</a>
+            <a href="mtn.html" class="btn">NO</a>
+        </div>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/oppong.safo.35"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/safo_oppong"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/oppong-safo-259a35205"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/+233545454000"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/kyekyekutek"><i class="fab fa-instagram"></i></a>
+        </div>
+    </form>
+
+    <script>
+       
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('open');
+        });
+
+        document.querySelector('.menu-toggle').addEventListener('click', function () {
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+
 </html>

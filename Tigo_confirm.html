@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kyekyeku-tech.com</title>
@@ -12,9 +11,8 @@
     <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
     <link rel="stylesheet" href="CSS/kye.css">
-
     <style>
-        .container {
+         .container {
             color: #0a0101;
             width: 80%;
             max-width: 800px;
@@ -80,7 +78,16 @@
             margin-top: 10px;
             font-weight: bold;
         }
+        mark {
+            color: RED;
+            background-color: blue;
+        }
+        .make {
+            color: rgb(8, 6, 0);
+            background-color: rgb(250, 247, 247);
+        }
     </style>
+
 </head>
 
 <body>
@@ -100,110 +107,36 @@
     </nav>
 
     <form id="paymentForm" action="https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC" method="POST" enctype="multipart/form-data">
-        
-        <input 
-            type="hidden"
-            name="x-sheetmonkey-insert-worksheet"
-            value="TIGO"
-        />
+
+        <input type="hidden" name="x-sheetmonkey-insert-worksheet" value="MTN" />
 
         <h2 id="mtn-heading">KYEKYEKU</h2>
         <h2 class="form-text">-TECH</h2>
         <div class="container">
-            <label for="phoneNumber">PHONE:</label><br>
-            <input type="tel" id="phoneNumber" name="NUMBER" required placeholder="e.g., 0234567890"><br>
+            <h3>Hello, Cherished Customer !!</h3>
+            <i class="fas fa-handshake"></i>
 
-            <label for="bundle">PACKAGE:</label><br>
-            <select id="bundle" name="BUNDLE" onchange="updateAmount()">
-                <option value="0">SELECT HERE</option>
-                <option value="1">1GB</option>
-                <option value="2">2GB</option>
-                <option value="3">3GB</option>
-                <option value="4">4GB</option>
-                <option value="5">5GB</option>
-                <option value="6">6GB</option>
-                <option value="7">7GB</option>
-                <option value="8">8GB</option>
-                <option value="10">10GB</option>
-                <option value="12">12GB</option>
-                <option value="15">15GB</option>
-                <option value="20">20GB</option>
-                <option value="50">50GB</option>
-                <option value="100">100GB</option>
-                <option value="200">200GB</option>
-            </select><br>
+            <marquee>
+                <h5>WELCOME TO <mark>AT BIG TIME</mark> BUNDLE ZONE</h5>
+            </marquee>
 
-            <label for="amount">AMOUNT:</label><br>
-            <input type="text" id="amount" name="AMOUNT" readonly><br>
+            <p><mark class="make">PLEASE ARE YOU AN AGENT ?</mark></p>
 
-            <input type="submit" value="Buy Here">
+            <a href="login_tigo.html" class="btn">YES</a>
+            <a href="Airteltigo.html" class="btn">NO</a>
+        </div>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/oppong.safo.35"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/safo_oppong"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/oppong-safo-259a35205"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/+233545454000"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/kyekyekutek"><i class="fab fa-instagram"></i></a>
         </div>
     </form>
 
-    <p id="submissionTime"></p>
-
     <script>
-        var prices = {
-            "0": 0,
-            "1": 4,
-            "2": 8,
-            "3": 12,
-            "4": 15,
-            "5": 19,
-            "6": 22,
-            "7": 25,
-            "8": 28,
-            "10": 36,
-            "12": 40,
-            "15": 50,
-            "20": 68,
-            "50": 120,
-            "100": 250,
-            "200": 490
-        };
-
-        function updateAmount() {
-            var bundleSelect = document.getElementById("bundle");
-            var amountInput = document.getElementById("amount");
-            var selectedValue = bundleSelect.value;
-
-            if (selectedValue in prices) {
-                amountInput.value = "GHS " + prices[selectedValue].toFixed(2);
-            }
-        }
-
-        document.getElementById("paymentForm").addEventListener("submit", async function(event) {
-            event.preventDefault();
-
-            var form = event.target;
-            var formData = new FormData(form);
-
-            // Send form data to SheetMonkey
-            fetch(form.action, {
-                method: "POST",
-                body: formData
-            }).then(function(response) {
-                if (response.ok) {
-                    // Capture the current time
-                    var currentTime = new Date();
-                    var formattedTime = currentTime.toLocaleString();
-
-                    // Display the submission time
-                    document.getElementById("submissionTime").textContent = "Form submitted at: " + formattedTime;
-
-                    // Redirect to the specified URL after displaying the time
-                    setTimeout(function() {
-                        window.location.href = "https://paystack.com/pay/airteltigo";
-                    }, 3000);
-                } else {
-                    alert("There was an error with your submission.");
-                }
-            }).catch(function(error) {
-                console.error("Error:", error);
-                alert("There was an error with your submission.");
-            });
-        });
-
+       
         const menuToggle = document.querySelector('.menu-toggle');
         const menu = document.querySelector('.menu');
 

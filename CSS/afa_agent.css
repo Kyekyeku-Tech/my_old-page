@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-image: url('https://mymtnngnxtgen-shop-staging.mtnnigeria.net/media/auth0/autho-img.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.form-container {
+    background-color: rgba(22, 1, 1, 0.582);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(250, 204, 1, 0.925);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+h4 {
+    font-weight: bold;
+    color: yellow;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: yellow;
+}
+input[type="text"],
+input[type="date"],
+input[type="tel"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+p {
+    color: white;
+}
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: yellow;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+input[type="submit"]:hover {
+    background-color: black;
+    color: yellow;
+}

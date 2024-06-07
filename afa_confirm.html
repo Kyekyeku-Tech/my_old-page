@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kyekyeku-tech.com</title>
@@ -94,6 +93,17 @@
             color: black;
             /* Color for Form */
         }
+        p {
+            color: white;
+        }
+        mark {
+            color: rgb(255, 196, 0);
+            background-color: black;
+        }
+        .make {
+            color: rgb(8, 6, 0);
+            background-color: rgb(250, 247, 247);
+        }
     </style>
 
 </head>
@@ -121,114 +131,30 @@
         <h2 id="mtn-heading">KYEKYEKU</h2>
         <h2 class="form-text">-TECH</h2>
         <div class="container">
-            <label for="phoneNumber">PHONE:</label><br>
-            <input type="tel" id="phoneNumber" name="PHONE NUMBER" required placeholder="e.g., 0234567890"><br>
+            <h3>Y'ello Cherished Customer !!</h3>
+            <i class="fas fa-handshake"></i>
 
-            <label for="bundle">PACKAGE:</label><br>
-            <select id="bundle" name="BUNDLE" onchange="updateAmount()">
-                <option value="0">SELECT HERE</option>
-                <option value="1">1GB</option>
-                <option value="2">2GB</option>
-                <option value="3">3GB</option>
-                <option value="4">4GB</option>
-                <option value="5">5GB</option>
-                <option value="6">6GB</option>
-                <option value="7">7GB</option>
-                <option value="8">8GB</option>
-                <option value="10">10GB</option>
-                <option value="12">12GB</option>
-                <option value="15">15GB</option>
-                <option value="20">20GB</option>
-                <option value="50">50GB </option>
-                <option value="100">100GB</option>
-                <option value="200">200GB</option>
-            </select><br>
+            <marquee>
+                <h5>WELCOME TO <mark>MTN AFA</mark> REGISTRATION ZONE</h5>
+            </marquee>
 
-            <label for="amount">AMOUNT:</label><br>
-            <input type="text" id="amount" name="AMOUNT" readonly><br>
+            <p><mark class="make">PLEASE ARE YOU AN AGENT ?</mark></p>
 
-            <input type="submit" value="Buy here"><br><br>
-            <a href="signup.html" class="btn">REGISTER FOR AGENT</a>
+            <a href="afa_login.html" class="btn">YES</a>
+            <a href="afa.html" class="btn">NO</a>
+        </div>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/oppong.safo.35"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/safo_oppong"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/oppong-safo-259a35205"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/+233545454000"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/kyekyekutek"><i class="fab fa-instagram"></i></a>
         </div>
     </form>
-    <p id="submissionTime"></p>
 
     <script>
-        var prices = {
-            "0": 0,
-            "1": 5.5,
-            "2": 11,
-            "3": 17,
-            "4": 22,
-            "5": 27,
-            "6": 30,
-            "7": 35,
-            "8": 40,
-            "10": 50,
-            "12": 60,
-            "15": 75,
-            "20": 90,
-            "50": 180,
-            "100": 350,
-            "200": 630
-        };
-
-        var paymentLinks = {
-            "1": "https://paystack.com/pay/1gbo",
-            "2": "https://paystack.com/pay/2gb",
-            "3": "https://paystack.com/pay/3gb",
-            "4": "https://paystack.com/pay/4gbo",
-            "5": "https://paystack.com/pay/5gbo",
-            "6": "https://paystack.com/pay/6gb"
-        };
-
-        function updateAmount() {
-            var bundleSelect = document.getElementById("bundle");
-            var amountInput = document.getElementById("amount");
-            var selectedValue = bundleSelect.value;
-
-            if (selectedValue in prices) {
-                amountInput.value = "GHS " + prices[selectedValue].toFixed(2);
-            }
-        }
-
-        document.getElementById("paymentForm").addEventListener("submit", async function (event) {
-            event.preventDefault();
-
-            var form = event.target;
-            var formData = new FormData(form);
-            var selectedBundle = document.getElementById("bundle").value;
-
-            // Send form data to SheetMonkey
-            fetch(form.action, {
-                method: "POST",
-                body: formData
-            }).then(function (response) {
-                if (response.ok) {
-                    // Capture the current time
-                    var currentTime = new Date();
-                    var formattedTime = currentTime.toLocaleString();
-
-                    // Display the submission time
-                    document.getElementById("submissionTime").textContent = "Form submitted at: " + formattedTime;
-
-                    // Redirect to the specified URL after displaying the time
-                    setTimeout(function () {
-                        if (selectedBundle in paymentLinks) {
-                            window.location.href = paymentLinks[selectedBundle];
-                        } else {
-                            window.location.href="https://paystack.com/pay/kyekyeku";
-                        }
-                    }, 3000);
-                } else {
-                    alert("There was an error with your submission.");
-                }
-            }).catch(function (error) {
-                console.error("Error:", error);
-                alert("There was an error with your submission.");
-            });
-        });
-
+       
         const menuToggle = document.querySelector('.menu-toggle');
         const menu = document.querySelector('.menu');
 
