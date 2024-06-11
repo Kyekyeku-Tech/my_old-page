@@ -1,7 +1,7 @@
 var prices = {
     "0": 0,
     "1": 4.7,
-    "2": 9.2,
+    "2": 9,
     "3": 13.7,
     "4": 18.5,
     "5": 21.8,
@@ -17,6 +17,22 @@ var prices = {
     "50": 160
 };
 
+var agentEmails = {
+    "AFA1411": "safooppong121@gmail.com",
+    "SAM2288": "sam.ebulley210@gmail.com",
+    "ESK1196": "esko0896@gmail.com",
+    "NFC2563": "nimohandy7@gmail.com",
+    "AB5050": "abrahamkessey@gmail.com",
+    "AFA8106": "customer2@example.com",
+    "AFA0907": "customer3@example.com",
+    "AFA2308": "customer4@example.com",
+    "AFA7009": "customer5@example.com",
+    "AFA0710": "customer6@example.com",
+    "AFA1720": "",
+    "AFA7124": "",
+    "AFA9803": "",
+    "AFA9921": ""
+};
 function updateAmount() {
     var bundleSelect = document.getElementById("bundle");
     var amountInput = document.getElementById("amount");
@@ -30,12 +46,20 @@ function updateAmount() {
 document.getElementById("paymentForm").addEventListener("submit", function(event) {
     event.preventDefault();
     var phoneNumber = document.getElementById("phoneNumber").value;
+    var agentId = document.getElementById("agentId").value.toUpperCase(); 
     var selectedBundle = document.getElementById("bundle").value;
     var amount = prices[selectedBundle] * 100; // Amount in kobo
 
+    if (!(agentId in agentEmails) || agentEmails[agentId] === "") {
+        Swal.fire('Error', 'Invalid or unregistered Agent ID.', 'error');
+        return;
+    }
+
+    var email = agentEmails[agentId];
+
     var handler = PaystackPop.setup({
         key: 'pk_live_fb405d2702a00868ba424f73b9148b7aad07b2b0', // Replace with your public key
-        email: 'safooppong121@gmail.com',
+        email: email,
         amount: amount,
         currency: 'GHS',
         ref: 'KYEKYEKU-' + Math.floor((Math.random() * 1000000000) + 1),

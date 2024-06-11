@@ -2,7 +2,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
     event.preventDefault(); // Prevent the default form submission
 
     var phoneNumber = document.getElementById("Phone_Number").value;
-    var amount = 7.2 * 100; // Amount in kobo
+    var amount = 7 * 100; // Amount in kobo
 
     var handler = PaystackPop.setup({
         key: 'pk_live_fb405d2702a00868ba424f73b9148b7aad07b2b0', // Replace with your public key
@@ -31,7 +31,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
                     Swal.fire({
                         position: "center",
                         icon: "success",
-                        title: "Your payment has been received,thank you",
+                        title: "Your data has been saved, Thank You",
                         showConfirmButton: false,
                         timer: 2500
                     });
