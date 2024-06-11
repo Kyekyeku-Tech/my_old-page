@@ -1,11 +1,11 @@
 function checkAccess() {
     var agentID = document.getElementById("agentID").value.toUpperCase(); // Convert to uppercase for case-insensitive comparison
-    var allowedIDs = ["AFA1411", "SAM2288", "AFA7103", "AFA0064", "AFA0915", "AFA8106", "AFA0907", "AFA2308", "AFA7009", "AFA0710", "AFA1720", "AFA7124", "AFA9803", "AFA9921"];
+    var allowedIDs = ["AFA1411", "SAM2288", "ESK1196", "NFC2563", "AFA0915", "AFA8106", "AFA0907", "AFA2308", "AFA7009", "AFA0710", "AFA1720", "AFA7124", "AFA9803", "AFA9921"];
     var usernames = {
         "AFA1411": "OPPONG SAFO",
         "SAM2288": "SAMUEL EBULLEY",
-        "AFA7103": "",
-        "AFA0064": "",
+        "ESK1196": "STEPHEN ESHUN",
+        "NFC2563": "ANDY NIMOH",
         "AFA0915": "",
         "AFA8106": "",
         "AFA0907": "",
