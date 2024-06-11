@@ -28,12 +28,12 @@ input[type="text"], button, .btm {
     padding: 10px;
     box-sizing: border-box; /* Include padding and border in width */
     border-radius: 5px;
-    border: 1px solid #f1f1ee;
+    border: 2px solid #0a05f8;
     text-align: center; /* Center text */
 }
 button, .btm {
     background-color: red;
-    color: #fdfdfa;
+    color: white;
     border: none;
     cursor: pointer;
     text-decoration: none; /* Remove underline from link */
@@ -47,4 +47,10 @@ p {
   
   padding-left: 10px;
 
+}
+.button {
+    color: #0515fc;
+}
+.button:hover {
+    color: red;
 }

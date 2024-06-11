@@ -18,9 +18,9 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(248, 211, 1, 0.1);
 }
-h2 {
+h3 {
     text-align: center;
-    color: #ffd900;
+    color: yellow;
 }
 input[type="text"], button, .btm {
     margin-bottom: 10px;
@@ -47,4 +47,10 @@ p {
   
   padding-left: 10px;
 
+}
+.button {
+    color: #0515fc;
+}
+.button:hover {
+    color: red;
 }

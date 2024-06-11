@@ -23,11 +23,11 @@ function checkAccess() {
         Swal.fire({
             icon: 'success',
             title: 'Welcome!',
-            text: "Welcome !! " + username + ", you're an Agent! Enjoy the best prices.",
+            text: "" + username + ", you're an Agent! Enjoy the best prices.",
             showConfirmButton: false,
-            timer: 2500
+            timer: 3500
         }).then(() => {
-            window.location.href = "tigo_agent.html"; // Redirect to the link after SweetAlert closes
+            window.location.href = "afa_agent.html"; // Redirect to the link after SweetAlert closes
         });
     } else {
         Swal.fire({

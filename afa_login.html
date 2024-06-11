@@ -1,98 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>kyekyeku-tech.site</title>
-<style>
-    body {
-        margin: 0;
-        padding: 20px;
-        font-family: Arial, sans-serif;
-        background-image: url('https://mymtnngnxtgen-shop-staging.mtnnigeria.net/media/auth0/autho-img.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
-    .container {
-        max-width: 400px;
-        color: #facd04;
-        padding: 20px;
-        background-color: #0a0000;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(248, 211, 1, 0.1);
-    }
-    h2 {
-        text-align: center;
-        color: #ffd900;
-    }
-    input[type="text"], button, .btm {
-        margin-bottom: 10px;
-        width: 100%; /* Set input width to 100% */
-        padding: 10px;
-        box-sizing: border-box; /* Include padding and border in width */
-        border-radius: 5px;
-        border: 1px solid #f1f1ee;
-        text-align: center; /* Center text */
-    }
-    button, .btm {
-        background-color: #0c0b01;
-        color: #ffd904;
-        border: none;
-        cursor: pointer;
-        text-decoration: none; /* Remove underline from link */
-        display: inline-block; /* Make link behave like a button */
-    }
-    button:hover, .btm:hover {
-        color: black;
-        background-color: #faf604;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyekyeku-tech.com</title>
+    <!-- Add Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
+    <link rel="stylesheet" href="CSS/kye.css">
+    <link rel="stylesheet" href="CSS/mtn_login.css">
 </head>
 <body>
 
-<script>
-    function checkAccess() {
-    var agentID = document.getElementById("agentID").value.toUpperCase(); // Convert to uppercase for case-insensitive comparison
-    var allowedIDs = ["AFA1411", "AFA0253", "AFA7103", "AFA0064", "AFA0915", "AFA8106", "AFA0907", "AFA2308", "AFA7009", "AFA0710", "AFA1720", "AFA7124", "AFA9803", "AFA9921"];
-    var usernames = {
-        "AFA1411": "OPPONG SAFO",
-        "AFA0253": "NEW AGENT",
-        "AFA7103": "",
-        "AFA0064": "",
-        "AFA0915": "",
-        "AFA8106": "",
-        "AFA0907": "",
-        "AFA2308": "",
-        "AFA7009": "",
-        "AFA0710": "",
-        "AFA1720": "",
-        "AFA7124": "",
-        "AFA9803": "",
-        "AFA9921": ""
-    };
-    if (allowedIDs.includes(agentID)) {
-        var username = usernames[agentID];
-        
-                alert("Welcome !! " + username + ", you're an Agent! Enjoy the best prices.");
-                window.location.href = "afa_agent.html"; // Redirect to the link
-            } else {
-                alert("Invalid Agent ID. Access denied.");
-            }
-          };
-</script>
+    <div class="form-container">
+        <h3>Agent Access</h3>
+        <input type="text" id="agentID" placeholder="Enter Agent ID">
+        <button onclick="checkAccess()">Check Access</button>
+        <a href="signup.html" class="button">Request ID</a>
+    </div>
 
-<div class="container">
-    <h2>AFA AGENT PORTAL</h2>
-    <marquee>
-    <p>Before accessing the Portal, please confirm if you are an Agent </p>
-</marquee>
-    <input type="text" id="agentID" placeholder="Enter Your AFA Agent ID">
-    <button onclick="checkAccess()">LOGIN</button>
-    <a href="signup.html" class="btm">Request ID</a>
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="SCRIPT/afa_login.js"></script>
 </body>
 </html>

@@ -1,33 +1,66 @@
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
 
-    var form = event.target;
-    var formData = new FormData(form);
+    var phoneNumber = document.getElementById("Phone_Number").value;
+    var amount = 10 * 100; // Amount in kobo
 
-    // Send form data to SheetMonkey
-    fetch('https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC', {
-        method: "POST",
-        body: formData
-    }).then(function(response) {
-        if (response.ok) {
-            // Capture the current time
-            var currentTime = new Date();
-            var formattedTime = currentTime.toLocaleString();
+    var handler = PaystackPop.setup({
+        key: 'pk_live_fb405d2702a00868ba424f73b9148b7aad07b2b0', // Replace with your public key
+        email: 'safooppong121@gmail.com',
+        amount: amount,
+        currency: 'GHS',
+        ref: 'KYEKYEKU-' + Math.floor((Math.random() * 1000000000) + 1),
+        metadata: {
+            custom_fields: [{
+                display_name: "Phone Number",
+                variable_name: "phone_number",
+                value: phoneNumber
+            }]
+        },
+        callback: function(response) {
+            // Send form data to SheetMonkey
+            var form = event.target;
+            var formData = new FormData(form);
 
-            // Display the submission time
-            document.getElementById("submissionTime").textContent = "Form submitted at: " + formattedTime;
+            fetch('https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC', {
+                method: "POST",
+                body: formData
+            }).then(function(response) {
+                if (response.ok) {
+                    // Show the success alert
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Your data has been saved, pay to receive",
+                        showConfirmButton: false,
+                        timer: 2500
+                    });
 
-            // Redirect to the specified URL after displaying the time
-            setTimeout(function() {
-                window.location.href = "https://paystack.com/pay/kyekyeku-tech";
-            }, 3000);
-        } else {
-            alert("There was an error with your submission.");
+                    // Redirect to the specified URL after a delay
+                    setTimeout(function() {
+                        window.location.href = "";
+                    }, 2000);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'There was an error with your submission.'
+                    });
+                }
+            }).catch(function(error) {
+                console.error("Error:", error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'There was an error with your submission.'
+                });
+            });
+        },
+        onClose: function() {
+            Swal.fire('Payment Cancelled', 'You closed the payment window.', 'info');
         }
-    }).catch(function(error) {
-        console.error("Error:", error);
-        alert("There was an error with your submission.");
     });
+    handler.openIframe();
 });
 
 const menuToggle = document.querySelector('.menu-toggle');
