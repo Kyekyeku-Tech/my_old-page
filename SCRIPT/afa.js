@@ -31,14 +31,14 @@ document.getElementById('registrationForm').addEventListener('submit', function(
                     Swal.fire({
                         position: "center",
                         icon: "success",
-                        title: "Your data has been saved, pay to receive",
+                        title: "Your data has been saved, Thank you",
                         showConfirmButton: false,
-                        timer: 2500
+                        timer: 1500
                     });
 
                     // Redirect to the specified URL after a delay
                     setTimeout(function() {
-                        window.location.href = "";
+                        window.location.href = "https://wa.me/+233545454000";
                     }, 2000);
                 } else {
                     Swal.fire({

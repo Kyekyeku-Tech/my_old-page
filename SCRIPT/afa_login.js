@@ -7,7 +7,7 @@ function checkAccess() {
         "ESK1196": "STEPHEN ESHUN",
         "NFC2563": "ANDY NIMOH",
         "AB5050": "ABRAHAM KESSEY",
-        "AFA8106": "",
+        "AY2080": "AYISHATU ABDULLAI",
         "AFA0907": "",
         "AFA2308": "",
         "AFA7009": "",

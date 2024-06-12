@@ -33,13 +33,13 @@ document.getElementById('registrationForm').addEventListener('submit', function(
                         icon: "success",
                         title: "Your data has been saved, Thank You",
                         showConfirmButton: false,
-                        timer: 2500
+                        timer: 1500
                     });
 
                     // Redirect to the specified URL after a delay
                     setTimeout(function() {
-                        window.location.href = "";
-                    }, 2000);
+                        window.location.href = "https://wa.me/+233545454000";
+                    }, 1500);
                 } else {
                     Swal.fire({
                         icon: 'error',
