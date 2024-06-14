@@ -1,20 +1,20 @@
 var prices = {
     "0": 0,
-    "1": 5.5,
-    "2": 11,
-    "3": 17,
-    "4": 22,
-    "5": 27,
-    "6": 30,
-    "7": 35,
-    "8": 40,
-    "10": 50,
-    "12": 60,
-    "15": 75,
-    "20": 90,
-    "50": 180,
-    "100": 350,
-    "200": 630
+    "1": 6,
+    "2": 12,
+    "3": 18,
+    "4": 23,
+    "5": 28,
+    "6": 32,
+    "7": 36.5,
+    "8": 41.5,
+    "10": 51.5,
+    "12": 62.5,
+    "15": 73.5,
+    "20": 94.5,
+    "50": 190,
+    "100": 360,
+    "200": 640
 };
 
 function updateAmount() {
@@ -35,7 +35,7 @@ document.getElementById("paymentForm").addEventListener("submit", function(event
 
     var handler = PaystackPop.setup({
         key: 'pk_live_fb405d2702a00868ba424f73b9148b7aad07b2b0', // Replace with your public key
-        email: 'safooppong121@gmail.com',
+        email: 'ceo@kyekyeku-tech.site',
         amount: amount,
         currency: 'GHS',
         ref: 'KYEKYEKU-' + Math.floor((Math.random() * 1000000000) + 1),
