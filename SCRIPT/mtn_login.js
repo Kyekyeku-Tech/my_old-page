@@ -39,7 +39,7 @@ function checkAccess() {
             showConfirmButton: false,
             timer: 3500
         }).then(() => {
-            window.location.href = "afa_agent.html"; // Redirect to the link after SweetAlert closes
+            window.location.href = "agent_mtn.html"; // Redirect to the link after SweetAlert closes
         });
     } else {
         Swal.fire({
