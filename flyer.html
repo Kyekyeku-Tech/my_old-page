@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kyekyeku-tech.site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-container {
+            max-width: 600px;
+            background-color: #ffd000;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            position: relative; /* Added for positioning */
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .form-container input, .form-container button {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #0a0000;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background-color: black;
+            color: #ffd000;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #0905f7;
+            color: white;
+        }
+        .price-display {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .logo-container {
+            position: absolute;
+            top: 10px; /* Adjust as needed */
+            right: 20px; /* Adjust as needed */
+        }
+        .logo-container img {
+            width: 100px; /* Adjust the size of the logo */
+            height: auto;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <div class="logo-container">
+            <img src="https://seeklogo.com/images/M/mtn-logo-40644FC8B0-seeklogo.com.png" alt="MTN Logo">
+        </div>
+        <h2>Generate a Flyer</h2>
+        <form id="flyerForm">
+            <label for="flyerTitle">Your Company name:</label>
+            <input type="text" id="flyerTitle" name="flyerTitle"  placeholder="KYEKYEKU-TECH OFFERS" required>
+            <button type="submit">Generate Flyer</button>
+        </form>
+    </div>
+
+    <script>
+        const pricelist = {
+            "1": 7,
+            "2": 13,
+            "3": 19,
+            "4": 24,
+            "5": 29,
+            "6": 32,
+            "7": 36.5,
+            "8": 41.5,
+            "10": 54.5,
+            "12": 62.5,
+            "15": 73.5,
+            "20": 94.5,
+            "50": 190,
+            "100": 360,
+            "200": 640
+        };
+
+        document.getElementById('flyerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const flyerTitle = document.getElementById('flyerTitle').value;
+
+            // Import the jsPDF library
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.setFontSize(25);
+            doc.text(flyerTitle, 20, 20);
+
+            doc.setFontSize(12);
+            doc.text('Price List:', 20, 40);
+
+            let y = 50;
+            for (const [size, price] of Object.entries(pricelist)) {
+                doc.text(`${size}GB = GHS ${price.toFixed(2)}`, 20, y);
+                y += 10;
+            }
+
+            doc.save(`${flyerTitle}.pdf`);
+        });
+    </script>
+</body>
+</html>
