@@ -5,31 +5,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kyekyeku-tech.com</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
-    <link rel="stylesheet" href="CSS/kye.css">
-    <link rel="stylesheet" href="CSS/mtn_agent.css">
+   <style>
+    body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://mymtnngnxtgen-shop-staging.mtnnigeria.net/media/auth0/autho-img.png');
+            background-size: cover;
+            color: black;
+        }
+
+        #paymentForm {
+            background: #fccf09;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px black;
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2#mtn-heading,
+        h2.form-text {
+            display: inline;
+        }
+
+        h2#mtn-heading {
+            color: rgb(248, 247, 243);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h2.form-text {
+            color: rgb(6, 2, 250);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 10px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #555;
+            text-align: left;
+        }
+
+        input[type="tel"],
+        input[type="text"],
+        select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input[type="submit"] {
+            background-color: #0d0d0e;
+            color: yellow;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .fa-handshake {
+            color: #ffc107;
+            margin: 10px 0;
+        }
+   </style>
+    
 </head>
-
-<body onload="setInitialDate(); initializeStockQuantities();">
-    <button class="menu-toggle" aria-label="Menu Toggle">
-        <span class="text">MENU</span>
-        <span class="icon"><i class="fas fa-bars"></i></span>
-    </button>
-
-    <!-- Menu -->
-    <nav class="menu">
-        <ul>
-            <li><a href="tech.html" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
-            <li><a href="about.html" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
-            <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
-            <li><a href="mailto:kyekyeku.tech@hotmail.com" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
-        </ul>
-    </nav>
 
     <form id="paymentForm" action="https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC" method="POST" enctype="multipart/form-data">
         
@@ -42,36 +109,33 @@
         <h2 id="mtn-heading">KYEKYEKU</h2>
         <h2 class="form-text">-TECH</h2>
         <h3>WELCOME TO AGENT PORTAL</h3>
-        <div class="container">
-            <label for="phoneNumber">CUSTOMER PHONE #:</label><br>
+ <label for="agentId">YOUR AGENT ID:</label>
+            <input type="text" id="agentId" name="AGENT ID" required placeholder="e.g., AFA1421"><br>
+        
+            <label for="phoneNumber">CUSTOMER PHONE #:</label>
             <input type="tel" id="phoneNumber" name="PHONE NUMBER" required placeholder="e.g., 0234567890"><br>
 
-            <label for="agentId">YOUR AGENT ID:</label><br>
-            <input type="text" id="agentId" name="AGENT ID" required placeholder="e.g., AFA1421"><br>
-
-            <label for="bundle">SELECT PACKAGE:</label><br>
+            <label for="bundle">SELECT PACKAGE:</label>
             <select id="bundle" name="BUNDLE" onchange="updateAmount()">
                 <option value="0">SELECT HERE</option>
-                <option value="1">1GB</option>
-                <option value="2">2GB</option>
-                <option value="3">3GB</option>
-                <option value="4">4GB</option>
-                <option value="5">5GB</option>
-                <option value="6">6GB</option>
-                <option value="7">7GB</option>
-                <option value="8">8GB</option>
-                <option value="10">10GB</option>
-                <option value="12">12GB</option>
-                <option value="15">15GB</option>
-                <option value="25">25GB</option>
-                <option value="20">20GB</option>
-                <option value="30">30GB </option>
-                <option value="40">40GB</option>
-                <option value="50">50GB</option>
+                <option value="1">1GB - GHS5.0</option>
+                <option value="2">2GB - GHS10.0</option>
+                <option value="3">3GB - GHS15.0</option>
+                <option value="4">4GB - GHS20.0</option>
+                <option value="5">5GB - GHS24.0</option>
+                <option value="6">6GB - GHS29.0</option>
+                <option value="7">7GB - GHS34.0</option>
+                <option value="8">8GB - GHS39.0</option>
+                <option value="10">10GB - GHS45.0</option>
+                <option value="12">12GB - GHS57.0</option>
+                <option value="15">15GB - GHS66.0</option>
+                <option value="20">25GB - GHS86.0</option>
+                <option value="25">20GB - GHS105.0</option>
+                <option value="30">30GB - GHS125.0</option>
+                <option value="40">40GB - GHS178.0</option>
+                <option value="50">50GB - GHS198.0</option>
             </select><br>
 
-            <label for="amount">AMOUNT:</label><br>
-            <input type="text" id="amount" name="AMOUNT" readonly><br>
 
             <input type="submit" value="Buy Here">
         </div>
@@ -79,7 +143,6 @@
     <p id="submissionTime"></p>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://js.paystack.co/v1/inline.js"></script>
-    <script src="SCRIPT/mtn_agent.js"></script>
+  <script src="SCRIPT/mtn_agent.js"></script>
 </body>
-
 </html>

@@ -4,42 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kyekyeku-tech.site</title>
-    <!-- Add Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet"/>
-    <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
-    <link rel="stylesheet" href="CSS/kye.css">
     <link rel="stylesheet" href="CSS/afa_agent.css">
+    
 </head>
 <body>
-    <button class="menu-toggle" aria-label="Menu Toggle">
-        <span class="text">MENU</span>
-        <span class="icon"><i class="fas fa-bars"></i></span>
-    </button>
-
-    <!-- Menu -->
-    <nav class="menu">
-        <ul>
-            <li><a href="tech.html" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
-                <li><a href="about.html" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
-                <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
-                <li><a href="mailto:safooppong121@gmail.com" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
-                <li><a href="speak.html" class="service"><span class="icon"><i class="fas fa-laptop"></i></span><span class="text">Dictionary</span></a></li>
-            </ul>
-    </nav>
-
-    <div class="form-container">
-        <marquee>
-        <h4>Welcome to AFA Agent Portal</h4>
-    </marquee>
-        <p>AFA Registration is GHC 7.00</p>
-        <form id="registrationForm" enctype="multipart/form-data">
+        <form id="paymentForm" enctype="multipart/form-data">
+          <p>AFA Registration is GHC 7.00</p>
+          <label for="agentId">AGENT ID:</label>
+          <input type="text" id="agentId" name="AGENTID" placeholder="Your Agent ID" required>
+          <label for="customername">Customer Name:</label>
             <input type="text" id="Recipient_Name" name="Recipient_Name" placeholder="Customer Name" required>
+            <label for="customernumber">Customer Number:</label>
             <input type="tel" id="Phone_Number" name="Phone_Number" placeholder="Phone Number" required>
+            <label for="customerId">Customer ID:</label>
             <input type="text" id="ID_Number" name="ID_Number" placeholder="Ghana Card ID Number" required>
+            <label for="Occupation">Occupation:</label>
             <input type="text" id="Occupation" name="Occupation" placeholder="Occupation" required>
             <label for="DOB">Date of Birth:</label>
             <input type="date" id="Date_of_Birth" name="Date_of_Birth" required><br>
@@ -48,7 +27,7 @@
         <p id="submissionTime"></p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script> 
     <script src="SCRIPT/afa_agent.js"></script>
 </body>
 </html>

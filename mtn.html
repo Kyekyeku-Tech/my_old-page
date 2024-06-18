@@ -5,155 +5,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kyekyeku-tech.com</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
-    <link rel="stylesheet" href="CSS/kye.css">
     <style>
         body {
-            background-color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://mymtnngnxtgen-shop-staging.mtnnigeria.net/media/auth0/autho-img.png');
+            background-size: cover;
             color: black;
         }
 
-        .container {
-            color: #0a0101;
-            width: 80%;
-            max-width: 800px;
-            background-color: rgb(252, 187, 10);
+        #paymentForm {
+            background: #fccf09;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px black;
+            max-width: 400px;
+            width: 100%;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px black;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        h2 {
-            color: rgb(255, 217, 0);
-        }
-
-        p {
-            color: #0a0101;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        select,
-        input {
-            width: 70%;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: white;
-            color: black;
-            border: 2px solid;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        input[type="submit"] {
-            width: 30%;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: black;
-            color: yellow;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        input[type="submit"]:hover {
-            background-color: white;
-            color: black;
+            text-align: center;
         }
 
         h2#mtn-heading,
         h2.form-text {
             display: inline;
-            /* Display on the same line */
         }
 
         h2#mtn-heading {
-            color: rgb(255, 208, 0);
-            /* Color for AFA REGISTRATION */
+            color: rgb(248, 247, 243);
+            font-size: 24px;
+            font-weight: bold;
         }
 
         h2.form-text {
-            color: black;
-            /* Color for Form */
+            color: rgb(6, 2, 250);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 10px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #555;
+            text-align: left;
+        }
+
+        input[type="tel"],
+        input[type="text"],
+        select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input[type="submit"] {
+            background-color: #0d0d0e;
+            color: yellow;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .fa-handshake {
+            color: #ffc107;
+            margin: 10px 0;
         }
     </style>
 </head>
 
 <body>
-    <button class="menu-toggle" aria-label="Menu Toggle">
-        <span class="text">MENU</span>
-        <span class="icon"><i class="fas fa-bars"></i></span>
-    </button>
-
-    <!-- Menu -->
-    <nav class="menu">
-        <ul>
-            <li><a href="tech.html" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
-            <li><a href="about.html" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
-            <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
-            <li><a href="mailto:kyekyeku.tech@hotmail.com" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
-        </ul>
-    </nav>
-
-    <form id="paymentForm" method="POST">
+    <form id="paymentForm" action="https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="x-sheetmonkey-insert-worksheet" value="MTN" />
-
         <h2 id="mtn-heading">KYEKYEKU</h2>
         <h2 class="form-text">-TECH</h2>
-        <div class="container">
-            <label for="phoneNumber">PHONE:</label><br>
-            <input type="tel" id="phoneNumber" name="PHONE NUMBER" required placeholder="e.g., 0234567890"><br>
-
-            <label for="bundle">PACKAGE:</label><br>
-            <select id="bundle" name="BUNDLE" onchange="updateAmount()">
-                <option value="0">SELECT HERE</option>
-                <option value="1">1GB</option>
-                <option value="2">2GB</option>
-                <option value="3">3GB</option>
-                <option value="4">4GB</option>
-                <option value="5">5GB</option>
-                <option value="6">6GB</option>
-                <option value="7">7GB</option>
-                <option value="8">8GB</option>
-                <option value="10">10GB</option>
-                <option value="12">12GB</option>
-                <option value="15">15GB</option>
-                <option value="20">20GB</option>
-                <option value="50">50GB </option>
-                <option value="100">100GB</option>
-                <option value="200">200GB</option>
-            </select><br>
-
-            <label for="amount">AMOUNT:</label><br>
-            <input type="text" id="amount" name="AMOUNT" readonly><br>
-
-            <input type="submit" value="Buy here"><br><br>
-            <a href="signup.html" class="btn">REGISTER FOR AGENT</a>
-        </div>
+        <h3>WELCOME TO AGENT PORTAL</h3>
+        <label for="agentId">YOUR EMAIL:</label>
+        <input type="text" id="email" name="email" required placeholder="e.g., safo@example.com"><br>
+        <label for="phoneNumber">CUSTOMER PHONE #:</label>
+        <input type="tel" id="phoneNumber" name="PHONE NUMBER" required placeholder="e.g., 0234567890"><br>
+        <label for="bundle">SELECT PACKAGE:</label>
+        <select id="bundle" name="BUNDLE" onchange="updateAmount()">
+            <option value="0">SELECT HERE</option>
+            <option value="1">1GB - GHS6.0</option>
+            <option value="2">2GB - GHS12.0</option>
+            <option value="3">3GB - GHS18.0</option>
+            <option value="4">4GB - GHS24.0</option>
+            <option value="5">5GB - GHS30.0</option>
+            <option value="6">6GB - GHS36.0</option>
+            <option value="7">7GB - GHS42.0</option>
+            <option value="8">8GB - GHS48.0</option>
+            <option value="10">10GB - GHS54.0</option>
+            <option value="12">12GB - GHS62.0</option>
+            <option value="15">15GB - GHS78.0</option>
+            <option value="20">25GB - GHS95.0</option>
+            <option value="25">20GB - GHS125.0</option>
+            <option value="30">30GB - GHS134.0</option>
+            <option value="40">40GB - GHS189.0</option>
+            <option value="50">50GB - GHS202.0</option>
+        </select><br>
+        <input type="hidden" id="amount" name="amount">
+        <input type="submit" value="Buy Here">
     </form>
     <p id="submissionTime"></p>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://js.paystack.co/v1/inline.js"></script>
     <script src="SCRIPT/mtn.js"></script>
 </body>
-
 </html>
