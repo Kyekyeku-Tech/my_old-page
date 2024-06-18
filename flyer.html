@@ -8,21 +8,22 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            background: linear-gradient(to right, #eaee02 0%, #603ff5 100%);
         }
         .form-container {
             max-width: 600px;
-            background-color: #ffd000;
+            background-color: #16a0b9;
             margin: auto;
             padding: 20px;
-            border: 1px solid #ccc;
+            border: 1px solid #0f0101;
             border-radius: 10px;
-            position: relative; /* Added for positioning */
+            position: relative;
         }
         .form-container label {
             display: block;
             margin-bottom: 8px;
         }
-        .form-container input, .form-container button {
+        .form-container input, .form-container select, .form-container button {
             width: 95%;
             padding: 10px;
             margin-bottom: 10px;
@@ -39,73 +40,122 @@
             background-color: #0905f7;
             color: white;
         }
-        .price-display {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .logo-container {
-            position: absolute;
-            top: 10px; /* Adjust as needed */
-            right: 20px; /* Adjust as needed */
-        }
-        .logo-container img {
-            width: 100px; /* Adjust the size of the logo */
+        .form-container img {
+            width: 100%;
+            max-width: 200px;
             height: auto;
+            display: block;
+            margin: auto;
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
 </head>
 <body>
     <div class="form-container">
-        <div class="logo-container">
-            <img src="https://seeklogo.com/images/M/mtn-logo-40644FC8B0-seeklogo.com.png" alt="MTN Logo">
-        </div>
-        <h2>Generate a Flyer</h2>
+        <h2>Instant Flyer Generator</h2>
         <form id="flyerForm">
-            <label for="flyerTitle">Your Company name:</label>
-            <input type="text" id="flyerTitle" name="flyerTitle"  placeholder="KYEKYEKU-TECH OFFERS" required>
+            <img src="https://d1csarkz8obe9u.cloudfront.net/embeddesigns/59c8c93c42d4061188496b56aa105014_embed.jpg" alt="flyer image"/>
+            <label for="flyerTitle">Your Company Name:</label>
+            <input type="text" id="flyerTitle" name="flyerTitle" placeholder="KYEKYEKU-TECH OFFERS" required>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="e.g., 0241234567" required>
+            <label for="pricelist">Select Pricelist:</label>
+            <select id="pricelist" name="pricelist" required>
+                <option value="mtn">MTN Flyer</option>
+                <option value="tigo">AirtelTigo</option>
+            </select>
             <button type="submit">Generate Flyer</button>
         </form>
     </div>
 
     <script>
-        const pricelist = {
+        const mtnPricelist = {
             "1": 7,
             "2": 13,
-            "3": 19,
-            "4": 24,
-            "5": 29,
-            "6": 32,
-            "7": 36.5,
-            "8": 41.5,
-            "10": 54.5,
-            "12": 62.5,
-            "15": 73.5,
-            "20": 94.5,
-            "50": 190,
-            "100": 360,
-            "200": 640
+            "3": 18,
+            "4": 23,
+            "5": 28,
+            "6": 33,
+            "10": 58,
+            "12": 62,
+            "15": 74,
+            "20": 100,
+            "25": 128,
+            "30": 150
+        };
+
+        const tigoPricelist = {
+            "1": 5,
+            "2": 10,
+            "3": 15,
+            "4": 20,
+            "5": 25,
+            "6": 30,
+            "10": 40,
+            "15": 60,
+            "20": 75,
+            "25": 90,
+            "30": 115,
+            "40": 140
         };
 
         document.getElementById('flyerForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const flyerTitle = document.getElementById('flyerTitle').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const pricelistSelection = document.getElementById('pricelist').value;
+            const pricelist = pricelistSelection === 'mtn' ? mtnPricelist : tigoPricelist;
 
-            // Import the jsPDF library
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
 
+            let primaryColor, secondaryColor, titleColor, textColor;
+            if (pricelistSelection === 'mtn') {
+                primaryColor = [255, 208, 0]; // MTN Yellow
+                secondaryColor = [0, 0, 0]; // Black
+                textColor = [0, 0, 0]; // Black
+                titleColor = [255, 0, 0]; // Red
+            } else {
+                primaryColor = [0, 0, 255]; // Tigo Blue
+                secondaryColor = [255, 255, 255]; // White
+                textColor = [0, 0, 0]; // Black
+                titleColor = [255, 0, 0]; // Red
+            }
+
+            doc.setFillColor(...primaryColor);
+            doc.rect(0, 0, doc.internal.pageSize.width, doc.internal.pageSize.height, 'F');
+
+            doc.setTextColor(...titleColor);
             doc.setFontSize(25);
             doc.text(flyerTitle, 20, 20);
 
+            doc.setTextColor(...textColor);
+            doc.setFontSize(12);
+            doc.text(`Phone Number: ${phoneNumber}`, 20, 30);
+
+            doc.setTextColor(...textColor);
             doc.setFontSize(12);
             doc.text('Price List:', 20, 40);
 
-            let y = 50;
+            const tableData = [];
             for (const [size, price] of Object.entries(pricelist)) {
-                doc.text(`${size}GB = GHS ${price.toFixed(2)}`, 20, y);
-                y += 10;
+                tableData.push([`${size}GB`, `GHS ${price.toFixed(2)}`]);
             }
+
+            doc.autoTable({
+                startY: 50,
+                head: [['Data Plan', 'Price']],
+                body: tableData,
+                styles: {
+                    fillColor: [...primaryColor],
+                    textColor: [...textColor],
+                },
+                headStyles: {
+                    fillColor: [...secondaryColor],
+                    textColor: [...primaryColor],
+                }
+            });
 
             doc.save(`${flyerTitle}.pdf`);
         });
