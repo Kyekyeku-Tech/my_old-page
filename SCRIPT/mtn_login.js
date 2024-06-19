@@ -20,7 +20,7 @@ function checkAccess() {
         "NFC2563": "ANDY NIMOH",
         "AB5050": "ABRAHAM KESSEY",
         "AY2080": "AYISHATU ABDULLAI",
-        "AFA0907": "",
+        "FK3310": "FREDRICK KUSI",
         "AFA2308": "",
         "AFA7009": "",
         "AFA0710": "",

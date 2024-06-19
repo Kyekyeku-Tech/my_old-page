@@ -27,7 +27,7 @@ var agentEmails = {
     "AY2080": "johnkessey66@gmail.com",
     "BO2013": "bernardoppong220@gmail.com",
     "MA2308": "maryaccomplish7@gmail.com",
-    "AFA7009": "customer5@example.com",
+    "FK3310": "fredrickkusi10@gmail.com",
     "AFA0710": "customer6@example.com",
     "AFA1720": "",
     "AFA7124": "",
