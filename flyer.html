@@ -82,14 +82,16 @@
             "15": 74,
             "20": 100,
             "25": 128,
-            "30": 150
+            "30": 134,
+            "40": 189.5,
+            "50": 203.5
         };
 
         const tigoPricelist = {
-            "1": 5,
-            "2": 10,
-            "3": 15,
-            "4": 20,
+            "1": 6,
+            "2": 11,
+            "3": 15.5,
+            "4": 21,
             "5": 25,
             "6": 30,
             "10": 40,
@@ -97,7 +99,8 @@
             "20": 75,
             "25": 90,
             "30": 115,
-            "40": 140
+            "40": 140,
+            "50": 168 
         };
 
         document.getElementById('flyerForm').addEventListener('submit', function(event) {
@@ -152,8 +155,8 @@
                     textColor: [...textColor],
                 },
                 headStyles: {
-                    fillColor: [...secondaryColor],
-                    textColor: [...primaryColor],
+                    fillColor: [...textColor],
+                    textColor: [...secondaryColor],
                 }
             });
 
