@@ -58,15 +58,11 @@ document.getElementById("paymentForm").addEventListener("submit", function(event
                 body: formData
             }).then(function(response) {
                 if (response.ok) {
-                    // Capture the current time
-                    var currentTime = new Date();
-                    var formattedTime = currentTime.toLocaleString();
-
-                    // Display the submission time
+                    const currentTime = new Date();
+                    const formattedTime = currentTime.toLocaleString();
                     document.getElementById("submissionTime").textContent = "Form submitted at: " + formattedTime;
-
-                    // Display success message
-                    Swal.fire('Payment Successful!', 'Your payment was successful. Transaction reference: ' + response.reference, 'success');
+                    Swal.fire('Payment Successful!', 'Best Regard Kyekyeku-tech');
+                    sendSMS(phoneNumber, selectedBundle); // Call the function to send SMS after successful payment
                 } else {
                     Swal.fire('Error', 'There was an error with your submission.', 'error');
                 }
@@ -81,3 +77,33 @@ document.getElementById("paymentForm").addEventListener("submit", function(event
     });
     handler.openIframe();
 });
+
+function sendSMS(phoneNumber, selectedBundle) {
+    const packageNames = {
+        "1": "1GB",
+        "2": "2GB",
+        "3": "3GB",
+        "4": "4GB",
+        "5": "5GB",
+        "6": "6GB",
+        "7": "7GB",
+        "8": "8GB",
+        "10": "10GB",
+        "12": "12GB",
+        "15": "15GB",
+        "20": "25GB",
+        "25": "20GB",
+        "30": "30GB",
+        "40": "40GB",
+        "50": "50GB"
+    };
+
+    const package = packageNames[selectedBundle];
+
+    fetch(`https://devp-sms03726-api.hubtel.com/v1/messages/send?clientid=janhcpit&clientsecret=pisvfpwz&from=KyekyekuTek&to=+233545454000&content=Someone Just Buy ${package} On ${phoneNumber} Kindly confirm`, {
+        method: 'GET'
+    })
+        .then(response => response.text())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error sending SMS:', error));
+}

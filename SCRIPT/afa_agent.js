@@ -59,7 +59,7 @@ var agentEmails = {
                     document.getElementById("submissionTime").textContent = "Form submitted at: " + formattedTime;
 
                     // Display success message
-                    Swal.fire('Payment Successful!', 'Your payment was successful. Transaction reference: ' + response.reference, 'success');
+                    Swal.fire('Payment Successful!', 'Wait for form to submitted before u left');
                 } else {
                     Swal.fire('Error', 'There was an error with your submission.', 'error');
                 }
