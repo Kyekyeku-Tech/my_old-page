@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kyekyeku-tech.com</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
-    <link rel="stylesheet" href="CSS/kye.css">
+   
+   
+    <link rel="stylesheet" href="">
     <style>
 body {
     font-family: 'Roboto', sans-serif;
@@ -67,10 +65,11 @@ marquee {
     margin-top: 10px;
 }
 
-h5 {
+h6 {
     font-size: 1.2em;
     font-weight: bold;
     margin: 0;
+    color: #f7b604;
 }
 
 make {
@@ -121,37 +120,21 @@ make {
 
 </head>
 
-<body>
-    <button class="menu-toggle" aria-label="Menu Toggle">
-        <span class="text">MENU</span>
-        <span class="icon"><i class="fas fa-bars"></i></span>
-    </button>
-
-    <!-- Menu -->
-    <nav class="menu">
-        <ul>
-            <li><a href="tech.html" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
-            <li><a href="about.html" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
-            <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
-            <li><a href="mailto:kyekyeku.tech@hotmail.com" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
-        </ul>
-    </nav>
-
     <form id="paymentForm" action="https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC" method="POST" enctype="multipart/form-data">
 
         <input type="hidden" name="x-sheetmonkey-insert-worksheet" value="MTN" />
 
-        <h2 id="mtn-heading">KYEKYEKU</h2>
-        <h2 class="form-text">-TECH</h2>
+        
         <div class="container">
+            
             <h3>Hello, Cherished Customer !!</h3>
             <i class="fas fa-handshake"></i>
 
-            <marquee>
-                <h5>WELCOME TO <mark>MTN</mark> BUNDLE ZONE</h5>
-            </marquee>
+        
+                <h6>WELCOME TO MTN NON-EXPIRE BUNDLE</h6><br>
+            
 
-            <p><mark class="make">PLEASE ARE YOU AN AGENT ?</mark></p>
+            <p>PLEASE ARE YOU AN AGENT ?</p>
 
             <a href="Agentzone.html" class="btn">YES</a>
             <a href="NonAgent.html" class="btn">NO</a>
@@ -165,20 +148,6 @@ make {
                 <a href="https://instagram.com/kyekyekutek"><i class="fab fa-instagram"></i></a>
         </div>
     </form>
-
-    <script>
-       
-        const menuToggle = document.querySelector('.menu-toggle');
-        const menu = document.querySelector('.menu');
-
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('open');
-        });
-
-        document.querySelector('.menu-toggle').addEventListener('click', function () {
-            this.classList.toggle('active');
-        });
-    </script>
 </body>
 
 </html>
