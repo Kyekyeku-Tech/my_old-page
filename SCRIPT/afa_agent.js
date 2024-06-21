@@ -9,7 +9,7 @@ var agentEmails = {
     "MA2308": "maryaccomplish7@gmail.com",
     "FK3310": "fredrickkusi10@gmail.com",
     "AR9041": "mutarurazak@gmail.com",
-    "AFA1720": "",
+    "UV1234": "vidaackahmensah@gmail.com",
     "AFA7124": "",
     "AFA9803": "",
     "AFA9921": ""
