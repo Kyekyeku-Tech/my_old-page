@@ -28,7 +28,7 @@ const agentEmails = {
     "BO2013": "bernardoppong220@gmail.com",
     "MA2308": "maryaccomplish7@gmail.com",
     "FK3310": "fredrickkusi10@gmail.com",
-    "AFA0710": "customer6@example.com",
+    "AR9041": "mutarurazak@gmail.com",
     "AFA1720": "",
     "AFA7124": "",
     "AFA9803": "",
