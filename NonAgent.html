@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeting Page</title>
+  <style>
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://telegra.ph/file/ddf9087dae1e826d8b986.jpg');
+    color: #333;
+    text-align: center;
+}
+
+.quarter-section {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.5em; /* Adjusted font size for greeting */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+
+/* Button Styles */
+.button-container {
+    margin-top: 20px;
+}
+
+.button-container a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #034fa0;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-container a:hover {
+    background-color: #00b300;
+    transform: translateY(-2px);
+}
+
+#notification {
+    background-color: #28a745; /* Green color for notification button */
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#notification:hover {
+    background-color: #218838;
+}
+
+#logout-button {
+    background-color: #dc3545; /* Red color for logout button */
+}
+
+#logout-button:hover {
+    background-color: #c8af23;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .quarter-section {
+        padding: 10px;
+    }
+}
+
+  </style>
+  <script>
+    // Function to get the current time and return a greeting
+    function getGreeting() {
+      var currentTime = new Date().getHours();
+      var greeting;
+
+      if (currentTime < 12) {
+        greeting = "Good morning";
+      } else if (currentTime < 16) {
+        greeting = "Good afternoon";
+      } else {
+        greeting = "Good evening";
+      }
+
+      return greeting;
+    }
+
+    // Function to get the current quarter and month
+    function getQuarterAndMonth() {
+      var currentMonth = new Date().getMonth();
+      var quarter;
+
+      if (currentMonth >= 0 && currentMonth <= 2) {
+        quarter = "WE'RE IN QUARTER ONE";
+      } else if (currentMonth >= 3 && currentMonth <= 5) {
+        quarter = "WE'RE IN QUARTER TWO";
+      } else if (currentMonth >= 6 && currentMonth <= 8) {
+        quarter = "WE'RE IN QUARTER THREE";
+      } else {
+        quarter = "WE'RE IN QUARTER FOUR";
+      }
+
+      // Get the current month name
+      var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      var currentMonthName = monthNames[currentMonth];
+
+      return { quarter: quarter, month: currentMonthName };
+    }
+
+    // Function to display the greeting and additional text on the page
+    function displayGreeting() {
+      var greeting = getGreeting();
+      var quarterAndMonth = getQuarterAndMonth();
+      var additionalText = "";
+
+      // Display greeting with comma or exclamation mark
+      var greetingText = greeting.endsWith("g") ? greeting + "," : greeting + "!";
+      document.getElementById("greeting").innerHTML = `<span style="color: red;">${greetingText}</span> VALUED USER!`;
+
+      // Display additional text in a new paragraph
+      var additionalParagraph = document.createElement("p");
+      additionalParagraph.innerText = additionalText;
+
+      // Display current time in bold and big font
+      var timeText = document.createElement("span");
+      timeText.style.fontWeight = "bold";
+      timeText.style.fontSize = "38px";
+      timeText.style.color = "red";
+      timeText.innerText = new Date().toLocaleTimeString();
+
+      // Append elements to the body
+      additionalParagraph.appendChild(document.createElement("br")); // Add a line break
+      additionalParagraph.appendChild(timeText);
+      document.body.appendChild(additionalParagraph);
+
+      // Add today's notification button
+      var notificationText = "Today's Notification";
+      var notificationButton = document.createElement("button");
+      notificationButton.id = "notification";
+      notificationButton.innerText = notificationText;
+
+      // Append button to the body
+      document.body.appendChild(notificationButton);
+
+      // Add click event to the notification button
+      notificationButton.addEventListener("click", function () {
+        alert("Dear Valued Agent! Kindly Note MTN has increased group share Data price by 25% . Thank You.");
+        
+
+        // Append the heading and paragraph to the body
+        document.body.appendChild(headOfficeHeading);
+        document.body.appendChild(headOfficeParagraph);
+      });
+
+      // Apply style based on the quarter
+      var quarterSection = document.getElementById("quarter-section");
+      quarterSection.classList.add(getQuarterClass(quarterAndMonth.quarter));
+
+      // Change background color every 5 seconds
+      setInterval(function () {
+        var colors = ["#FFFF99", "#ADD8E6", "white", "green", "#f1ce04"]; // Yellow, Light Blue, White
+        var randomColor = colors[Math.floor(Math.random() * colors.length)];
+        quarterSection.style.backgroundColor = randomColor;
+      }, 5000);
+
+      // Display the quarter and month
+      document.getElementById("quarter").innerText = quarterAndMonth.quarter;
+      document.getElementById("month").innerText = quarterAndMonth.month;
+    }
+
+    // Function to get the class name for the quarter
+    function getQuarterClass(quarter) {
+      switch (quarter) {
+        case "WE'RE IN QUARTER ONE":
+          return "first-quarter";
+        case "WE'RE IN QUARTER TWO":
+          return "second-quarter";
+        case "WE'RE IN QUARTER THREE":
+          return "third-quarter";
+        case "WE'RE IN QUARTER FOUR":
+          return "fourth-quarter";
+        default:
+          return "";
+      }
+    }
+
+    // Call the displayGreeting function when the page loads
+    window.onload = displayGreeting;
+  </script>
+</head>
+
+<body>
+  <div id="quarter-section" class="quarter-section">
+    <h1 id="greeting"></h1>
+    <p id="quarter"></p>
+    <!-- Add a new element to display the month -->
+    <p id="month"></p>
+
+    <!-- Button Container -->
+    <div class="button-container">
+      <a href="mtn.html">MTN BUNDLE</a>
+      <a href="afa.html">MTN AFA REGISTRATION</a>
+      <a href="Airteltigo.html">AIRTEL TIGO BUNDLE</a>
+      <a href="signup.html">REQUEST AGENT ID</a>
+    </div>
+    <div class="button-container">
+      <!-- Change the background color of the logout button -->
+      <a href="service.html" id="logout-button">LOGOUT</a>
+    </div>
+  </div>
+</body>
+</html>

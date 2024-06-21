@@ -12,80 +12,103 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
     <link rel="stylesheet" href="CSS/kye.css">
     <style>
-         .container {
-            color: #0a0101;
-            width: 80%;
-            max-width: 800px;
-            background-color: #f7f4f4;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px red;
-            animation: fadeIn 1s ease-in-out;
-        }
-        select, input {
-            width: 70%;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: white;
-            color: black;
-            border: 2px solid;
-            border-color: #0703fc;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        h2 {
-            color: #0703fc;
-        }
-        p {
-            color: #0a0101;
-        }
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        input[type="submit"] {
-            width: 30%;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: blue;
-            color: red;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        input[type="submit"]:hover {
-            background-color: red;
-            color: blue;
-        }
-        h2#mtn-heading, h2.form-text {
-            display: inline; /* Display on the same line */
-        }
-        h2#mtn-heading {
-            color: blue; /* Color for AFA REGISTRATION */
-        }
-        h2.form-text {
-            color: red; /* Color for Form */
-        }
-        #submissionTime {
-            margin-top: 10px;
-            font-weight: bold;
-        }
-        mark {
-            color: RED;
-            background-color: blue;
-        }
-        .make {
-            color: rgb(8, 6, 0);
-            background-color: rgb(250, 247, 247);
-        }
+         ./* Reset and General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #007bff; /* Blue color for headings */
+    margin: 0;
+}
+
+.form-text {
+    font-size: 1.2em;
+    color: #555;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.fa-handshake {
+    font-size: 2em;
+    color: #007bff; /* Blue color for icon */
+}
+
+marquee {
+    margin-top: 10px;
+}
+
+h5 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+make {
+    font-size: 1.2em;
+    color: #007bff; /* Blue color for highlighted text */
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff; /* Blue button background */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+.social-icons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #007bff; /* Blue color for social icons */
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #0056b3; /* Darker shade of blue on hover */
+}
+
     </style>
 
 </head>
@@ -122,8 +145,8 @@
 
             <p><mark class="make">PLEASE ARE YOU AN AGENT ?</mark></p>
 
-            <a href="login_tigo.html" class="btn">YES</a>
-            <a href="Airteltigo.html" class="btn">NO</a>
+            <a href="Agentzone.html" class="btn">YES</a>
+            <a href="NonAgent.html" class="btn">NO</a>
         </div>
 
             <div class="social-icons">

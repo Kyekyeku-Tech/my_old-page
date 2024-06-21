@@ -12,79 +12,14 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
     <link rel="stylesheet" href="CSS/kye.css">
     <style>
-        body {
-            background-color: white;
-            color: black;
-        }
-
-        .container {
-            color: #0a0101;
-            width: 80%;
-            max-width: 800px;
-            background-color: rgb(252, 187, 10);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px black;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        h2 {
-            color: rgb(255, 217, 0);
-        }
-
-        p {
-            color: #0a0101;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        select,
-        input {
-            width: 70%;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: white;
-            color: black;
-            border: 2px solid;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        input[type="submit"] {
-            width: 30%;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: black;
-            color: yellow;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        input[type="submit"]:hover {
-            background-color: white;
-            color: black;
-        }
-
-        h2#mtn-heading,
-        h2.form-text {
-            display: inline;
-            /* Display on the same line */
-        }
-
-        h2#mtn-heading {
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #0e0d0d;
+}
+h2#mtn-heading {
             color: rgb(255, 208, 0);
             /* Color for AFA REGISTRATION */
         }
@@ -93,17 +28,95 @@
             color: black;
             /* Color for Form */
         }
-        p {
-            color: white;
-        }
-        mark {
-            color: rgb(255, 196, 0);
-            background-color: black;
-        }
-        .make {
-            color: rgb(8, 6, 0);
-            background-color: rgb(250, 247, 247);
-        }
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fffb00; /* Blue color for headings */
+    margin: 0;
+}
+
+.form-text {
+    font-size: 1.2em;
+    color: #555;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.fa-handshake {
+    font-size: 2em;
+    color: #ffd900; /* Blue color for icon */
+}
+
+marquee {
+    margin-top: 10px;
+}
+
+h5 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+make {
+    font-size: 1.2em;
+    color: #ffd900; /* Blue color for highlighted text */
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #f7b604;
+    background-color: #070707; /* Blue button background */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+.social-icons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #007bff; /* Blue color for social icons */
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #0056b3; /* Darker shade of blue on hover */
+}
+
     </style>
 
 </head>
@@ -131,7 +144,7 @@
         <h2 id="mtn-heading">KYEKYEKU</h2>
         <h2 class="form-text">-TECH</h2>
         <div class="container">
-            <h3>Y'ello Cherished Customer !!</h3>
+            <h3>Hello, Cherished Customer !!</h3>
             <i class="fas fa-handshake"></i>
 
             <marquee>
@@ -140,8 +153,8 @@
 
             <p><mark class="make">PLEASE ARE YOU AN AGENT ?</mark></p>
 
-            <a href="afa_login.html" class="btn">YES</a>
-            <a href="afa.html" class="btn">NO</a>
+            <a href="Agentzone.html" class="btn">YES</a>
+            <a href="NonAgent.html" class="btn">NO</a>
         </div>
 
             <div class="social-icons">

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kyekyeku-tech.online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="CSS/service.css">
+    <style>
+        /* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-image: url('https://telegra.ph/file/ddf9087dae1e826d8b986.jpg');
+    color: #030303;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(252, 251, 251, 0.986);
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo img {
+    max-width: 50px;
+    margin-left: 10px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu ul li {
+    margin-left: 20px;
+}
+
+.menu ul li:first-child {
+    margin-left: 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #050505;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url("path_to_your_hero_image");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.feature {
+    margin-bottom: 40px;
+}
+
+.feature i {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 16px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #161515e1;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    header nav {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: transparent;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.904);
+        border-radius: 8px;
+        padding: 20px;
+        z-index: 1;
+    }
+
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .menu ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.social-icons a {
+    color: inherit;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+/* Services Section */
+.services-1 {
+    color: #fcf8f8;
+    background-color: #080808;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.services-1 .icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+p {
+    color: white;
+}
+.services-1 h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.services-1 p {
+    font-size: 14px;
+}
+
+/* Subscribe Form */
+.subscribe-form {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fdf3f3fb;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.subscribe-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.subscribe-form .form-text {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.subscribe-form input[type="email"] {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #080808;
+    border-radius: 5px;
+}
+
+.subscribe-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: #fd2a05;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div id="logo">
+                    <img src="https://telegra.ph/file/30c032ee516d51ceb456a.jpg" alt="Logo">
+                </div>
+                <button class="menu-toggle" id="menu-toggle">
+                    <div class="icon"></div>
+                    <div class="text">MENU</div>
+                </button>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="title-section">Our Services</h2>
+                <div class="divider mx-auto"></div>
+            </div>
+              
+         <div class="col-12 col-lg-auto py-3 wow fadeInLeft">
+           <div class="card-pricing">
+             <div class="header">
+               <div class="price-icon my-1">
+                 <img width="100px" src="https://cedisroom.com/assets/A19.png" alt="">
+               </div>
+               <div class="price-title">AT Big Time</div>
+             </div>
+             <div class="body py-3">
+               <div class="price-tag">
+                 AT Big Time Bundles
+               </div>
+               <div class="price-info">
+                 <p>Choose the plan that is right for you</p>
+               </div>
+             </div>
+             <div class="footer">
+               <a href="Tigo_confirm.html" class="btn btn-outline rounded-pill">Buy Now</a>
+             </div>
+           </div>
+         </div>
+  
+         <div class="col-12 col-lg-auto py-3 wow fadeInUp">
+           <div class="card-pricing">
+             <div class="header">
+               <div class="price-icon my-1">
+                 <img width="100px" src="https://seeklogo.com/images/M/mtn-logo-40644FC8B0-seeklogo.com.png" alt="">
+               </div>
+               <div class="price-title">MTN</div>
+             </div>
+             <div class="body py-3">
+               <div class="price-tag">
+                 Offers made for You
+               </div>
+               <div class="price-info">
+                 <p>Choose the plan that's right for you</p>
+               </div>
+             </div>
+             <div class="footer">
+               <a href="confirmb.html" class="btn btn-outline rounded-pill">Buy Now</a>
+             </div>
+           </div>
+         </div>
+  
+         <div class="col-12 col-lg-auto py-3 wow fadeInUp">
+           <div class="card-pricing">
+             <div class="header">
+               <div class="price-icon my-1">
+                 <img width="100px" src="https://seeklogo.com/images/M/mtn-logo-40644FC8B0-seeklogo.com.png" alt="">
+               </div>
+               <div class="price-title">AFA Registration</div>
+             </div>
+             <div class="body py-3">
+               <div class="price-tag">
+                 AFA Registration
+               </div>
+               <div class="price-info">
+                 <p>For Farmers and Association Mtn Users</p>
+               </div>
+             </div>
+             <div class="footer">
+               <a href="afa_confirm.html" class="btn btn-outline rounded-pill">Register</a>
+             </div>
+           </div>
+         </div>
+       </div>
+        </div>
+    </div> 
+    </main>
+    
+    <div class="subscribe-form">
+        <h2 id="mtn-heading">Subscribe to Our Newsletter</h2>
+        <h2 class="form-text">Stay Updated</h2>
+        <form>
+            <input type="email" placeholder="Enter your email">
+            <button id="submitBtn">Subscribe</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2024 Kyekyeku-Tech. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

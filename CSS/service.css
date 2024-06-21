@@ -1,89 +1,217 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
 
-.page-banner {
-    background-color: #0b7ff3; /* Change this color as needed */
-    padding: 60px 0;
-    text-align: center;
-    font-style: italic;
-   
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title-section {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #080808;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background-color: #007bff;
+  margin: 10px auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 15px;
+}
+
+.col-lg-auto {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+}
+
+.card-pricing {
+  background-color: red;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.849);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.col-lg-auto:nth-child(3) .card-pricing,
+.col-lg-auto:nth-child(4) .card-pricing {
+  background-color: #fccf06;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.849);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s;
+} 
+.col-lg-auto:nth-child(1) .card-pricing {
+  background-color: #f8f8f6;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.849);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s;
+} 
+.card-pricing:hover {
+  transform: translateY(-10px);
+}
+
+.header {
+  padding: 20px;
+  color: #fff;
+  background-color: #007bff; /* Default header color */
+}
+
+.header .price-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Specific styling for MTN and AFA Registration headers */
+.col-lg-auto:nth-child(3) .header,
+.col-lg-auto:nth-child(4) .header {
+  background-color: #000;
+}
+.col-lg-auto:nth-child(1) .header {
+  background-color: rgba(9, 245, 20, 0.918);
+}
+.price-icon img {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.price-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.body {
+  padding: 20px;
+}
+
+.price-tag {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.price-info {
+  font-size: 1em;
+  color: #666;
+}
+
+.footer {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #070707;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background-color: red;
+  color: #fff;
+}
+.col-lg-auto:nth-child(3) .btn,
+.col-lg-auto:nth-child(4) .btn {
+  color: yellow;
+  background-color: #000;
+}
+.col-lg-auto:nth-child(3) .btn:hover,
+.col-lg-auto:nth-child(4) .btn:hover {
+  color: rgb(8, 8, 8);
+  background-color: #fcf805;
+}
+.col-lg-auto:nth-child(1) .btn {
+  color: rgb(236, 240, 236);
+  background-color: #18f504;
+}
+.col-lg-auto:nth-child(1) .btn:hover {
+  color: white;
+  background-color: blue;
+}
+/* Animations */
+.wow {
+  visibility: hidden;
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInLeft {
+  0% {
+      opacity: 0;
+      transform: translateX(-50px);
   }
-  
-  .page-banner h1 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #333; /* Adjust text color as needed */
+  100% {
+      opacity: 1;
+      transform: translateX(0);
   }
-  
-  .title-section {
-    font-size: 32px;
-    font-weight: bold;
-    color: #333; /* Adjust text color as needed */
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(50px);
   }
-  
-  .divider {
-    width: 50px;
-    height: 3px;
-    background-color: #4015fc; /* Adjust divider color as needed */
-    margin: 20px auto;
+  100% {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
-  .card-pricing {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .card-pricing:hover {
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card-pricing .header {
-    padding: 20px;
-  }
-  
-  .card-pricing .price-icon img {
-    display: block;
-    margin: 0 auto;
-  }
-  
-  .card-pricing .price-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333; /* Adjust text color as needed */
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .card-pricing .body {
-    padding: 20px;
-  }
-  
-  .card-pricing .price-tag {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333; /* Adjust text color as needed */
-    text-align: center;
-  }
-  
-  .card-pricing .price-info {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .card-pricing .footer {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .card-pricing .btn {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333; /* Adjust button text color as needed */
-    border-color: #333; /* Adjust button border color as needed */
-  }
-  
-  .card-pricing .btn:hover {
-    background-color: #333; /* Adjust button hover background color as needed */
-    color: #fff; /* Adjust button hover text color as needed */
-  }
-  
+}
+
+/* Adding animation delays for staggered effect */
+.col-lg-auto:nth-child(1) .wow {
+  animation-delay: 0.1s;
+}
+
+.col-lg-auto:nth-child(2) .wow {
+  animation-delay: 0.3s;
+}
+
+.col-lg-auto:nth-child(3) .wow {
+  animation-delay: 0.5s;
+}
+
+.col-lg-auto:nth-child(4) .wow {
+  animation-delay: 0.7s;
+}
+
+.wow {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  visibility: visible;
+}
