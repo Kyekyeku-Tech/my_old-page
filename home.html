@@ -288,6 +288,206 @@ p {
 .subscribe-form button:hover {
     background-color: #fd2a05;
 }
+h1 {
+    color: #4a90e2;
+    text-align: center;
+}
+
+p {
+    line-height: 1.6;
+}
+
+#content img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4a90e2;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 30px;
+    scale: 1.2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#chat-header {
+    background: #4a90e2;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Make sure the header is above other elements */
+}
+
+#chat-header span {
+    font-size: 18px;
+}
+
+#chat-header .close-chat,
+#chat-header .reset-chat {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#chat-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 70px);
+    position: relative;
+    top: -15px; /* Adjust the position of the chat box */
+    overflow: auto;
+    padding-top: 20px;
+}
+
+#chat-box::-webkit-scrollbar {
+    width: 4px;
+}
+
+#chat-box::-webkit-scrollbar-thumb {
+    background: #666666;
+    border-radius: 10px;
+}
+
+#chat-box::-webkit-scrollbar-track {
+    background: rgb(172, 172, 172);
+}
+
+#user-input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+    background: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    z-index: 1;
+}
+
+#chat-container {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 400px;
+    height: 50%;
+    position: fixed;
+    bottom: 54%;
+    right: 50%;
+    scale: 1.1;
+    transform: translate(50%, 50%);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background: #fff;
+    padding-top: 20px; /* Add padding at the top of the chat container */
+}
+
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#send-button {
+    width: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #4a90e2;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 0px;
+}
+
+.message {
+    position: relative;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    max-width: 80%;
+    left: 5px;
+    word-wrap: break-word;
+}
+
+.user {
+    background: #4a90e2;
+    color: #fff;
+}
+
+.bot {
+    background: #f06;
+    color: #fff;
+}
+
+.images-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.images-container img {
+    max-width: 48%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.loading-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    margin: 5px 0;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+    background: #ccc;
+    border-radius: 50%;
+    animation: bounce 1.5s infinite;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+                                       
+
 
     </style>
 </head>
@@ -399,7 +599,24 @@ p {
             <button id="submitBtn">Subscribe</button>
         </form>
     </div>
+    <div id="chat-icon">Ai</div>
+        <img src="https://telegra.ph/file/c8b54f590b64bad563a22.jpg" style="height: 40px; float: right; margin-right: 50px;">
+    </div>
 
+    <div id="chat-container">
+        <div id="chat-header">
+            <div class="close-chat">←</div>
+            <span style="position: relative; left: 8px;">Chat Bot Assistant</span>
+            <div class="reset-chat"><img src="https://telegra.ph/file/dfe48942802ea8797fc7d.jpg" style="height: 30px; float: right; margin-right: 20px;"></div>
+        </div>
+        <div id="chat-box">
+            <div id="messages"></div>
+        </div>
+        <div id="user-input-container">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
     <footer>
         <div class="container">
             <div class="social-icons">
@@ -420,5 +637,108 @@ p {
             document.querySelector('.menu').classList.toggle('active');
         });
     </script>
+    
+     <script>
+                                                 const chatIcon = document.getElementById('chat-icon');
+         const chatContainer = document.getElementById('chat-container');
+         const closeChat = document.querySelector('.close-chat');
+         const resetChat = document.querySelector('.reset-chat');
+ 
+         let isBotResponding = false; 
+ 
+         chatIcon.addEventListener('click', function() {
+             chatContainer.style.display = 'flex';
+             chatIcon.style.display = 'none';
+         });
+ 
+         closeChat.addEventListener('click', function() {
+             chatContainer.style.display = 'none';
+             chatIcon.style.display = 'flex';
+         });
+ 
+         resetChat.addEventListener('click', function() {
+             resetMessages();
+         });
+ 
+         document.getElementById('send-button').addEventListener('click', function() {
+             if (!isBotResponding) { 
+                 sendMessage();
+             }
+         });
+ 
+         document.getElementById('user-input').addEventListener('keypress', function(event) {
+             if (event.key === 'Enter' && !isBotResponding) { 
+                 sendMessage();
+             }
+         });
+ 
+         function sendMessage() {
+             const userInput = document.getElementById('user-input').value;
+             if (userInput.trim() !== '') {
+                 addMessage(userInput, 'user');
+                 document.getElementById('user-input').value = '';
+                 isBotResponding = true; 
+                 showLoadingIndicator(); 
+                 setTimeout(() => {
+                     getBotResponse(userInput);
+                 }, 1000); 
+             }
+         }
+ 
+         function addMessage(text, sender) {
+             const messageContainer = document.createElement('div');
+             messageContainer.classList.add('message', sender);
+             messageContainer.textContent = text;
+             document.getElementById('messages').appendChild(messageContainer);
+         }
+ 
+         function getBotResponse(userInput) {
+             let botResponse = '';
+ 
+             switch (userInput.toLowerCase()) {
+                 case 'hi':
+                     botResponse = 'Hello! How can I assist you today? 😊';
+                     break;
+                 case 'how are you?':
+                     botResponse = 'I`m fine, thanks!';
+                     break;
+                 case 'what are you doing?':
+                     botResponse = 'I am answering the questions!';
+                     break;
+                 default:
+                     botResponse = 'Sorry, but i can`t understand. Can you repeat the question.';
+             }
+ 
+             setTimeout(() => {
+                 addMessage(botResponse, 'bot');
+                 isBotResponding = false; 
+                 hideLoadingIndicator(); 
+             }, 2000); 
+         }
+ 
+         function showLoadingIndicator() {
+             const loadingIndicator = document.createElement('div');
+             loadingIndicator.classList.add('loading-indicator');
+ 
+             for (let i = 0; i < 3; i++) {
+                 const dot = document.createElement('div');
+                 dot.classList.add('dot');
+                 loadingIndicator.appendChild(dot);
+             }
+             document.getElementById('messages').appendChild(loadingIndicator);
+         }
+ 
+         function hideLoadingIndicator() {
+             const loadingIndicator = document.querySelector('.loading-indicator');
+             if (loadingIndicator) {
+                 loadingIndicator.remove();
+             }
+         }
+ 
+         function resetMessages() {
+             document.getElementById('messages').innerHTML = '';
+         } 
+ 
+     </script> 
 </body>
 </html>

@@ -15,11 +15,11 @@ var agentEmails = {
     "AFA9921": ""
 };
 
-    document.getElementById("paymentForm").addEventListener("submit", function(event) {
+document.getElementById("paymentForm").addEventListener("submit", function(event) {
     event.preventDefault();
     var phoneNumber = document.getElementById("Phone_Number").value;
     var agentId = document.getElementById("agentId").value.toUpperCase(); 
-    var amount = 7 * 100;// Amount in kobo
+    var amount = 7 * 100; // Amount in kobo
 
     if (!(agentId in agentEmails) || agentEmails[agentId] === "") {
         Swal.fire('Error', 'Invalid or unregistered Agent ID.', 'error');
@@ -59,7 +59,16 @@ var agentEmails = {
                     document.getElementById("submissionTime").textContent = "Form submitted at: " + formattedTime;
 
                     // Display success message
-                    Swal.fire('Payment Successful!', 'Wait for form to submitted before u left');
+                    Swal.fire('Payment Successful!', 'Wait for form to be submitted before you leave.');
+
+                    // Send SMS notification
+                    fetch(`https://devp-sms03726-api.hubtel.com/v1/messages/send?clientid=janhcpit&clientsecret=mzrmyenb&from=KyekyekuTek&to=+233545454000&content=Someone Just Registered AFA On ${phoneNumber}. Kindly confirm.`, {
+                        method: 'GET'
+                    })
+                    .then(response => response.text())
+                    .then(data => console.log(data))
+                    .catch(error => console.error('Error sending SMS:', error));
+
                 } else {
                     Swal.fire('Error', 'There was an error with your submission.', 'error');
                 }

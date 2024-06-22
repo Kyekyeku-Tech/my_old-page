@@ -1,6 +1,6 @@
 const prices = {
     "0": 0,
-    "1": 5.2,
+    "1": .2,
     "2": 10.5,
     "3": 15.3,
     "4": 20.4,
@@ -113,7 +113,7 @@ function sendSMS(phoneNumber, selectedBundle) {
 
     const package = packageNames[selectedBundle];
 
-    fetch(`https://devp-sms03726-api.hubtel.com/v1/messages/send?clientid=janhcpit&clientsecret=pisvfpwz&from=KyekyekuTek&to=+233545454000&content=Someone Just Buy ${package} On ${phoneNumber} Kindly confirm`, {
+    fetch(`https://devp-sms03726-api.hubtel.com/v1/messages/send?clientid=janhcpit&clientsecret=mzrmyenb&from=KyekyekuTek&to=+233545454000&content=Someone Just Buy ${package} On ${phoneNumber} Kindly confirm`, {
         method: 'GET'
     })
     .then(response => response.text())
