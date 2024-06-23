@@ -42,8 +42,28 @@ p {
 .button-container a {
     display: inline-block;
     text-decoration: none;
+    color: #fac104;
+    background-color: black;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+#tigo-button {
+    display: inline-block;
+    text-decoration: none;
     color: #fff;
-    background-color: #034fa0;
+    background-color: blue;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+#flyer-button {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(0, 255, 21);
     padding: 12px 20px;
     border-radius: 5px;
     margin: 5px;
@@ -51,8 +71,15 @@ p {
 }
 
 .button-container a:hover {
-    background-color: #00b300;
+    background-color: #fac104;
+    color: black;
     transform: translateY(-2px);
+}
+#tigo-button:hover {
+    background-color: red;
+}
+#flyer-button:hover {
+    background-color: rgb(0, 238, 255);
 }
 
 #notification {
@@ -70,7 +97,8 @@ p {
 }
 
 #logout-button {
-    background-color: #dc3545; /* Red color for logout button */
+  color: white;
+    background-color: red; /* Red color for logout button */
 }
 
 #logout-button:hover {
@@ -217,8 +245,8 @@ p {
     <div class="button-container">
       <a href="mtn.html">MTN BUNDLE</a>
       <a href="afa.html">MTN AFA REGISTRATION</a>
-      <a href="Airteltigo.html">AIRTEL TIGO BUNDLE</a>
-      <a href="signup.html">REQUEST AGENT ID</a>
+      <a href="Airteltigo.html" id="tigo-button">AIRTEL TIGO BUNDLE</a>
+      <a href="signup.html" id="flyer-button">REQUEST AGENT ID</a>
     </div>
     <div class="button-container">
       <!-- Change the background color of the logout button -->
