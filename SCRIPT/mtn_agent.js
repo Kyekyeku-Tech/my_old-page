@@ -30,7 +30,7 @@ const agentEmails = {
     "FK3310": "fredrickkusi10@gmail.com",
     "AR9041": "mutarurazak@gmail.com",
     "UV1234": "vidaackahmensah@gmail.com",
-    "AFA7124": "",
+    "MN0144": "mpakyiyanoah02@gmail.com",
     "AFA9803": "",
     "AFA9921": ""
 };
