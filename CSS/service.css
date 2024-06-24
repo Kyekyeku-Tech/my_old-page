@@ -61,7 +61,8 @@ body {
   transition: transform 0.3s;
 } 
 .col-lg-auto:nth-child(1) .card-pricing {
-  background-color: #f8f8f6;
+  background-color: #0804ff;
+  color: #080808;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.849);
   overflow: hidden;
@@ -90,7 +91,7 @@ body {
   background-color: #000;
 }
 .col-lg-auto:nth-child(1) .header {
-  background-color: rgba(9, 245, 20, 0.918);
+  background-color: rgba(245, 210, 9, 0.918);
 }
 .price-icon img {
   width: 100px;
@@ -121,7 +122,8 @@ body {
 
 .footer {
   padding: 20px;
-  background-color: #f9f9f9;
+  width: 100%;
+  background-color: #070000;
 }
 
 .btn {
@@ -142,8 +144,8 @@ body {
 }
 .col-lg-auto:nth-child(3) .btn,
 .col-lg-auto:nth-child(4) .btn {
-  color: yellow;
-  background-color: #000;
+  color: black;
+  background-color: rgb(255, 174, 0);
 }
 .col-lg-auto:nth-child(3) .btn:hover,
 .col-lg-auto:nth-child(4) .btn:hover {
@@ -151,8 +153,11 @@ body {
   background-color: #fcf805;
 }
 .col-lg-auto:nth-child(1) .btn {
-  color: rgb(236, 240, 236);
+  color: rgb(15, 12, 1);
   background-color: #18f504;
+}
+.col-lg-auto:nth-child(1) .p {
+  color: rgb(15, 12, 1);
 }
 .col-lg-auto:nth-child(1) .btn:hover {
   color: white;

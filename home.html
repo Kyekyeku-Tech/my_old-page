@@ -8,487 +8,239 @@
     <link rel="stylesheet" href="CSS/service.css">
     <style>
         /* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+        /* Basic styling for layout */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #797874;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .product-item {
+            width: 300px;
+            background-color: #f9f9f9;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .buy-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .buy {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .buy:hover {
+            background-color: #555;
+        }
+       
+        /* Menu bar styling */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #030303;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 15px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            color: #f10505;
+        }
+        #logo img {
+            max-width: 50px;
+            margin-left: 10px;
+        }
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .menu-toggle .icon {
+            width: 25px;
+            height: 3px;
+            background-color: #0408ff;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+        .menu {
+            display: flex;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 30%;
+                background-color: #0314ff;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                padding: 10px 0;
+            }
+            .menu.active {
+                display: flex;
+            }
+            .menu ul {
+                flex-direction: column;
+                width: 100%;
+            }
+            .menu ul li {
+                text-align: center;
+                margin: 10px 0;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .features {
+            padding: 80px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .feature {
+            margin-bottom: 40px;
+        }
+
+        .feature i {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .feature h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .services-1 {
+            color: #fcf8f8;
+            background-color: #080808;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .services-1 .icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: white;
+        }
+
+        .services-1 h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .services-1 p {
+            font-size: 14px;
+        }
+
+        .subscribe-form {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #fdf3f3fb;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .subscribe-form h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .subscribe-form .form-text {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .subscribe-form input[type="email"] {
+            width: 70%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #080808;
+            border-radius: 5px;
+        }
+
+        .subscribe-form button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .subscribe-form button:hover {
+            background-color: #fd2a05;
+        }
+
+        h1 {
+            color: #4a90e2;
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+ .footer {
+  padding: 20px;
+  width: 100%;
+  background-color: transparent;
+  
 }
-
-html {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-image: url('https://telegra.ph/file/ddf9087dae1e826d8b986.jpg');
-    color: #030303;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Header Styles */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgb(252, 251, 251);
-    padding: 15px 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-header nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#logo img {
-    max-width: 50px;
-    margin-left: 10px;
-}
-
-.menu-toggle {
-    display: none;
-}
-
-.menu {
-    display: flex;
-}
-
-.menu ul {
-    list-style: none;
-    display: flex;
-}
-
-.menu ul li {
-    margin-left: 20px;
-}
-
-.menu ul li:first-child {
-    margin-left: 0;
-}
-
-.menu ul li a {
-    text-decoration: none;
-    color: #050505;
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.menu ul li a:hover {
-    color: #007bff;
-}
-
-/* Hero Section */
-.hero {
-    background-image: url("path_to_your_hero_image");
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-}
-
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 20px;
-    margin-bottom: 40px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
-
-/* Features Section */
-.features {
-    padding: 80px 0;
-    background-color: #fff;
-    text-align: center;
-}
-
-.feature {
-    margin-bottom: 40px;
-}
-
-.feature i {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #007bff;
-}
-
-.feature h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.feature p {
-    font-size: 16px;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #161515e1;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-footer p {
-    margin: 0;
-    font-size: 14px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 10px;
-    }
-
-    header nav {
-        flex-wrap: wrap;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .menu {
-        display: none;
-        width: 100%;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        background-color: transparent;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.904);
-        border-radius: 8px;
-        padding: 20px;
-        z-index: 1;
-    }
-
-    .menu.active {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .menu ul {
-        flex-direction: column;
-    }
-
-    .menu ul li {
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-}
-
-/* Social Icons */
-.social-icons {
-    margin-top: 10px;
-    text-align: center;
-}
-
-.social-icons a {
-    color: inherit;
-    margin: 0 10px;
-    font-size: 24px;
-}
-
-.social-icons a:hover {
-    color: #007bff;
-}
-
-/* Services Section */
-.services-1 {
-    color: #fcf8f8;
-    background-color: #080808;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.services-1 .icon {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-p {
-    color: white;
-}
-.services-1 h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.services-1 p {
-    font-size: 14px;
-}
-
-/* Subscribe Form */
-.subscribe-form {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #fdf3f3fb;
-    border-radius: 10px;
-    margin: 20px;
-}
-
-.subscribe-form h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-.subscribe-form .form-text {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-.subscribe-form input[type="email"] {
-    width: 70%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #080808;
-    border-radius: 5px;
-}
-
-.subscribe-form button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.subscribe-form button:hover {
-    background-color: #fd2a05;
-}
-h1 {
-    color: #4a90e2;
-    text-align: center;
-}
-
-p {
-    line-height: 1.6;
-}
-
-#content img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-#chat-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #4a90e2;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: #fff;
-    font-size: 30px;
-    scale: 1.2;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-#chat-header {
-    background: #4a90e2;
-    color: #fff;
-    padding: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Make sure the header is above other elements */
-}
-
-#chat-header span {
-    font-size: 18px;
-}
-
-#chat-header .close-chat,
-#chat-header .reset-chat {
-    cursor: pointer;
-    font-size: 18px;
-}
-
-#chat-box {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: calc(100% - 70px);
-    position: relative;
-    top: -15px; /* Adjust the position of the chat box */
-    overflow: auto;
-    padding-top: 20px;
-}
-
-#chat-box::-webkit-scrollbar {
-    width: 4px;
-}
-
-#chat-box::-webkit-scrollbar-thumb {
-    background: #666666;
-    border-radius: 10px;
-}
-
-#chat-box::-webkit-scrollbar-track {
-    background: rgb(172, 172, 172);
-}
-
-#user-input-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 0px;
-    background: #fff;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    z-index: 1;
-}
-
-#chat-container {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    max-width: 400px;
-    height: 50%;
-    position: fixed;
-    bottom: 54%;
-    right: 50%;
-    scale: 1.1;
-    transform: translate(50%, 50%);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    background: #fff;
-    padding-top: 20px; /* Add padding at the top of the chat container */
-}
-
-
-#user-input {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#send-button {
-    width: 50px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background: #4a90e2;
-    color: #fff;
-    cursor: pointer;
-    margin-left: 0px;
-}
-
-.message {
-    position: relative;
-    padding: 8px;
-    margin: 5px 0;
-    border-radius: 5px;
-    max-width: 80%;
-    left: 5px;
-    word-wrap: break-word;
-}
-
-.user {
-    background: #4a90e2;
-    color: #fff;
-}
-
-.bot {
-    background: #f06;
-    color: #fff;
-}
-
-.images-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.images-container img {
-    max-width: 48%;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.loading-indicator {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    margin: 5px 0;
-}
-
-.dot {
-    width: 8px;
-    height: 8px;
-    margin: 0 2px;
-    background: #ccc;
-    border-radius: 50%;
-    animation: bounce 1.5s infinite;
-}
-
-.dot:nth-child(2) {
-    animation-delay: 0.3s;
-}
-
-.dot:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-                                       
-
-
     </style>
 </head>
 <body>
@@ -498,6 +250,7 @@ p {
                 <div id="logo">
                     <img src="https://telegra.ph/file/30c032ee516d51ceb456a.jpg" alt="Logo">
                 </div>
+                <h1>KYEKYEKU-TECH DATA HUB</h1>
                 <button class="menu-toggle" id="menu-toggle">
                     <div class="icon"></div>
                     <div class="text">MENU</div>
@@ -505,9 +258,9 @@ p {
                 <div class="menu">
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="Wifi.html">Buy Wifi</a></li>
-                        <li><a href="#">Services</a></li>
+                        <li><a href="tech.html">About</a></li>
                         <li><a href="mailto:ceo@kyekyeku-tech.site">Contact</a></li>
+                        <li><a href="Wifi.html">Buy Wifi</a></li>
                     </ul>
                 </div>
             </nav>
@@ -517,10 +270,30 @@ p {
     <div class="page-section" id="services">
         <div class="container">
             <div class="text-center">
-                <h2 class="title-section">Our Services</h2>
                 <div class="divider mx-auto"></div>
             </div>
-              
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-auto py-3 wow fadeInLeft">
+                  <div class="card-pricing">
+                    <div class="header">
+                      <div class="price-icon my-1">
+                        <img width="100px" src="https://i.postimg.cc/gk7vcdYS/Whats-App-Image-2024-06-23-at-1-13-34-PM.jpg" alt="">
+                      </div>
+                      <div class="price-title">AFFORDABLE WIFI DEVICE</div>
+                    </div>
+                    <div class="body py-3">
+                      <div class="price-tag">
+                        MTN WIFI & MIFI's
+                      </div>
+                      <div class="price-info">
+                        <p>We have MTN Broadband devices, high speed internet.</p>
+                      </div>
+                    </div>
+                    <div class="footer">
+                      <a href="Wifi.html" class="btn btn-outline rounded-pill">Buy Now</a>
+                    </div>
+                  </div>
+                </div>
          <div class="col-12 col-lg-auto py-3 wow fadeInLeft">
            <div class="card-pricing">
              <div class="header">
@@ -598,24 +371,10 @@ p {
             <input type="email" placeholder="Enter your email">
             <button id="submitBtn">Subscribe</button>
         </form>
+        <a href="T&Cs.html" class="">Terms and Conditions</a>
     </div>
-    <div id="chat-icon">Ai</div>
+    <div  id=""></div>
         <img src="https://telegra.ph/file/c8b54f590b64bad563a22.jpg" style="height: 40px; float: right; margin-right: 50px;">
-    </div>
-
-    <div id="chat-container">
-        <div id="chat-header">
-            <div class="close-chat">←</div>
-            <span style="position: relative; left: 8px;">Chat Bot Assistant</span>
-            <div class="reset-chat"><img src="https://telegra.ph/file/dfe48942802ea8797fc7d.jpg" style="height: 30px; float: right; margin-right: 20px;"></div>
-        </div>
-        <div id="chat-box">
-            <div id="messages"></div>
-        </div>
-        <div id="user-input-container">
-            <input type="text" id="user-input" placeholder="Type a message...">
-            <button id="send-button">Send</button>
-        </div>
     </div>
     <footer>
         <div class="container">
@@ -627,7 +386,7 @@ p {
                 <a href="#"><i class="fab fa-whatsapp"></i></a>
                 <a href="#"><i class="fas fa-envelope"></i></a>
             </div>
-            <p>&copy; 2024 Kyekyeku-Tech. All rights reserved.</p>
+            <p>&copy; 2024 Kyekyeku-Tech. All rights reserved.</p><a href="T&Cs.html" class="btn">Terms and Conditions</a></p>
         </div>
     </footer>
 
@@ -637,108 +396,5 @@ p {
             document.querySelector('.menu').classList.toggle('active');
         });
     </script>
-    
-     <script>
-                                                 const chatIcon = document.getElementById('chat-icon');
-         const chatContainer = document.getElementById('chat-container');
-         const closeChat = document.querySelector('.close-chat');
-         const resetChat = document.querySelector('.reset-chat');
- 
-         let isBotResponding = false; 
- 
-         chatIcon.addEventListener('click', function() {
-             chatContainer.style.display = 'flex';
-             chatIcon.style.display = 'none';
-         });
- 
-         closeChat.addEventListener('click', function() {
-             chatContainer.style.display = 'none';
-             chatIcon.style.display = 'flex';
-         });
- 
-         resetChat.addEventListener('click', function() {
-             resetMessages();
-         });
- 
-         document.getElementById('send-button').addEventListener('click', function() {
-             if (!isBotResponding) { 
-                 sendMessage();
-             }
-         });
- 
-         document.getElementById('user-input').addEventListener('keypress', function(event) {
-             if (event.key === 'Enter' && !isBotResponding) { 
-                 sendMessage();
-             }
-         });
- 
-         function sendMessage() {
-             const userInput = document.getElementById('user-input').value;
-             if (userInput.trim() !== '') {
-                 addMessage(userInput, 'user');
-                 document.getElementById('user-input').value = '';
-                 isBotResponding = true; 
-                 showLoadingIndicator(); 
-                 setTimeout(() => {
-                     getBotResponse(userInput);
-                 }, 1000); 
-             }
-         }
- 
-         function addMessage(text, sender) {
-             const messageContainer = document.createElement('div');
-             messageContainer.classList.add('message', sender);
-             messageContainer.textContent = text;
-             document.getElementById('messages').appendChild(messageContainer);
-         }
- 
-         function getBotResponse(userInput) {
-             let botResponse = '';
- 
-             switch (userInput.toLowerCase()) {
-                 case 'hi':
-                     botResponse = 'Hello! How can I assist you today? 😊';
-                     break;
-                 case 'how are you?':
-                     botResponse = 'I`m fine, thanks!';
-                     break;
-                 case 'what are you doing?':
-                     botResponse = 'I am answering the questions!';
-                     break;
-                 default:
-                     botResponse = 'Sorry, but i can`t understand. Can you repeat the question.';
-             }
- 
-             setTimeout(() => {
-                 addMessage(botResponse, 'bot');
-                 isBotResponding = false; 
-                 hideLoadingIndicator(); 
-             }, 2000); 
-         }
- 
-         function showLoadingIndicator() {
-             const loadingIndicator = document.createElement('div');
-             loadingIndicator.classList.add('loading-indicator');
- 
-             for (let i = 0; i < 3; i++) {
-                 const dot = document.createElement('div');
-                 dot.classList.add('dot');
-                 loadingIndicator.appendChild(dot);
-             }
-             document.getElementById('messages').appendChild(loadingIndicator);
-         }
- 
-         function hideLoadingIndicator() {
-             const loadingIndicator = document.querySelector('.loading-indicator');
-             if (loadingIndicator) {
-                 loadingIndicator.remove();
-             }
-         }
- 
-         function resetMessages() {
-             document.getElementById('messages').innerHTML = '';
-         } 
- 
-     </script> 
 </body>
 </html>
