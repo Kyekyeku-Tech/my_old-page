@@ -1,185 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kyekyeku-tech.com</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="CSS/play.css">
+    <link rel="stylesheet" href="CSS/play.css">
 
     <style>
-    @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  display: flex;
-  height: 100vh;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
- 
-}
-.login-form {
-  position: relative;
-  width: 370px;
-  height: auto;
-  background: #1b1b1b;
-  padding: 40px 35px 60px;
-  box-sizing: border-box;
-  border: 1px solid black;
-  border-radius: 5px;
-  box-shadow: inset 0 0 1px #272727;
-}
-.text {
-  font-size: 30px;
-  color: #c7c7c7;
-  font-weight: 600;
-  letter-spacing: 2px;
-}
-form {
-  margin-top: 40px;
-}
-form .field {
-  margin-top: 20px;
-  display: flex;
-}
-.field .fas {
-  height: 50px;
-  width: 60px;
-  color: #868686;
-  font-size: 20px;
-  line-height: 50px;
-  border: 1px solid #444;
-  border-right: none;
-  border-radius: 5px 0 0 5px;
-  background: linear-gradient(#333, #222);
-}
-.field input,
-form button {
-  height: 50px;
-  width: 100%;
-  outline: none;
-  font-size: 19px;
-  color: #868686;
-  padding: 0 15px;
-  border-radius: 0 5px 5px 0;
-  border: 1px solid #444;
-  caret-color: #339933;
-  background: linear-gradient(#333, #222);
-}
-input:focus {
-  color: #339933;
-  box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 255, 0, 0.1);
-  background: linear-gradient(#333933, #222922);
-  animation: glow 0.8s ease-out infinite alternate;
-}
-@keyframes glow {
-  0% {
-    border-color: #339933;
-    box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 0, 0, 0.1);
-  }
-  100% {
-    border-color: #6f6;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.6),
-      inset 0 0 10px rgba(0, 255, 0, 0.4);
-  }
-}
-button {
-  margin-top: 30px;
-  border-radius: 5px !important;
-  font-weight: 600;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-button:hover {
-  color: #339933;
-  border: 1px solid #339933;
-  box-shadow: 0 0 5px rgba(0, 255, 0, 0.3), 0 0 10px rgba(0, 255, 0, 0.2),
-    0 0 15px rgba(0, 255, 0, 0.1), 0 2px 0 black;
-}
-.link {
-  margin-top: 25px;
-  color: #868686;
-}
-.link a {
-  color: #339933;
-  text-decoration: none;
-}
-.link a:hover {
-  text-decoration: underline;
-}
+        @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-form {
+            position: relative;
+            width: 370px;
+            height: auto;
+            background: #1b1b1b;
+            padding: 40px 35px 60px;
+            box-sizing: border-box;
+            border: 1px solid black;
+            border-radius: 5px;
+            box-shadow: inset 0 0 1px #272727;
+        }
+
+        .text {
+            font-size: 30px;
+            color: #c7c7c7;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        form {
+            margin-top: 40px;
+        }
+
+        form .field {
+            margin-top: 20px;
+            display: flex;
+        }
+
+        .field .fas {
+            height: 50px;
+            width: 60px;
+            color: #868686;
+            font-size: 20px;
+            line-height: 50px;
+            border: 1px solid #444;
+            border-right: none;
+            border-radius: 5px 0 0 5px;
+            background: linear-gradient(#333, #222);
+        }
+
+        .field input,
+        form button {
+            height: 50px;
+            width: 100%;
+            outline: none;
+            font-size: 19px;
+            color: #868686;
+            padding: 0 15px;
+            border-radius: 0 5px 5px 0;
+            border: 1px solid #444;
+            caret-color: #339933;
+            background: linear-gradient(#333, #222);
+        }
+
+        input:focus {
+            color: #339933;
+            box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 255, 0, 0.1);
+            background: linear-gradient(#333933, #222922);
+            animation: glow 0.8s ease-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                border-color: #339933;
+                box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 0, 0, 0.1);
+            }
+
+            100% {
+                border-color: #6f6;
+                box-shadow: 0 0 20px rgba(0, 255, 0, 0.6),
+                    inset 0 0 10px rgba(0, 255, 0, 0.4);
+            }
+        }
+
+        button {
+            margin-top: 30px;
+            border-radius: 5px !important;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            color: #339933;
+            border: 1px solid #339933;
+            box-shadow: 0 0 5px rgba(0, 255, 0, 0.3), 0 0 10px rgba(0, 255, 0, 0.2),
+                0 0 15px rgba(0, 255, 0, 0.1), 0 2px 0 black;
+        }
+
+        .link {
+            margin-top: 25px;
+            color: #868686;
+        }
+
+        .link a {
+            color: #339933;
+            text-decoration: none;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
     </style>
 
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<div class="login-form">
-  <div class="text">
-    AGENT SIGNUP
-  </div>
-  <form id="signupForm" enctype="multipart/form-data">
-    <input 
-    type="hidden"
-    name="x-sheetmonkey-insert-worksheet"
-    value="NEW"
-    />
-    <div class="field">
-      <div class="fas fa-user"></div>
-      <input type="text" name="NAME" placeholder="NAME" required>
-    </div>
-    <div class="field">
-      <div class="fas fa-envelope"></div>
-      <input type="email" name="Email" placeholder="Email" required>
-    </div>
-    <div class="field">
-        <div class="fas fa-phone"></div>
-        <input type="number" name="PHONE_NUMBER" placeholder="Phone Number" required>
-      </div>
-    <div class="field">
-      <div class="fas fa-lock"></div>
-      <input type="password" name="PASSWORD" placeholder="Password" required>
-    </div>
-    <div class="field">
-        <div class="fas fa-lock"></div>
-        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-      </div>
-    <button type="submit">SIGNUP</button>
-    <div class="link">
-      Are you a member?
-      <a href="Agentzone.html">Login now</a>
-      <p style="color: red;">Please you'll be charge for Agent portal</p>
-    </div>
-  </form>
-</div>
-<!-- partial -->
+    <div class="login-form">
+        <div class="text">
+            AGENT SIGNUP
+        </div>
+        <form id="signupForm" enctype="multipart/form-data">
+            <input type="hidden" name="x-sheetmonkey-insert-worksheet" value="NEW" />
+            <div class="field">
+                <div class="fas fa-user"></div>
+                <input type="text" id="name" name="NAME" placeholder="NAME" required>
+            </div>
+            <div class="field">
+                <div class="fas fa-envelope"></div>
+                <input type="email" id="email" name="Email" placeholder="Email" required>
+            </div>
+            <div class="field">
+                <div class="fas fa-phone"></div>
+                <input type="number" id="phoneNumber" name="PHONE_NUMBER" placeholder="Phone Number" required>
+            </div>
 
-<script>
-    document.getElementById('signupForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
+            <div class="field">
+                <div class="fas fa-lock"></div>
+                <input type="text" id="referral" name="Referral" placeholder="Referral Code" required>
+            </div>
+            <button type="submit">SIGNUP</button>
+            <div class="link">
+                Are you a member?
+                <a href="Agentzone.html">Login now</a>
+                <p style="color: red;">Please you'll be charge for Agent portal</p>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
 
-        var form = event.target;
-        var formData = new FormData(form);
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phoneNumber = document.getElementById("phoneNumber").value;
+            var referral = document.getElementById("referral").value;
+            var amount = 5 * 100; // Amount in kobo
 
-        // Send form data to SheetMonkey
-        fetch('https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC', {
-            method: "POST",
-            body: formData
-        }).then(function(response) {
-            if (response.ok) {
-                // Redirect to the specified URL after submission
-                window.location.href = "https://paystack.com/pay/agentlink";
-            } else {
-                alert("There was an error with your submission.");
-            }
-        }).catch(function(error) {
-            console.error("Error:", error);
-            alert("There was an error with your submission.");
+            var handler = PaystackPop.setup({
+                key: 'pk_live_fb405d2702a00868ba424f73b9148b7aad07b2b0', // Replace with your public key
+                email: email,
+                amount: amount,
+                currency: 'GHS',
+                ref: 'KYEKYEKU-' + Math.floor((Math.random() * 1000000000) + 1),
+                metadata: {
+                    custom_fields: [{
+                        display_name: "Phone Number",
+                        variable_name: "phone_number",
+                        value: phoneNumber
+                    }]
+                },
+                callback: function (response) {
+                    // Send form data to SheetMonkey
+                    var form = event.target;
+                    var formData = new FormData(form);
+
+                    fetch('https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC', {
+                        method: "POST",
+                        body: formData
+                    }).then(function (response) {
+                        if (response.ok) {
+                            // Show the success alert
+                            Swal.fire({
+                                position: "center",
+                                icon: "success",
+                                title: "Your Agent ID will be send to you, Thank you",
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+
+                            // Redirect to the specified URL after a delay
+                            setTimeout(function () {
+                                window.location.href = "https://wa.me/+233545454000";
+                            }, 2000);
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'There was an error with your submission.'
+                            });
+                        }
+                    }).catch(function (error) {
+                        console.error("Error:", error);
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'There was an error with your submission.'
+                        });
+                    });
+                },
+                onClose: function () {
+                    Swal.fire('Payment Cancelled', 'You closed the payment window.', 'info');
+                }
+            });
+            handler.openIframe();
         });
-    });
-</script>
+
+    </script>
 </body>
+
 </html>

@@ -6,7 +6,7 @@ var agentEmails = {
     "AB5050": "abrahamkessey@gmail.com",
     "AY2080": "johnkessey66@gmail.com",
     "BO2013": "bernardoppong220@gmail.com",
-    "MA2308": "maryaccomplish7@gmail.com",
+    "MA2302": "maryaccomplish7@gmail.com",
     "FK3310": "fredrickkusi10@gmail.com",
     "AR9041": "mutarurazak@gmail.com",
     "UV1234": "vidaackahmensah@gmail.com",
