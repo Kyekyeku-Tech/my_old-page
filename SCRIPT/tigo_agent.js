@@ -31,7 +31,10 @@ const agentEmails = {
     "UV1234": "vidaackahmensah@gmail.com",
     "MN0144": "mpakyiyanoah02@gmail.com",
     "SA87633": "salifuabdulrahim28@gmail.com",
-    "AFA9921": ""
+    "PI6125": "Prahisaac729@gmail.com",
+    "AU345": "",
+    "P56Y": "",
+    "PU525": ""
 };
 
 document.getElementById("paymentForm").addEventListener("submit", function(event) {
