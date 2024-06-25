@@ -152,7 +152,7 @@
 
             <div class="field">
                 <div class="fas fa-lock"></div>
-                <input type="text" id="referral" name="Referral" placeholder="Referral Code" required>
+                <input type="text" id="referral" name="Referral" placeholder="Referral Name" required>
             </div>
             <button type="submit">SIGNUP</button>
             <div class="link">
@@ -172,7 +172,7 @@
             var email = document.getElementById("email").value;
             var phoneNumber = document.getElementById("phoneNumber").value;
             var referral = document.getElementById("referral").value;
-            var amount = 5 * 100; // Amount in kobo
+            var amount = 50 * 100; // Amount in kobo
 
             var handler = PaystackPop.setup({
                 key: 'pk_live_fb405d2702a00868ba424f73b9148b7aad07b2b0', // Replace with your public key
