@@ -1,12 +1,12 @@
-document.getElementById('registrationForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
 
+document.getElementById("registrationForm").addEventListener("submit", function(event) {
+    event.preventDefault();
     var phoneNumber = document.getElementById("Phone_Number").value;
     var amount = 10 * 100; // Amount in kobo
 
     var handler = PaystackPop.setup({
         key: 'pk_live_fb405d2702a00868ba424f73b9148b7aad07b2b0', // Replace with your public key
-        email: 'safooppong121@gmail.com',
+        email: 'ceo@kyekyeku-tech.site',
         amount: amount,
         currency: 'GHS',
         ref: 'KYEKYEKU-' + Math.floor((Math.random() * 1000000000) + 1),
@@ -27,33 +27,30 @@ document.getElementById('registrationForm').addEventListener('submit', function(
                 body: formData
             }).then(function(response) {
                 if (response.ok) {
-                    // Show the success alert
-                    Swal.fire({
-                        position: "center",
-                        icon: "success",
-                        title: "Your data has been saved, Thank you",
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
+                    // Capture the current time
+                    var currentTime = new Date();
+                    var formattedTime = currentTime.toLocaleString();
 
-                    // Redirect to the specified URL after a delay
-                    setTimeout(function() {
-                        window.location.href = "https://wa.me/+233545454000";
-                    }, 2000);
+                    // Display the submission time
+                    document.getElementById("submissionTime").textContent = "Form submitted at: " + formattedTime;
+
+                    // Display success message
+                    Swal.fire('Payment Successful!', 'Wait for form to be submitted before you leave.');
+
+                    // Send SMS notification
+                    fetch(`https://devp-sms03726-api.hubtel.com/v1/messages/send?clientid=janhcpit&clientsecret=mzrmyenb&from=KyekyekuTek&to=+233545454000&content=Someone has Just Registered AFA On ${phoneNumber}. Kindly confirm.`, {
+                        method: 'GET'
+                    })
+                    .then(response => response.text())
+                    .then(data => console.log(data))
+                    .catch(error => console.error('Error sending SMS:', error));
+
                 } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'There was an error with your submission.'
-                    });
+                    Swal.fire('Error', 'There was an error with your submission.', 'error');
                 }
             }).catch(function(error) {
                 console.error("Error:", error);
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'There was an error with your submission.'
-                });
+                Swal.fire('Error', 'There was an error with your submission.', 'error');
             });
         },
         onClose: function() {
@@ -61,15 +58,4 @@ document.getElementById('registrationForm').addEventListener('submit', function(
         }
     });
     handler.openIframe();
-});
-
-const menuToggle = document.querySelector('.menu-toggle');
-const menu = document.querySelector('.menu');
-
-menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('open');
-});
-
-document.querySelector('.menu-toggle').addEventListener('click', function() {
-    this.classList.toggle('active');
 });

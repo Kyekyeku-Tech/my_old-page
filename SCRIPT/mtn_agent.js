@@ -19,7 +19,7 @@ const prices = {
 };
 
 const agentEmails = {
-    "AFA1411": "safooppong121@gmail.com",
+    "AFA1412": "safooppong121@gmail.com",
     "SAM2288": "sam.ebulley210@gmail.com",
     "ESK1196": "esko0896@gmail.com",
     "NFC2563": "nimohandy7@gmail.com",
@@ -27,7 +27,7 @@ const agentEmails = {
     "AY2080": "johnkessey66@gmail.com",
     "BO2013": "bernardoppong220@gmail.com",
     "MA2308": "maryaccomplish7@gmail.com",
-    "FK3310": "fredrickkusi10@gmail.com",
+    "FK1470": "fredrickkusi10@gmail.com",
     "AR9041": "mutarurazak@gmail.com",
     "UV1234": "vidaackahmensah@gmail.com",
     "MN0144": "mpakyiyanoah02@gmail.com",
@@ -116,7 +116,7 @@ function sendSMS(phoneNumber, selectedBundle) {
 
     const package = packageNames[selectedBundle];
 
-    fetch(`https://devp-sms03726-api.hubtel.com/v1/messages/send?clientid=janhcpit&clientsecret=mzrmyenb&from=KyekyekuTek&to=+233545454000&content=Someone Just Buy ${package} On ${phoneNumber} Kindly confirm`, {
+    fetch(`https://devp-sms03726-api.hubtel.com/v1/messages/send?clientid=janhcpit&clientsecret=mzrmyenb&from=KyekyekuTek&to=+233545454000&content=Hi Boss, ${package} has been bought on phone number ${phoneNumber} Kindly confirm the Transaction`, {
         method: 'GET'
     })
     .then(response => response.text())
