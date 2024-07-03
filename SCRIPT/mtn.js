@@ -91,8 +91,8 @@ function sendSMS(phoneNumber, selectedBundle) {
         "10": "10GB",
         "12": "12GB",
         "15": "15GB",
-        "20": "25GB",
-        "25": "20GB",
+        "20": "20GB",
+        "25": "25GB",
         "30": "30GB",
         "40": "40GB",
         "50": "50GB"
