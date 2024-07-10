@@ -1,59 +1,41 @@
 var prices = {
     "0": 0,
-    "1": 3.8,
-    "2": 7.4,
-    "3": 10.5,
-    "4": 12.5,
-    "5": 15.5,
-    "6": 18.5,
-    "7": 23.5,
-    "8": 25.6,
-    "10": 33.8,
-    "12": 37.8,
-    "15": 46.8,
-    "20": 60.8,
-    "25": 78.5,
-    "40": 119.5,
-    "50": 147.5
+    "1": 5.9,
+    "2": 11.5,
+    "3": 17.5,
+    "4": 23.5,
+    "5": 29.5,
+    "6": 35.5,
+    "7": 41.5,
+    "8": 47.5,
+    "10": 53.6,
+    "12": 60,
+    "15": 77,
+    "20": 93.8,
+    "25": 123.8,
+    "30": 131.2,
+    "40": 186.5,
+    "50": 201.5
 };
 
-const agentEmails = {
-    "AFA1412": "safooppong121@gmail.com",
-    "SAM2288": "sam.ebulley210@gmail.com",
-    "ESK1196": "esko0896@gmail.com",
-    "NFC2563": "nimohandy7@gmail.com",
-    "AB5050": "abrahamkessey@gmail.com",
-    "AY2080": "johnkessey66@gmail.com",
-    "BO2013": "bernardoppong220@gmail.com",
-    "MA2308": "maryaccomplish7@gmail.com",
-    "FK1470": "fredrickkusi10@gmail.com",
-    "AR9041": "mutarurazak@gmail.com",
-    "UV1234": "vidaackahmensah@gmail.com",
-    "MN0144": "mpakyiyanoah02@gmail.com",
-    "SA87633": "salifuabdulrahim28@gmail.com",
-    "PI6125": "Prahisaac729@gmail.com",
-    "XA1873": "alexboasiako11@gmail.com",
-    "VN8482": "vicentnutsugah@gmail.com",
-    "MO9673": "mordecaiobeng941@gmail.com",
-    "FK0234": "frankkwabenaowusu@gmail.com",
-    "BN8363": "bnat90883@gmail.com"
-};
+function updateAmount() {
+    var bundleSelect = document.getElementById("bundle");
+    var amountInput = document.getElementById("amount");
+    var selectedValue = bundleSelect.value;
+
+    if (selectedValue in prices) {
+        amountInput.value = "GHS " + prices[selectedValue].toFixed(2);
+    }
+}
 
 document.getElementById("paymentForm").addEventListener("submit", function(event) {
     event.preventDefault();
-    const phoneNumber = document.getElementById("phoneNumber").value;
-    const agentId = document.getElementById("agentId").value.toUpperCase();
-    const selectedBundle = document.getElementById("bundle").value;
-    const amount = prices[selectedBundle] * 100; // Amount in pesewas
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    var email = document.getElementById("email").value;
+    var selectedBundle = document.getElementById("bundle").value;
+    var amount = prices[selectedBundle] * 100; // Amount in pesewas
 
-    if (!(agentId in agentEmails) || agentEmails[agentId] === "") {
-        Swal.fire('Error', 'Invalid or unregistered Agent ID.', 'error');
-        return;
-    }
-
-    const email = agentEmails[agentId];
-
-    const handler = PaystackPop.setup({
+    var handler = PaystackPop.setup({
         key: 'pk_live_fb405d2702a00868ba424f73b9148b7aad07b2b0', // Replace with your public key
         email: email,
         amount: amount,
@@ -67,8 +49,9 @@ document.getElementById("paymentForm").addEventListener("submit", function(event
             }]
         },
         callback: function(response) {
-            const form = event.target;
-            const formData = new FormData(form);
+            // Send form data to SheetMonkey
+            var form = event.target;
+            var formData = new FormData(form);
 
             fetch('https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC', {
                 method: "POST",
@@ -120,7 +103,7 @@ function sendSMS(phoneNumber, selectedBundle) {
     fetch(`https://devp-sms03726-api.hubtel.com/v1/messages/send?clientid=janhcpit&clientsecret=mzrmyenb&from=KyekyekuTek&to=+233545454000&content=Hi Boss, ${package} has been bought on phone number ${phoneNumber} Kindly confirm the Transaction`, {
         method: 'GET'
     })
-    .then(response => response.text())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error sending SMS:', error));
+        .then(response => response.text())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error sending SMS:', error));
 }

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyekyeku-tech.com</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://mymtnngnxtgen-shop-staging.mtnnigeria.net/media/auth0/autho-img.png');
+            background-size: cover;
+            color: black;
+        }
+
+        #paymentForm {
+            background: red;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px black;
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2#mtn-heading,
+        h2.form-text {
+            display: inline;
+        }
+
+        h2#mtn-heading {
+            color: rgb(248, 247, 243);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h2.form-text {
+            color: rgb(6, 2, 250);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 10px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: white;
+            text-align: left;
+        }
+
+        input[type="tel"],
+        input[type="text"],
+        select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input[type="submit"] {
+            background-color: ;
+            color: red;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .fa-handshake {
+            color: #ffc107;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="paymentForm" action="https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="x-sheetmonkey-insert-worksheet" value="MTN" />
+        <h2 id="mtn-heading">KYEKYEKU</h2>
+        <h2 class="form-text">-TECH</h2>
+        <h3>WELCOME TO AGENT PORTAL</h3>
+        <label for="agentId">YOUR AGENT ID:</label>
+        <input type="text" id="agentId" name="AGENT ID" required placeholder="e.g., AFA1421"><br>
+
+        <label for="phoneNumber">CUSTOMER PHONE #:</label>
+        <input type="tel" id="phoneNumber" name="PHONE NUMBER" required placeholder="e.g., 0234567890"><br>
+
+        <label for="bundle">SELECT PACKAGE:</label>
+        <select id="bundle" name="BUNDLE">
+            <option value="0">SELECT HERE</option>
+            <option value="1">1GB - GHS5.0</option>
+            <option value="2">2GB - GHS10.0</option>
+            <option value="3">3GB - GHS15.0</option>
+            <option value="4">4GB - GHS20.0</option>
+            <option value="5">5GB - GHS24.0</option>
+            <option value="6">6GB - GHS29.0</option>
+            <option value="7">7GB - GHS34.0</option>
+            <option value="8">8GB - GHS39.0</option>
+            <option value="10">10GB - GHS45.0</option>
+            <option value="12">12GB - GHS57.0</option>
+            <option value="15">15GB - GHS66.0</option>
+            <option value="20">20GB - GHS86.0</option>
+            <option value="25">25GB - GHS105.0</option>
+            <option value="30">30GB - GHS125.0</option>
+            <option value="40">40GB - GHS178.0</option>
+            <option value="50">50GB - GHS198.0</option>
+        </select><br>
+
+        <input type="submit" value="Buy Here">
+    </form>
+    <p id="submissionTime"></p>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script>
+       const prices = {
+    "0": 0,
+    "1": 5.2,
+    "2": 10.5,
+    "3": 15.5,
+    "4": 20.5,
+    "5": 24.5,
+    "6": 29.5,
+    "7": 34.5,
+    "8": 39.5,
+    "10": 45.6,
+    "12": 57,
+    "15": 67,
+    "20": 88,
+    "25": 105.8,
+    "30": 126,
+    "40": 179.5,
+    "50": 199.5
+};
+
+const agentEmails = {
+    "AFA1412": "safooppong121@gmail.com",
+    "SAM2288": "sam.ebulley210@gmail.com",
+    "ESK1196": "esko0896@gmail.com",
+    "NFC2563": "nimohandy7@gmail.com",
+    "AB5050": "abrahamkessey@gmail.com",
+    "AY2080": "johnkessey66@gmail.com",
+    "BO2013": "bernardoppong220@gmail.com",
+    "MA2308": "maryaccomplish7@gmail.com",
+    "FK1470": "fredrickkusi10@gmail.com",
+    "AR9041": "mutarurazak@gmail.com",
+    "UV1234": "vidaackahmensah@gmail.com",
+    "MN0144": "mpakyiyanoah02@gmail.com",
+    "SA87633": "salifuabdulrahim28@gmail.com",
+    "PI6125": "Prahisaac729@gmail.com",
+    "XA1873": "alexboasiako11@gmail.com",
+    "VN8482": "vicentnutsugah@gmail.com",
+   "MO9673": "mordecaiobeng941@gmail.com",
+    "FK0234": "frankkwabenaowusu@gmail.com"
+};
+
+document.getElementById("paymentForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const phoneNumber = document.getElementById("phoneNumber").value;
+    const agentId = document.getElementById("agentId").value.toUpperCase();
+    const selectedBundle = document.getElementById("bundle").value;
+    const amount = prices[selectedBundle] * 100; // Amount in pesewas
+
+    if (!(agentId in agentEmails) || agentEmails[agentId] === "") {
+        Swal.fire('Error', 'Invalid or unregistered Agent ID.', 'error');
+        return;
+    }
+
+    const email = agentEmails[agentId];
+
+    const handler = PaystackPop.setup({
+        key: 'pk_live_fb405d2702a00868ba424f73b9148b7aad07b2b0', // Replace with your public key
+        email: email,
+        amount: amount,
+        currency: 'GHS',
+        ref: 'KYEKYEKU-' + Math.floor((Math.random() * 1000000000) + 1),
+        metadata: {
+            custom_fields: [{
+                display_name: "Phone Number",
+                variable_name: "phone_number",
+                value: phoneNumber
+            }]
+        },
+        callback: function(response) {
+            const form = event.target;
+            const formData = new FormData(form);
+
+            fetch('https://api.sheetmonkey.io/form/s2tNaVG3kzyiw91cPx6AyC', {
+                method: "POST",
+                body: formData
+            }).then(function(response) {
+                if (response.ok) {
+                    const currentTime = new Date();
+                    const formattedTime = currentTime.toLocaleString();
+                    document.getElementById("submissionTime").textContent = "Form submitted at: " + formattedTime;
+                    Swal.fire('Payment Successful!', 'Best Regard Kyekyeku-tech');
+                    sendSMS(phoneNumber, selectedBundle); // Call the function to send SMS after successful payment
+                } else {
+                    Swal.fire('Error', 'There was an error with your submission.', 'error');
+                }
+            }).catch(function(error) {
+                console.error("Error:", error);
+                Swal.fire('Error', 'There was an error with your submission.', 'error');
+            });
+        },
+        onClose: function() {
+            Swal.fire('Payment Cancelled', 'You closed the payment window.', 'info');
+        }
+    });
+    handler.openIframe();
+});
+
+function sendSMS(phoneNumber, selectedBundle) {
+    const packageNames = {
+        "1": "1GB",
+        "2": "2GB",
+        "3": "3GB",
+        "4": "4GB",
+        "5": "5GB",
+        "6": "6GB",
+        "7": "7GB",
+        "8": "8GB",
+        "10": "10GB",
+        "12": "12GB",
+        "15": "15GB",
+        "20": "20GB",
+        "25": "25GB",
+        "30": "30GB",
+        "40": "40GB",
+        "50": "50GB"
+    };
+
+    const package = packageNames[selectedBundle];
+
+    fetch(`https://devp-sms03726-api.hubtel.com/v1/messages/send?clientid=janhcpit&clientsecret=mzrmyenb&from=KyekyekuTek&to=+233545454000&content=Hi Boss, ${package} has been bought on phone number ${phoneNumber} Kindly confirm the Transaction`, {
+        method: 'GET'
+    })
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error sending SMS:', error));
+}
+
+    </script>
+</body>
+
+</html>

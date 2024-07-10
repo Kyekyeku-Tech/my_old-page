@@ -91,7 +91,7 @@ body {
   background-color: #000;
 }
 .col-lg-auto:nth-child(1) .header {
-  background-color: rgba(245, 210, 9, 0.918);
+  background-color: red;
 }
 .price-icon img {
   width: 100px;
@@ -111,13 +111,13 @@ body {
 .price-tag {
   font-size: 1.2em;
   font-weight: bold;
-  color: #333;
+  color: #f5f1f1;
   margin-bottom: 10px;
 }
 
 .price-info {
   font-size: 1em;
-  color: #666;
+  color: #f5efef;
 }
 
 .footer {
@@ -149,19 +149,19 @@ body {
 }
 .col-lg-auto:nth-child(3) .btn:hover,
 .col-lg-auto:nth-child(4) .btn:hover {
-  color: rgb(8, 8, 8);
+  color: black;
   background-color: #fcf805;
 }
 .col-lg-auto:nth-child(1) .btn {
-  color: rgb(15, 12, 1);
-  background-color: #18f504;
+  color: rgb(250, 249, 247);
+  background-color: #f50404;
 }
 .col-lg-auto:nth-child(1) .p {
   color: rgb(15, 12, 1);
 }
 .col-lg-auto:nth-child(1) .btn:hover {
-  color: white;
-  background-color: blue;
+  color: rgb(248, 6, 6);
+  background-color: rgb(239, 239, 243);
 }
 /* Animations */
 .wow {

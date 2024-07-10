@@ -42,8 +42,28 @@ p {
 .button-container a {
     display: inline-block;
     text-decoration: none;
+    color: #fac104;
+    background-color: black;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+#tigo-button {
+    display: inline-block;
+    text-decoration: none;
     color: #fff;
-    background-color: #034fa0;
+    background-color: blue;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+#flyer-button {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(0, 255, 21);
     padding: 12px 20px;
     border-radius: 5px;
     margin: 5px;
@@ -51,10 +71,23 @@ p {
 }
 
 .button-container a:hover {
-    background-color: #00b300;
+    background-color: #fac104;
+    color: black;
     transform: translateY(-2px);
 }
-
+#tigo-button:hover {
+    background-color: red;
+}
+#flyer-button:hover {
+    background-color: rgb(0, 238, 255);
+}
+#telecel:hover {
+    color: white;
+    background-color: red;
+}
+#telecel {
+    color: red;
+}
 #notification {
     background-color: #28a745; /* Green color for notification button */
     color: #fff;
@@ -70,11 +103,12 @@ p {
 }
 
 #logout-button {
-    background-color: #dc3545; /* Red color for logout button */
+    color: white;
+    background-color: #fd021b; /* Red color for logout button */
 }
 
 #logout-button:hover {
-    background-color: #c8af23;
+    background-color: #c0bfbb;
 }
 
 /* Responsive adjustments */
@@ -132,7 +166,7 @@ p {
 
       // Display greeting with comma or exclamation mark
       var greetingText = greeting.endsWith("g") ? greeting + "," : greeting + "!";
-      document.getElementById("greeting").innerHTML = `<span style="color: red;">${greetingText}</span> VALUED AGENT!`;
+      document.getElementById("greeting").innerHTML = `<span style="color: red;">${greetingText}</span> VALUED Agent!`;
 
       // Display additional text in a new paragraph
       var additionalParagraph = document.createElement("p");
@@ -161,7 +195,7 @@ p {
 
       // Add click event to the notification button
       notificationButton.addEventListener("click", function () {
-        alert("Dear Valued Agent! Kindly Note MTN has increased group share Data price by 25% . Thank You.");
+        alert("Dear Valued Agent! Kindly Note MTN has increased group share Data price by 25% . Thank You.");
         
 
         // Append the heading and paragraph to the body
@@ -175,7 +209,7 @@ p {
 
       // Change background color every 5 seconds
       setInterval(function () {
-        var colors = ["#FFFF99", "#ADD8E6", "white", "green", "#f1ce04"]; // Yellow, Light Blue, White
+        var colors = ["#FFFF99", "#ADD8E6", "white", "rgb(0, 238, 255)", "#f1ce04"]; // Yellow, Light Blue, White
         var randomColor = colors[Math.floor(Math.random() * colors.length)];
         quarterSection.style.backgroundColor = randomColor;
       }, 5000);
@@ -217,8 +251,9 @@ p {
     <div class="button-container">
       <a href="agent_mtn.html">MTN BUNDLE</a>
       <a href="afa_agent.html">MTN AFA REGISTRATION</a>
-      <a href="tigo_agent.html">AIRTEL TIGO BUNDLE</a>
-      <a href="flyerconfirm.html">REQUEST FLYER</a>
+      <a href="tigo_agent.html" id="tigo-button">AIRTEL TIGO BUNDLE</a>
+      <a href="voda_agent.html" id="telecel">TELECEL BUNDLE</a>
+      <a href="flyerconfirm.html" id="flyer-button">REQUEST FLYER</a>
     </div>
     <div class="button-container">
       <!-- Change the background color of the logout button -->
@@ -227,3 +262,5 @@ p {
   </div>
 </body>
 </html>
+    <!-- Button Container -->
+    
