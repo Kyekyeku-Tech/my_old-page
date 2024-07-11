@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700&display=swap" rel="stylesheet">
     <title>kyekyeku-tech.site</title>
     <link rel="stylesheet" href="CSS/service.css">
+    <link rel="stylesheet" href="CSS/kye.css">
+
     <style>
         /* Basic styling for layout */
         body {
@@ -16,12 +18,7 @@
             padding: 0;
             background-color: #797874;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
+       
         .container {
             max-width: 1200px;
             margin: 20px auto;
@@ -64,88 +61,14 @@
         .buy:hover {
             background-color: #555;
         }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        /* Menu bar styling */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #030303;
-            padding: 10px 0;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 0 15px;
-            font-size: 18px;
-        }
-        nav a:hover {
-            color: #f10505;
-        }
-        #logo img {
-            max-width: 50px;
-            margin-left: 10px;
-        }
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        .menu-toggle .icon {
-            width: 55px;
-            height: 3px;
-            background-color: #0408ff;
-            margin: 3px 0;
-            transition: 0.4s;
-        }
-        .menu {
-            display: flex;
-        }
-        @media (max-width: 768px) {
-            .menu {
-                display: none;
-                flex-direction: column;
-                width: 30%;
-                background-color: #0314ff;
-                position: absolute;
-                top: 50px;
-                left: 0;
-                padding: 10px 0;
-            }
-            .menu.active {
-                display: flex;
-            }
-            .menu ul {
-                flex-direction: column;
-                width: 100%;
-            }
-            .menu ul li {
-                text-align: center;
-                margin: 10px 0;
-            }
-            .menu-toggle {
-                display: flex;
-            }
-        }
+        
+       
     </style>
 </head>
 <body>
-    <header>
-        
         <div class="container">
             <nav>
-                <div id="logo">
-                    <img src="https://telegra.ph/file/30c032ee516d51ceb456a.jpg" alt="Logo">
-                </div>
-                <h1 style="color: rgb(247, 247, 248);">KYEKYEKU-TECH WIFI SHOP</h1>
+                <h1 style="color: rgb(4, 4, 247);">KYEKYEKU-TECH WIFI SHOP</h1>
                 <button class="menu-toggle" id="menu-toggle">
                     <div class="icon"></div>
                     <div class="icon"></div>
@@ -153,15 +76,15 @@
                 </button>
                 <div class="menu" id="menu">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="tech.html">About</a></li>
-                        <li><a href="mailto:ceo@kyekyeku-tech.site">Contact</a></li>
-                        <li><a href="home.html">Buy Data</a></li>
+                        <li><a href="index.html" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
+                        <li><a href="about.html" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
+                        <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
+                        <li><a href="mailto:safooppong121@gmail.com" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
+                        <li><a href="Wifi.html" class="service"><span class="icon"><i class="fas fa-laptop"></i></span><span class="text">Buy Wifi</span></a></li>
                     </ul>
                 </div>
             </nav>
         </div>
-    </header>
     <div class="container">
         <div class="product">
             <div class="product-item">
@@ -225,7 +148,8 @@
     </footer>
     <script>
         document.getElementById('menu-toggle').addEventListener('click', function() {
-            document.getElementById('menu').classList.toggle('active');
+            this.classList.toggle('active');
+            document.querySelector('.menu').classList.toggle('active');
         });
     </script>
 </body>

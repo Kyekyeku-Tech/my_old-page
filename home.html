@@ -5,238 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kyekyeku-tech.online</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="CSS/kye.css">
     <link rel="stylesheet" href="CSS/service.css">
     <style>
         /* Reset and Base Styles */
         /* Basic styling for layout */
-        body {
-            font-family: 'Poppins', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #797874;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .product {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .product-item {
-            width: 300px;
-            background-color: #f9f9f9;
-            margin: 10px;
-            padding: 20px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .product-item img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 15px;
-        }
-        .buy-price {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .buy {
-            display: inline-block;
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        .buy:hover {
-            background-color: #555;
-        }
-        .col-lg-auto:nth-child(1) .header {
-  background-color: red;
-}
-        /* Menu bar styling */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #030303;
-            padding: 20px 0;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding:  10px;
-            font-size: 18px;
-        }
-        nav a:hover {
-            color: #f10505;
-        }
-        #logo img {
-            max-width: 50px;
-            margin-left: 10px;
-        }
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        .menu-toggle .icon {
-            width: 25px;
-            height: 3px;
-            background-color: #0408ff;
-            margin: 4px 0;
-            transition: 0.4s;
-        }
-        .menu {
-            display: flex;
-        }
-        @media (max-width: 768px) {
-            .menu {
-                display: none;
-                flex-direction: column;
-                width: 30%;
-                background-color: #0314ff;
-                position: absolute;
-                top: 50px;
-                left: 0;
-                padding: 10px 0;
-            }
-            .menu.active {
-                display: flex;
-            }
-            .menu ul {
-                flex-direction: column;
-                width: 100%;
-            }
-            .menu ul li {
-                text-align: center;
-                margin: 10px 0;
-            }
-            .menu-toggle {
-                display: flex;
-            }
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        .features {
-            padding: 80px 0;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .feature {
-            margin-bottom: 40px;
-        }
-
-        .feature i {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #007bff;
-        }
-
-        .feature h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .services-1 {
-            color: #fcf8f8;
-            background-color: #080808;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .services-1 .icon {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            color: white;
-        }
-
-        .services-1 h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .services-1 p {
-            font-size: 14px;
-        }
-
-        .subscribe-form {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #fdf3f3fb;
-            border-radius: 10px;
-            margin: 20px;
-        }
-
-        .subscribe-form h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .subscribe-form .form-text {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-
-        .subscribe-form input[type="email"] {
-            width: 70%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #080808;
-            border-radius: 5px;
-        }
-
-        .subscribe-form button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .subscribe-form button:hover {
-            background-color: #fd2a05;
-        }
-
-        h1 {
-            color: #4a90e2;
-            text-align: center;
-        }
-
-        p {
-            line-height: 1.6;
-        }
+        
  .footer {
   padding: 20px;
   width: 100%;
@@ -262,27 +36,27 @@
     </style>
 </head>
 <body>
-    <header>
+    
         <div class="container">
             <nav>
-                <div id="logo">
-                    <img src="https://telegra.ph/file/30c032ee516d51ceb456a.jpg" alt="Logo">
-                </div>
+                
                 <h1>KYEKYEKU-TECH DATA HUB</h1>
                 <button class="menu-toggle" id="menu-toggle">
                     <div class="icon"></div>
                     <div class="text">MENU</div>
                 </button>
                 <div class="menu">
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="tech.html">About</a></li>
-                        <li><a href="Wifi.html">Buy Wifi</a></li>
-                    </ul>
+                  <ul>
+                    <li><a href="index.html" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
+                    <li><a href="about.html" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
+                    <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
+                    <li><a href="mailto:safooppong121@gmail.com" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
+                    <li><a href="Wifi.html" class="service"><span class="icon"><i class="fas fa-laptop"></i></span><span class="text">Buy Wifi</span></a></li>
+                </ul>
                 </div>
             </nav>
         </div>
-    </header>
+    
 
     <div class="page-section" id="services">
         <div class="container">
