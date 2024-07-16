@@ -100,7 +100,7 @@ function sendSMS(phoneNumber, selectedBundle) {
 
     const package = packageNames[selectedBundle];
 
-    fetch(`https://devp-sms03726-api.hubtel.com/v1/messages/send?clientid=janhcpit&clientsecret=mzrmyenb&from=KyekyekuTek&to=+233545454000&content=Hi Boss, ${package} has been bought on phone number ${phoneNumber} Kindly confirm the Transaction`, {
+    fetch(`https://devp-sms03726-api.hubtel.com/v1/messages/send?clientid=janhcpit&clientsecret=mzrmyenb&from=KyekyekuTek&to=+233545454000&content=Hi Boss, ${package} has been bought on Mtn phone number ${phoneNumber} Kindly confirm the Transaction`, {
         method: 'GET'
     })
         .then(response => response.text())

@@ -37,7 +37,9 @@ const agentEmails = {
     "VN8482": "vicentnutsugah@gmail.com",
     "MO9673": "mordecaiobeng941@gmail.com",
     "FK0234": "frankkwabenaowusu@gmail.com",
-    "BN8363": "bnat90883@gmail.com"
+    "BN8363": "bnat90883@gmail.com",
+    "NN8874": "lilyame311@gmail.com",
+   "SD7899": "scholasticacudjoe507@gmail.com"
 };
 
 document.getElementById("paymentForm").addEventListener("submit", function(event) {
@@ -118,7 +120,7 @@ function sendSMS(phoneNumber, selectedBundle) {
 
     const package = packageNames[selectedBundle];
 
-    fetch(`https://devp-sms03726-api.hubtel.com/v1/messages/send?clientid=janhcpit&clientsecret=mzrmyenb&from=KyekyekuTek&to=+233545454000&content=Hi Boss, ${package} has been bought on phone number ${phoneNumber} Kindly confirm the Transaction`, {
+    fetch(`https://devp-sms03726-api.hubtel.com/v1/messages/send?clientid=janhcpit&clientsecret=mzrmyenb&from=KyekyekuTek&to=+233545454000&content=Hi Boss, ${package} has been bought on Mtn phone number ${phoneNumber} Kindly confirm the Transaction`, {
         method: 'GET'
     })
     .then(response => response.text())
