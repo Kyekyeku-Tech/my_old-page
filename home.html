@@ -33,6 +33,33 @@
   background-color: red;
   color: #fff;
 }
+
+/* WhatsApp Widget */
+.whatsapp-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #570b01;
+    color: rgb(247, 244, 244);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.whatsapp-widget img {
+    width: 35px;
+    height: 35px;
+}
+.whatsapp-widget :hover {
+  transform: scale(1.2);
+
+}
     </style>
 </head>
 <body>
@@ -81,7 +108,7 @@
                       </div>
                     </div>
                     <div class="footer">
-                      <a href="voda_confirm.html" class="btn btn-outline rounded-pill">Buy Now</a>
+                      <a href="voda.html" class="btn btn-outline rounded-pill">Buy Now</a>
                     </div>
                   </div>
                 </div>
@@ -102,7 +129,7 @@
                </div>
              </div>
              <div class="footer">
-               <a href="Tigo_confirm.html" class="btn btn-outline rounded-pill">Buy Now</a>
+               <a href="Airteltigo.html" class="btn btn-outline rounded-pill">Buy Now</a>
              </div>
            </div>
          </div>
@@ -124,7 +151,7 @@
                </div>
              </div>
              <div class="footer">
-               <a href="confirmb.html" class="btn btn-outline rounded-pill">Buy Now</a>
+               <a href="mtn.html" class="btn btn-outline rounded-pill">Buy Now</a>
              </div>
            </div>
          </div>
@@ -146,7 +173,7 @@
                </div>
              </div>
              <div class="footer">
-               <a href="afa_confirm.html" class="btn btn-outline rounded-pill">Register</a>
+               <a href="afa.html" class="btn btn-outline rounded-pill">Register</a>
              </div>
            </div>
          </div>
@@ -164,7 +191,7 @@
         </form>
     </div>
     <div  id=""></div>
-        <img src="https://telegra.ph/file/c8b54f590b64bad563a22.jpg" style="height: 40px; float: right; margin-right: 50px;">
+        <img src="https://telegra.ph/file/7bc2c08d3b722da63e2b6.jpg" style="height: 40px; float: right; margin-right: 50px;">
     </div>
     <footer>
         <div class="container">
@@ -179,7 +206,9 @@
             <p>&copy; 2024 Kyekyeku-Tech. All rights reserved.</p><a href="T&Cs.html" class="btm">Terms and Conditions</a></p>
         </div>
     </footer>
-
+    <div class="whatsapp-widget" onclick="window.location.href='https://wa.me/+233545454000'">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </div>
     <script>
         document.getElementById('menu-toggle').addEventListener('click', function() {
             this.classList.toggle('active');

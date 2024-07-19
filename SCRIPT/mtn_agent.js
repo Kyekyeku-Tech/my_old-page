@@ -40,7 +40,8 @@ const agentEmails = {
     "BN8363": "bnat90883@gmail.com",
     "NN8874": "lilyame311@gmail.com",
     "RC8834": "maayaasekyiwaa@gmail.com",
-   "SD7899": "scholasticacudjoe507@gmail.com"
+   "SD7899": "scholasticacudjoe507@gmail.com",
+   "OA4906": "www.ayariga84@gmail.com"
 };
 
 document.getElementById("paymentForm").addEventListener("submit", function(event) {
