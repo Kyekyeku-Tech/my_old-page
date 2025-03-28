@@ -3,69 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kyekyeku-tech.site</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>kyekyeku-tech</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-image: url('https://telegra.ph/file/ddf9087dae1e826d8b986.jpg');
-        }
-        .form-container {
-            max-width: 600px;
-            background-color: #16a0b9;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #0f0101;
-            border-radius: 10px;
-            position: relative;
-        }
-        .form-container label {
-            display: block;
-            margin-bottom: 8px;
-        }
-        .form-container input, .form-container select, .form-container button {
-            width: 95%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #0a0000;
-            border-radius: 5px;
-        }
-        .form-container button {
-            background-color: black;
-            color: #ffd000;
-            border: none;
-            cursor: pointer;
-        }
-        .form-container button:hover {
-            background-color: #0905f7;
-            color: white;
-        }
-        .form-container img {
-            width: 100%;
-            max-width: 200px;
-            height: auto;
-            display: block;
-            margin: auto;
-        }
+     /* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form Container */
+.form-container {
+    width: 90%;
+    max-width: 450px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 12px 4px rgba(0, 0, 0, 0.973);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.form-container h2 {
+    color: #fc0505;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.form-container img {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+}
+
+.form-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Form Inputs */
+.form-container label {
+    display: block;
+    text-align: left;
+    color: rgb(5, 42, 250);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.form-container input,
+.form-container select,
+.form-container button {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid red;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-container input,
+.form-container select {
+
+    font-weight: 500;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    border-color: #ffd000;
+    outline: none;
+}
+
+/* Button */
+.form-container button {
+    background: linear-gradient(45deg, #000, #0905f7);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-container button:hover {
+    background: linear-gradient(45deg, #0905f7, #000);
+    transform: scale(1.05);
+}
+
+/* WhatsApp Widget */
+.whatsapp-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.whatsapp-widget img {
+    width: 35px;
+}
+
+.whatsapp-widget:hover {
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .form-container {
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
 </head>
 <body>
+
     <div class="form-container">
-        <h2>Instant Flyer Generator</h2>
+        <img src="my-logo.png" id="containerimge">
+        <h2>Instant Generator</h2>
+        
         <form id="flyerForm">
-            <img src="https://d1csarkz8obe9u.cloudfront.net/embeddesigns/59c8c93c42d4061188496b56aa105014_embed.jpg" alt="flyer image"/>
-            <label for="flyerTitle">Your Company Name:</label>
+            
+            <label for="flyerTitle">Company Name:</label>
             <input type="text" id="flyerTitle" name="flyerTitle" placeholder="KYEKYEKU-TECH OFFERS" required>
             <label for="phoneNumber">Phone Number:</label>
             <input type="text" id="phoneNumber" name="phoneNumber" placeholder="e.g., 0241234567" required>
-            <label for="pricelist">Select Pricelist:</label>
+            <label for="pricelist">Select Package</label>
             <select id="pricelist" name="pricelist" required>
                 <option value="mtn">MTN Flyer</option>
                 <option value="tigo">AirtelTigo</option>
             </select>
-            <button type="submit">Generate Flyer</button>
+            <button type="submit">Generate Flyer</button><br>
+            <a href="premiumflyer.html" class="btm">No I Want premiumflyer</a>
         </form>
     </div>
 
@@ -73,20 +169,20 @@
         const mtnPricelist = {
             "1": 7,
             "2": 13,
-            "3": 18,
-            "4": 24,
-            "5": 28,
-            "6": 34,
-            "8": 43,
-            "10": 53,
-            "12": 63,
-            "15": 70,
+            "3": 19,
+            "4": 25,
+            "5": 29,
+            "6": 35,
+            "8": 44,
+            "10": 54,
+            "12": 65,
+            "15": 72,
             "20": 100,
-            "25": 118,
-            "30": 130,
-            "40": 178,
-            "50": 190,
-            "100": 360,
+            "25": 124,
+            "30": 133,
+            "40": 179,
+            "50": 192,
+            "100": 365,
         };
 
         const tigoPricelist = {
@@ -168,5 +264,9 @@
             doc.save(`${flyerTitle}.pdf`);
         });
     </script>
+    
+    <div class="whatsapp-widget" onclick="window.location.href='https://wa.me/+233545454000'">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </div>
 </body>
 </html>

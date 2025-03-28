@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download App | KYE TECH</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff0a02, #1b02f5, #f7be02);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(8, 8, 8, 0.986);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(243, 243, 247, 0.911);
+            text-align: center;
+            width: 90%;
+            max-width: 450px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .app-details table {
+            width: 100%;
+            margin: 20px 0;
+            border-spacing: 10px;
+        }
+
+        .app-details td {
+            padding: 10px;
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(245, 1, 1, 0.733);
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 40px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #0e0101;
+            background: linear-gradient(45deg, #f8e802, #035bff5d);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 3px 3px rgba(248, 32, 3, 0.993);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(12, 12, 12, 0.966);
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .download-btn {
+                font-size: 0.9rem;
+                padding: 12px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="my-logo.png" alt="EMBA Logo" class="logo">
+        <h1>KYEKYEKU TECH</h1>
+        <div class="app-details">
+            <table>
+                <tr>
+                    <td><strong>Name:</strong></td>
+                    <td>KYE TECH</td>
+                </tr>
+                <tr>
+                    <td><strong>Description:</strong></td>
+                    <td>for Buying internet Bundle and More </td>
+                </tr>
+            </table>
+        </div>
+        <a href="https://apk.e-droid.net/apk/app3512458-kqbn0s.apk?v=1" class="download-btn">Download App</a>
+    </div>
+    <footer>Powered by Kyekyeku Tech</footer>
+</body>
+</html>

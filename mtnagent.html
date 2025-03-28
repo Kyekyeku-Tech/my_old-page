@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyekyeku Tech</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.pixabay.com/photo/2016/07/12/06/21/grid-1511496_960_720.jpg">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 5px;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+       .dashboard, #paymentForm {
+            background: #0a0000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 4px 4px rgb(28, 3, 250);
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+        .dashboard h4, .payment-form h2 {
+            margin-bottom: 10px;
+            color: #ff05b4;
+        }
+        .totals {
+            font-size: 18px;
+            margin: 8px 0;
+            color: #fcfcfd;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #ff470f;
+        }
+        #paymentForm label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: rgb(255, 115, 0);
+        }
+        #paymentForm input, #paymentForm select {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #fa0101;
+            border-radius: 5px;
+        }
+        #paymentForm input[type="submit"] {
+            background: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+        }
+        #payment-form input[type="submit"]:hover {
+            background: #0056b3;
+        }
+        .logo {
+            width: 150px;
+            position: absolute;
+            top: 50px;
+            left: 20%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html">
+        <img src="my-logo.png" alt="Emba Logo" class="logo">
+    </a>
+    <div class="dashboard">
+        <h4>Current Submission Dashboard</h4>
+        <p class="totals">Total Bundle: <span id="totalbundle" class="highlight">0GB</span></p>
+        <p class="totals">Total Amount: GHS <span id="totalAmount" class="highlight">0.00</span></p>
+        <p class="totals">Last Transaction: <span id="phonenumber" class="highlight">-</span></p>
+    </div>
+    <form id="paymentForm">
+        <h3 style="color: rgb(255, 115, 0);">Yellow Agent Portal</h3>
+        
+        <label for="agentId">Agent Username:</label>
+        <input type="text" id="agentId" required placeholder="e.g., OSARFO"><br>
+
+        <label for="phoneNumber">Customer Number:</label>
+        <input type="tel" id="phoneNumber" required placeholder="e.g., 0234567890"><br>
+
+        <label for="bundle">Select package:</label>
+        <select id="bundle">
+            <option value="0">SELECT HERE</option>
+            <option value="1">1GB - GHS4.90</option>
+            <option value="2">2GB - GHS9.80</option>
+            <option value="3">3GB - GHS14.70</option>
+            <option value="4">4GB - GHS20.00</option>
+            <option value="5">5GB - GHS24.80</option>
+            <option value="6">6GB - GHS29.70</option>
+            <option value="8">8GB - GHS39.50</option>
+            <option value="10">10GB - GHS48.00</option>
+        </select><br>
+        
+        <input type="submit" value="Buy Here">
+    </form>
+    <section class="testimonials">
+        <h3>Testamonials!!</h3>
+        <div class="testimonial-slider">
+            <div class="testimonial-slide">
+                <img src="https://i.postimg.cc/G2MzG3f6/shadrack.png" alt="Person 1">
+                <blockquote>"The internet bundles from Kyekyeku-Tech are affordable and delivery is lightning fast!"</blockquote>
+                <p>- Shadrack Antwi</p>
+            </div>
+            <div class="testimonial-slide">
+                <img src="https://i.postimg.cc/MH5d1qMD/francisca.jpg" alt="Person 2">
+                <blockquote>"Great value for money! I always get my internet bundle delivered within minutes."</blockquote>
+                <p>- Rebecca Arthur</p>
+            </div>
+            <div class="testimonial-slide">
+                <img src="https://i.postimg.cc/HLzt1sTj/fredereck.jpg" alt="Person 3">
+                <blockquote>"Fast delivery and reliable service. Kyekyeku-Tech never disappoints!"</blockquote>
+                <p>- Frederick Donkor</p>
+            </div>
+            <!-- Additional Testimonials -->
+            <div class="testimonial-slide">
+                <img src="https://i.postimg.cc/jjBSJkKN/safoa.jpg" alt="Person 4">
+                <blockquote>"I am impressed with the quality of service from Kyekyeku-Tech. Always reliable!"</blockquote>
+                <p>- Josephine Sarfo</p>
+            </div>
+            <div class="testimonial-slide">
+                <img src="https://i.postimg.cc/fLhhs4DH/IMG.jpg" alt="Person 7">
+                <blockquote>"Affordable and fast! Kyekyeku-Tech is my go-to for internet bundles."</blockquote>
+                <p>- Kweku James</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script>
+       const prices = {
+    "0": 0,
+    "1": 550, 
+    "2": 1050,
+    "3": 1550,
+    "4": 2050,
+    "5": 2550,
+    "6": 3040,
+    "8": 4000,
+    "10": 4850,
+    "12": 6000,
+    "15": 7250,
+    "20": 9350,
+    "25": 11750,
+    "30": 13250,
+    "40": 18250,
+    "50": 19950,
+    "100": 36000
+};
+
+const agents = {
+    "KSARFO": { email: "safooppong121@gmail.com", phone: "233545454000" },
+        "CLIFTON14": { email: "cliftinaeva@gmail.com", phone: "233544469820" },
+        "EWUSI WISDOM": { email: "ewusiw125@gmail.com", phone: "233558575831" },
+        "NANA YAW": { email: "vhimbowoy98@gmail.com", phone: "233558385107" },
+        "SOLOMON": { email: "heisking4@gmail.com", phone: "233554015727" },
+        "ADWOA": { email: "safoadwoa121@gmail.com", phone: "233549298567" },
+        "SAMLINK": { email: "miezahkojos22@gmail.com", phone: "233545961204" },
+        "YHAAKOFFEE": { email: "yhaakoffe6@gmail.com", phone: "233257868972" },
+        "NANAKWAME": { email: "kwamenana112233@gmail.com", phone: "233556545903" },
+        "EOCRAN": { email: "eocran4011@gmail.com", phone: "233248638431" },
+        "MY LORD": { email: "lordassebiah233@gmail.com", phone: "233536714554" },
+        "JOHN KESSEY": { email: "lordassebiah233@gmail.com", phone: "233594975203" },
+        "MEEKYBOI": { email: "asigrirashid93@gmail.com", phone: "233240284221" },
+        "NEVERMINOH": { email: "nimohandy7@gmail.com", phone: "233256350716" },
+        "NN": { email: "lilyame311@gmail.com", phone: "233594668874" },
+        "OHENE": { email: "yamoahgodfred34@gmail.com", phone: "233548785316" },
+        "PLATONIC": { email: "sam.ebulley210@gmail.com", phone: "233242540100" },
+        "PROFF.JO": { email: "proff.jo@gmail.com", phone: "233245883222" },
+        "VORVUHPROSPER99": { email: "Vorvuhprosper9@gmail.com", phone: "233244363630" },
+        "SD": { email: "scholasticacudjoe507@gmail.com", phone: "233598237899" },
+        "SHAWAZ GH": { email: "isaacnelson5656@gmail.com", phone: "233550848284" },
+        "SHOCKSPHONES": { email: "ashockyankey@gmail.com", phone: "233241256656" },
+        "SIRBERN07": { email: "bernardoppong220@gmail.com", phone: "233541436151" },
+        "STJOYCEENT": { email: "Sirkobby48@gmail.com", phone: "233241732573" },
+        "VICENT1": { email: "vincentnutsugah@gmail.com", phone: "233202768482" },
+        "XANDER": { email: "alexboasiako11@gmail.com", phone: "233245521873" },
+        "ZACOSH": { email: "Zacosh024@gmail.com", phone: "233597146212" },
+        "MISSBEE": { email: "berniceapodei5@gmail.com", phone: "233540533034" },
+        "BAWA HABIB": { email: "bawahabib47@gmail.com", phone: "233240956004" },
+        "PRINCE AYIM GASU": { email: "ayimprince80@gmail.com", phone: "233593636045" },
+        "KWAKU DAMALIE": { email: "bossoanthony680@gmail.com", phone: "233547598101" },
+        "RAZAKZIBLIM": { email: "okpubsbusinesscentre1986@gmail.com", phone: "233247447688" },
+        "OHEMAA": { email: "bassuman74@gmail.com", phone: "233544575363"},
+        "BERNARDANNAN": { email: "bernardjuniorannan@gmail.com", phone: "233557067527" },
+        "JUSTICESARKO": { email: "amgposty915@gmail.com", phone: "233207158514"},
+        "BERTA1": { email: "bertareigns@gmail.com", phone: "233543631870" },
+        "ASAREEMMANUEL": { email: "asarerichway200@gmail.com", phone: "233546424321" }
+};
+
+// Form submission event
+
+document.getElementById("paymentForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const phoneNumber = document.getElementById("phoneNumber").value;
+    const agentId = document.getElementById("agentId").value.toUpperCase();
+    const selectedBundle = document.getElementById("bundle").value;
+    const amount = prices[selectedBundle];
+
+    if (!(agentId in agents)) {
+        Swal.fire('Error', 'Invalid or unregistered Agent ID.', 'error');
+        return;
+    }
+
+    const agentEmail = agents[agentId].email;
+    const agentPhone = agents[agentId].phone;
+
+    const handler = PaystackPop.setup({
+        key: 'pk_live_fb405d2702a00868ba424f73b9148b7aad07b2b0',
+        email: agentEmail,
+        amount: amount,
+        currency: 'GHS',
+        ref: 'KYEKYEKU-' + Math.floor((Math.random() * 1000000000) + 1),
+        metadata: {
+            custom_fields: [{
+                display_name: "Phone Number",
+                variable_name: "phone_number",
+                value: phoneNumber
+            }]
+        },
+        callback: function(response) {
+            Swal.fire('Payment Successful!', 'Transaction Reference: ' + response.reference, 'success');
+            sendSMS(phoneNumber, selectedBundle, agentPhone);
+            updateDashboard(selectedBundle + "GB", "GHS " + (amount / 100).toFixed(2), phoneNumber);
+        },
+        onClose: function() {
+            Swal.fire('Payment Cancelled', 'You closed the payment window.', 'info');
+        }
+    });
+
+    handler.openIframe();
+});
+
+function updateDashboard(bundle, amount, phone) {
+    localStorage.setItem("lastBundle", bundle);
+    localStorage.setItem("lastAmount", amount);
+    localStorage.setItem("lastPhone", phone);
+
+    document.getElementById("totalbundle").innerText = bundle;
+    document.getElementById("totalAmount").innerText = amount;
+    document.getElementById("phonenumber").innerText = phone;
+}
+
+function sendSMS(customerPhone, selectedBundle, agentPhone) {
+    const packageNames = {
+        "1": "1GB", "2": "2GB", "3": "3GB", "4": "4GB", "5": "5GB",
+        "6": "6GB", "8": "8GB", "10": "10GB", "12": "12GB", "15": "15GB",
+        "20": "20GB", "25": "25GB", "30": "30GB", "40": "40GB", "50": "50GB", "100": "100GB"
+    };
+
+    const package = packageNames[selectedBundle] || "Unknown Package";
+    const senderID = "KYE-TECH";
+    const apiKey = "zwNY4rjo1XWnMXn8Om7Q8gk1U";
+    const adminPhone = "233545454000";
+
+    const messages = [
+        { phone: customerPhone, msg: `Hello, you have successfully purchased ${package} data bundle. Thank you for choosing Kyekyeku.Tech.` },
+        { phone: agentPhone, msg: `Hello Agent, a ${package} bundle was purchased for ${customerPhone}. Thank you for choosing Kyekyeku.Tech.` },
+        { phone: adminPhone, msg: `New Bundle purchase alert! ${package} bundle just bought on ${customerPhone}. Kindly confirm.` }
+    ];
+
+    messages.forEach(({ phone, msg }) => {
+        fetch(`https://apps.mnotify.net/smsapi?key=${apiKey}&to=${phone}&msg=${encodeURIComponent(msg)}&sender_id=${senderID}`)
+            .then(response => response.json())
+            .then(data => console.log(`SMS sent to ${phone}:`, data))
+            .catch(error => console.error(`Error sending SMS to ${phone}:`, error));
+    });
+}
+
+// Load last transaction details on page load
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("totalbundle").innerText = localStorage.getItem("lastBundle") || "0GB";
+    document.getElementById("totalAmount").innerText = localStorage.getItem("lastAmount") || "GHS 0.00";
+    document.getElementById("phonenumber").innerText = localStorage.getItem("lastPhone") || "-";
+});
+</script>
+</body>
+</html>

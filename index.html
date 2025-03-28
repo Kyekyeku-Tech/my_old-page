@@ -12,6 +12,71 @@
     <link href="https://cdn.jsdelivr.net/npm/flaticon@latest/css/flaticon.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="https://telegra.ph/file/30c032ee516d51ceb456a.jpg">
     <link rel="stylesheet" href="CSS/kye.css">
+    <style>
+        /* Background Slideshow */
+        .bg-image-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+    
+        .bg-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 1s ease-in-out;
+        }
+    
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+    
+        /* Quote Slideshow */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+    
+        .mySlides {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+    
+        .quote-container {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            font-size: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+    
+        .quote-container p {
+            font-weight: bold;
+        }
+    </style>
     
 </head>
 <body>
@@ -27,23 +92,22 @@
                 <li><a href="about.html" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
                 <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
                 <li><a href="mailto:safooppong121@gmail.com" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
-                <li><a href="Wifi.html" class="service"><span class="icon"><i class="fas fa-laptop"></i></span><span class="text">Buy Wifi</span></a></li>
             </ul>
         </nav>
 
     <section>
-        <marquee>
-        <h3>Welcome to our website! We appreciate your interest</h3>
-        </marquee>
+       
     <h2 id="mtn-heading">KYEKYEKU</h2>
     <h2 class="form-text">-TECH</h2><span aria-label="Verified channel" data-icon="psa-verified" class=""><svg viewBox="0 0 18 18" height="18" width="18" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 18 18"><title>psa-verified</title><polygon id="Star-2" fill="#00DA60" points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9 "></polygon><polygon id="Check-Icon" fill="#FFFFFF" points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4 "></polygon></svg></span> 
         <p>At Kyekyeku-Tech, we're the architects of your digital success. From comprehensive Bundle Solutions to strategic Information Technology Consultancy, innovative Product Design Strategy, and flawless Web Development, we're your trusted partners in navigating the digital landscape. Let's sculpt your digital future together.</p>
-        <div class="bg-image-container">
-            <div class="bg-image" style="background-image: url('https://images.pexels.com/photos/572056/pexels-photo-572056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"></div>
-            <div class="text-overlay">
-                Experienced for Every Kinds of ITSolutions
-            </div>
+        
+    <div class="bg-image-container">
+        <div class="bg-image"></div>
+        <div class="text-overlay">
+            Experienced for Every Kind of IT Solutions
         </div>
+    </div>
+</section>
     </section>   
 </form>
 </div>
@@ -79,9 +143,8 @@
                         <div class="line"></div>
                         <div class="icon"><span class="flaticon-bolt"></span></div>
                         <div class="media-body">
-                            <h3 class="heading mb-3">Information Technology Consultancy</h3>
-                            <a href="ITC.html" class="btn">Learn More</a>
-                            <a href="webd.html" class="btn">WEB DEV.</a>
+                            <h3 class="heading mb-3">Website Development</h3>
+                            <a href="develop.html" class="btn">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -90,9 +153,9 @@
                         <div class="line"></div>
                         <div class="icon"><span class="flaticon-light-bulb"></span></div>
                         <div class="media-body">
-                            <h3 class="heading mb-3">Product Design Strategy</h3>
-                            <a href="PDS.html" class="btn">Explore</a>
-                            <a href="speak.html" class="btn">DICTIONARY</a>
+                            <h3 class="heading mb-3">innovative & Technology</h3>
+                            <a href="dictionary.html" class="btn">Digital Dictionary</a>
+                            <a href="flyer.html" class="btn">Flyer Generator</a>
                         </div>
                     </div>
                 </div>
@@ -101,8 +164,9 @@
                         <div class="line"></div>
                         <div class="icon"><span class="flaticon-cyber"></span></div>
                         <div class="media-body">
-                            <h3 class="heading mb-3">Our Bundle Service</h3>
-                            <a href="service.html" class="btn">Discover More</a>
+                            <h3 class="heading mb-3">Internet & connectivity</h3>
+                            <a href="https://kyekyekutech.site" class="btn">Discover More</a>
+                            <a href="Bundle_app.html" class="btn">Data Bundle App</a>
                         </div>
                     </div>
                 </div>
@@ -114,8 +178,7 @@
                         <div class="icon"><span class="flaticon-bolt"></span></div>
                         <div class="media-body">
                             <h3 class="heading mb-3">HTML Code Playground</h3>
-                            <a href="code.html" class="btn">ABOUT INFO.</a>
-                            <a href="play.html" class="btn">TEST NOW</a>
+                            <a href="play.html" class="btn">Test Your html code</a>
                         </div>
                     </div>
                 </div>
@@ -142,7 +205,7 @@
             <div class="col-md-6 justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
                 <div class="block-18 mb-4">
                     <div class="text">
-                        <strong class="number" data-number="10">12</strong>
+                        <strong class="number" data-number="15">15</strong>
                         <span>Project Complete</span>
                     </div>
                 </div>
@@ -150,7 +213,7 @@
             <div class="col-md-6 justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
                 <div class="block-18 mb-4">
                     <div class="text">
-                        <strong class="number" data-number="568">24</strong>
+                        <strong class="number" data-number="124">124</strong>
                         <span>Happy Clients</span>
                     </div>
                 </div>
@@ -158,7 +221,7 @@
             <div class="col-md-6 justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
                 <div class="block-18 mb-4">
                     <div class="text">
-                        <strong class="number" data-number="478">2</strong>
+                        <strong class="number" data-number="3">3</strong>
                         <span>Business Partners</span>
                     </div>
                 </div>
@@ -166,7 +229,7 @@
             <div class="col-md-6 justify-content-center counter-wrap ftco-animate fadeInUp ftco-animated">
                 <div class="block-18 mb-4">
                     <div class="text">
-                        <strong class="number" data-number="780">7</strong>
+                        <strong class="number" data-number="8">8</strong>
                         <span>IT Consultant</span>
                     </div>
                 </div>
@@ -177,7 +240,7 @@
     
     <section class="features">
         <!-- Features -->
-        <h2>Features</h2>
+        <h3>Features</h3>
         <div class="feature">
             <h3>Responsive Design</h3>
             <i class="fas fa-laptop"></i>
@@ -199,30 +262,29 @@
             </div>
         </div>
     </div>
-    </section>
     <div class="slideshow-container">
-        <!-- Slides -->
         <div class="mySlides" style="background-image: url('https://telegra.ph/file/ddf9087dae1e826d8b986.jpg')">
-          <div class="quote-container">"WIN IN YOUR MIND AND YOU'LL WIN YOUR REALITY"<p>Kyekyeku-Tech</p></div>
+            <div class="quote-container">"WIN IN YOUR MIND AND YOU'LL WIN YOUR REALITY"<p>Kyekyeku-Tech</p></div>
         </div>
         <div class="mySlides" style="background-image: url('https://telegra.ph/file/e90abe7804cc8ddb443b7.jpg')">
-          <div class="quote-container">"IF YOU KEEP POSTPONING WHAT YOU CAN DO TODAY, TOMORROW BECOMES A SCARY PLACE."<p>Kyekyeku-Tech</p></p></div>
+            <div class="quote-container">"IF YOU KEEP POSTPONING WHAT YOU CAN DO TODAY, TOMORROW BECOMES A SCARY PLACE."<p>Kyekyeku-Tech</p></div>
         </div>
         <div class="mySlides" style="background-image: url('https://telegra.ph/file/c60e2d545ef8c1293b0c5.jpg')">
-          <div class="quote-container">"IT IS WHAT IT IS. ACCEPT IT AND MOVE ON"<p>Kyekyeku-Tech</p></div>
+            <div class="quote-container">"IT IS WHAT IT IS. ACCEPT IT AND MOVE ON"<p>Kyekyeku-Tech</p></div>
         </div>
-      </div>
+    </div>
+</section>
 
     <footer>
         <div class="feature">
             <h5>OUR TEAM</h5>
             <i class="fas fa-group"></i>
-        <p>The ultimate programmers</p>
-        <a href="ourteam.html" class="btn">View the team</a>
+        <p>The ultimate Team</p>
+        <a href="team.html" class="btn">View the team</a>
         </div>
         <div class="container">
             <section class="features" id="services">
-                <h1>Our Services</h1>
+                <h3>Our Services</h3>
                 <div class="feature">
                     <i class="fas fa-laptop-code"></i>
                     <h3>Web Development</h3>
@@ -235,8 +297,9 @@
                 </div>
                 <div class="feature">
                     <i class="fas fa-cloud"></i>
-                    <h3>Data Services</h3>
-                    <a href="home.html" class="btn">View Our Offers</a>
+                    <h3>Data Services & Wifi Devices</h3>
+                    <a href="https://kyekyekutech.site" class="btn">View Bundle Offers</a>
+                    <a href="shop.html" class="btn">Explore Wifi Devices</a>
                 </div>
             </section>
             <div class="subscribe-form">

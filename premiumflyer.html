@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyekyeku-Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="CSS/play.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('my-logo.png') no-repeat center center/cover;
+        }
+        .form-container {
+            
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 {
+            color: #f80e06;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #0c013a;
+            font-size: 14px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: 2px solid rgb(12, 2, 0);
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background: yellow;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        input[type="submit"]:hover {
+            background: black;
+            color: yellow;
+        }
+        .btm {
+            display: inline-block;
+            background: blue;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2>KYEKYEKU TECH SOLUTION</h2>
+    <p>Ultra Modern Flyer Design is GHC 7.00</p>
+    <form id="flyerForm">
+        <input type="text" id="Recipient_Name" name="Recipient_Name" placeholder="Your Company Name" required>
+        <input type="tel" id="Phone_Number" name="Phone_Number" placeholder="Your Payment Number" required>
+        <input type="text" id="Price" name="Price" placeholder="How Much You Sell 1GB" required>
+        <input type="text" id="afaPrice" name="afaPrice" placeholder="How Much You charge for AFA REG." required>
+        <input type="text" id="Whatsapp" name="Whatsapp" placeholder="Your Whatsapp Number" required>
+        <input type="submit" value="REQUEST">
+        <br><br>
+        <a href="https://wa.me/+233545454000" class="btm">NO, I WANT FREE</a>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+    document.getElementById('flyerForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let phoneNumber = document.getElementById("Phone_Number").value;
+        let recipientName = document.getElementById("Recipient_Name").value;
+        let price = document.getElementById("Price").value;
+        let afaPrice = document.getElementById("afaPrice").value;
+        let whatsapp = document.getElementById("Whatsapp").value;
+
+        if (phoneNumber.startsWith("0")) {
+            phoneNumber = "233" + phoneNumber.substring(1);
+        }
+
+        let handler = PaystackPop.setup({
+            key: 'pk_live_fb405d2702a00868ba424f73b9148b7aad07b2b0',
+            email: 'safooppong121@gmail.com',
+            amount: 20, // Amount in kobo (7.2 GHS * 100)
+            currency: 'GHS',
+            ref: 'KYEKYEKU-' + Math.floor((Math.random() * 1000000000) + 1),
+            metadata: {
+                custom_fields: [{
+                    display_name: "Phone Number",
+                    variable_name: "phone_number",
+                    value: phoneNumber
+                }]
+            },
+            callback: function (response) {
+                if (response.status === 'success') {
+                    sendAdminSms(recipientName, phoneNumber, price, afaPrice, whatsapp);
+                    sendUserSms(phoneNumber);
+
+                    Swal.fire({
+                        icon: "success",
+                        title: "Your Agent ID will be sent to you. Thank you!",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+
+                    setTimeout(function () {
+                        window.location.href = `https://wa.me/+233545454000?text=Hi+KYEKYEKU+TECH+🛡+I+Requested+a+Flyer+on+Your+System_ Here+are+my+details: COMPANYNAME:${recipientName}, MYPAYMENT NO:${phoneNumber}, DATAPRICE 1GB:${price}, AFA REG PRICE:${afaPrice}`;
+                    }, 2000);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'There was an error with your submission.'
+                    });
+                }
+            },
+            onClose: function () {
+                Swal.fire('Payment Cancelled', 'You closed the payment window.', 'info');
+            }
+        });
+
+        handler.openIframe();
+    });
+
+    function sendAdminSms(name, phone, price, afaPrice, whatsapp) {
+        let url = `https://devp-sms03726-api.hubtel.com/v1/messages/send?clientid=janhcpit&clientsecret=mzrmyenb&from=KyekyekuTek&to=+233545454000&content=Hi Boss, ${name} has requested a flyer. Details: COMPANYNAME: ${name}, PAYMENT NUMBER: ${phone}, BUNDLE PRICE: ${price}, AFA REG. PRICE: ${afaPrice}, WHATSAPP NUMBER: ${whatsapp}`;
+        fetch(url, { method: 'GET' }).catch(error => console.error('Error sending admin SMS:', error));
+    }
+
+    function sendUserSms(phone) {
+        let url = `https://apps.mnotify.net/smsapi?key=zwNY4rjo1XWnMXn8Om7Q8gk1U&to=${phone}&msg=Your REQUEST ID is under processing. You'll receive it via WhatsApp soon. Thank you!&sender_id=KYE-TECH`;
+        fetch(url, { method: 'GET' }).catch(error => console.error('Error sending user SMS:', error));
+    }
+</script>
+</body>
+</html>
