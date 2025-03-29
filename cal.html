@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyekyeku-Tech Calc</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/logo-3-color.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/kye.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            text-align: center;
+           padding-top: 0;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #04d3f8;
+            padding: 4px;
+            text-align: center;
+        }
+        th {
+            background-color: #ec0e0e;
+        }
+        input {
+            width: 100px;
+            padding: 5px;
+            text-align: center;
+        }
+        
+        #grandTotal {
+            font-size: 1.5em;
+            color: #00e676;
+        }
+        .container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-toggle" aria-label="Menu Toggle">
+        <span class="text">MENU</span>
+        <span class="icon"><i class="fas fa-bars"></i></span>
+    </button>
+        
+        <!-- Menu -->
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
+                <li><a href="about.html" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
+                <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
+                <li><a href="mailto:info@kyekyeku.tech" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
+               
+            </ul>
+        </nav>
+    
+    <div class="container">
+        <table>
+            <tr>
+                <th>Denomination</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+            <tr><td>GHC 200.00</td><td><input type="number" id="GHC200" oninput="calculateTotal('GHC200', 200)"></td><td id="total_GHC200">0</td></tr>
+            <tr><td>GHC 100.00</td><td><input type="number" id="GHC100" oninput="calculateTotal('GHC100', 100)"></td><td id="total_GHC100">0</td></tr>
+            <tr><td>GHC 50.00</td><td><input type="number" id="GHC50" oninput="calculateTotal('GHC50', 50)"></td><td id="total_GHC50">0</td></tr>
+            <tr><td>GHC 20.00</td><td><input type="number" id="GHC20" oninput="calculateTotal('GHC20', 20)"></td><td id="total_GHC20">0</td></tr>
+            <tr><td>GHC 10.00</td><td><input type="number" id="GHC10" oninput="calculateTotal('GHC10', 10)"></td><td id="total_GHC10">0</td></tr>
+            <tr><td>GHC 5.00</td><td><input type="number" id="GHC5" oninput="calculateTotal('GHC5', 5)"></td><td id="total_GHC5">0</td></tr>
+            <tr><td>GHC 2.00</td><td><input type="number" id="GHC2" oninput="calculateTotal('GHC2', 2)"></td><td id="total_GHC2">0</td></tr>
+            <tr><td>GHC 1.00</td><td><input type="number" id="GHC1" oninput="calculateTotal('GHC1', 1)"></td><td id="total_GHC1">0</td></tr>
+            <tr><td>GHC 0.50</td><td><input type="number" id="GHC0.5" oninput="calculateTotal('GHC0.5', 0.5)"></td><td id="total_GHC0.5">.0</td></tr>
+            <tr><td>GHC 0.20</td><td><input type="number" id="GHC0.2" oninput="calculateTotal('GHC0.2', 0.2)"></td><td id="total_GHC0.2">.0</td></tr>
+            <tr><td>GHC 0.10</td><td><input type="number" id="GHC0.1" oninput="calculateTotal('GHC0.1', 0.1)"></td><td id="total_GHC0.1">.0</td></tr>
+        </table>
+        <label for="eCash">E-Cash Amount:</label>
+        <input type="number" id="eCash" oninput="calculateGrandTotal()"><br>
+        <h3>Grand Total: <span id="grandTotal">0</span></h3><br>
+    </div>
+    
+    <script>
+        function calculateTotal(id, value) {
+            const quantity = document.getElementById(id).value || 0;
+            document.getElementById(`total_${id}`).innerText = (quantity * value).toFixed(2);
+            calculateGrandTotal();
+        }
+        
+        function calculateGrandTotal() {
+            let grandTotal = 0;
+            document.querySelectorAll("[id^='total_GHC']").forEach(item => {
+                grandTotal += parseFloat(item.innerText) || 0;
+            });
+            const eCash = parseFloat(document.getElementById('eCash').value) || 0;
+            grandTotal += eCash;
+            document.getElementById('grandTotal').innerText = grandTotal.toFixed(2);
+        }
+        const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+
+menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+});
+
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    this.classList.toggle('active');
+});
+    </script>
+</body>
+</html>
