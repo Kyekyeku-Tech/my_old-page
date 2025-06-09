@@ -1,168 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kyekyeku Tech Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/logo-3-color.png">
-    <link rel="stylesheet" href="CSS/kye.css">
-    <style>
-        /* Reset and Base Styles */
-        /* Basic styling for layout */
-        
- .footer {
-  padding: 20px;
-  width: 100%;
-  background-color: transparent;
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Futuristic Team</title>
+  <style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.btm {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1em;
-  font-weight: bold;
-  color: red;
-  border: 1px solid #070707;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.btm:hover {
-  background-color: red;
+body, html {
+  min-height: 100%;
+  font-family: 'Orbitron', sans-serif;
+  background: #0d0d0d;
   color: #fff;
 }
 
-/* WhatsApp Widget */
-.whatsapp-widget {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #570b01;
-    color: rgb(247, 244, 244);
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    cursor: pointer;
-    z-index: 1000;
+canvas#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.container {
+  position: relative;
+  z-index: 10;
+  padding: 4rem;
+  text-align: center;
+}
+.title {
+  font-size: 3rem;
+  color: #0ff;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px #0ff;
+}
+.card-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.team-card {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #0ff;
+  padding: 2rem;
+  width: 220px;
+  border-radius: 15px;
+  perspective: 1000px;
+  box-shadow: 0 0 20px #0ff, 0 0 30px #00f;
+  transition: transform 0.2s;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+.team-card:hover {
+  animation: pulse 1s infinite alternate;
+}
+.team-card img {
+  width: 100px;
+  border-radius: 50%;
+  border: 3px solid #0ff;
+  margin-bottom: 1rem;
+}
+.team-card h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+.team-card p {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 10px #0ff;
+  }
+  to {
+    box-shadow: 0 0 20px #0ff, 0 0 30px #0f0;
+  }
+}
+   .testimonials {
+            padding: 50px 20px;
+            margin-top: 40px;
+            background: rgba(15, 0, 0, 0.945);
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            
+        }
+
+        .testimonials h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            animation: slide 10s infinite;
+        }
+
+        .testimonial-slide img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 2px solid #0b07ff;
+        }
+
+        .testimonial-slide blockquote {
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        .testimonial-slide p {
+            font-weight: bold;
+            color: rgb(236, 5, 5);
+        }
+
+        @keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
 }
 
-.whatsapp-widget img {
-    width: 35px;
-    height: 35px;
+    .testimonial-slide {
+    opacity: 1;
+    transition: opacity 1s ease;
 }
-.whatsapp-widget :hover {
-  transform: scale(1.2);
 
+.testimonial-slide.fade-out {
+    opacity: 0;
 }
-    </style>
+                                   
+            
+  </style>
 </head>
 <body>
-    
-        <div class="container">
-            <nav>
-                <button class="menu-toggle" id="menu-toggle">
-                    <div class="icon"></div>
-                    <div class="text">MENU</div>
-                </button>
-                <div class="menu">
-                  <ul>
-                    <li><a href="index.html" class="home"><span class="icon"><i class="fas fa-home"></i></span><span class="text">Home</span></a></li>
-                    <li><a href="about.html" class="about"><span class="icon"><i class="fas fa-info-circle"></i></span><span class="text">About</span></a></li>
-                    <li><a href="service.html" class="service"><span class="icon"><i class="fas fa-cogs"></i></span><span class="text">Service</span></a></li>
-                    <li><a href="mailto:safooppong121@gmail.com" class="contact"><span class="icon"><i class="fas fa-envelope"></i></span><span class="text">Contact</span></a></li>
-                    <li><a href="Wifi.html" class="service"><span class="icon"><i class="fas fa-laptop"></i></span><span class="text">Buy Wifi</span></a></li>
-                </ul>
-                </div>
-            </nav>
-        </div>
-    
+  <canvas id="bgCanvas"></canvas>
+  <div class="container">
+    <h1 class="title">Meet Our Team</h1>
+    <div class="card-grid">
+      <div class="team-card" data-name="Luna">
+        <img src="assets/images/my-avatar.png" alt="Luna" />
+        <h2>Safo</h2>
+        <p>Chief Executive Officer</p>
+      </div>
+      <div class="team-card" data-name="Kai">
+        <img src="finance.jpg" alt="Kai" />
+        <h2>Ohene</h2>
+        <p>~Manager~</p>
+            <p>Kyekyekutech.site</p>
+      </div>
+      <div class="team-card" data-name="Nova">
+        <img src="support1.png" alt="Nova" />
+        <h2>Andy</h2>
+       <p>~Manager~</p>
+            <p>KyekyekuData Hub</p>
+      </div>
+    </div>
+  </div>
+  <section class="testimonials">
+    <h3>Testimonials</h3>
+    <div class="testimonial-slide" id="testimonial">
+        <img src="" alt="Person">
+        <blockquote></blockquote>
+        <p></p>
+    </div>
+</section>
 
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Meet Our Team</title>
-            <style>
-                * {
-                    box-sizing: border-box;
-                    margin: 0;
-                    padding: 0;
-                    font-family: Arial, sans-serif;
-                }
-                body {
-                    background-color: #f4f4f4;
-                    text-align: center;
-                    padding: 50px;
-                }
-                .team-container {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    gap: 20px;
-                }
-                .team-member {
-                    background: white;
-                    border-radius: 10px;
-                    box-shadow:  4px 8px rgba(7, 2, 78, 0.986);
-                    width: 250px;
-                    padding: 20px;
-                    text-align: center;
-                }
-                .team-member img {
-                    width: 100px;
-                    height: 100px;
-                    border-radius: 50%;
-                    margin-bottom: 10px;
-                }
-                .team-member h3 {
-                    color: #320796;
-                    margin-bottom: 5px;
-                }
-                .team-member p {
-                    color: #777;
-                }
-            </style>
-        </head>
-        <body>
-            <h1>Meet Our Team</h1>
-            <div class="team-container">
-                <div class="team-member">
-                    <img src="assets/images/my-avatar.png" alt="CEO">
-                    <h3>Safo Oppong</h3>
-                    <p>Chief Executive Officer</p>
-                    <a href="mailto:info@kyekyeku.tech"><i class="fas fa-envelope"> Email</i></a>
-                </div>
-                <div class="team-member">
-                    <img src="finance.jpg" alt="Finance">
-                    <h3>Godfred Yamoah</h3>
-                    <p>Finance Manager</p>
-                    <a href="wa.me/+233548785316"><i class="fab fa-whatsapp"> Whatsapp</i></a>
-                </div>
-                <div class="team-member">
-                    <img src="assets/images/avatar-4.png" alt="General Manager">
-                    <h3>Andy Nuamah</h3>
-                    <p>General Manager</p>
-                    <a href="wa.me/+233256350716"><i class="fab fa-whatsapp"> Whatsapp</i></a>
-                </div>
-                <div class="team-member">
-                    <img src="assets/images/avatar-1.png" alt="Customer Service">
-                    <h3>Ohenenana Kwasi</h3>
-                    <p>Customer Service Support</p>
-                    <a href="tel:0548785316"><i class="fas fa-phone">call</i></a>
-                </div>
-                <div class="team-member">
-                    <img src="my-logo.png" alt="Developer">
-                    <h3>Kyekyeku-Tech</h3>
-                    <p>Lead Developer</p>
-                </div>
-            </div>
-        </body>
-        </html>
-        
+  <script>
+    const testimonialData = [
+    {
+        img: "https://i.pravatar.cc/",
+        quote: "The internet bundles from Kyekyeku-Tech are affordable and delivery is lightning fast!",
+        name: "- Top User"
+    },
+    {
+        img: "https://i.postimg.cc/MH5d1qMD/francisca.jpg",
+        quote: "Great value for money! I always get my internet bundle delivered within minutes.",
+        name: "- Rebecca Arthur"
+    },
+     {
+        img: "https://i.postimg.cc/HLzt1sTj/fredereck.jpg",
+        quote: "Fast delivery and reliable service. Kyekyeku-Tech never disappoints!",
+        name: "- Frederick Donkor"
+    },
+    {
+        img: "https://i.pravatar.cc/",
+        quote: "Kyekyeku-Tech has the best internet bundles in town. Highly recommend!",
+        name: "- User123"
+    },
+    {
+        img: "assets/images/avatar-2.png",
+        quote: "I love the variety of internet bundles available. Perfect for my needs!",
+        name: "- Ama Serwaa"
+    },
+    {
+        img: "assets/images/avatar-4.png",
+        quote: "Kyekyeku-Tech's customer service is top-notch. They always go the extra mile!",
+        name: "- Kofi Mensah"
+    },
+    {
+        img: "https://i.pravatar.cc/",
+        quote: "I switched to Kyekyeku-Tech and I couldn't be happier with the service!",
+        name: "- USER456"
+    },
+    {
+        img: "https://i.pravatar.cc/",
+        quote: "The internet speed is amazing! I can stream and download without any issues.",
+        name: "- user789"
+    },
+    {
+        img: "https://i.pravatar.cc/",
+        quote: "Kyekyeku-Tech offers the best deals on internet bundles. I'm a loyal customer!",
+        name: "- user101"
+    },
+    {
+        img: "https://i.pravatar.cc/",
+        quote: "I appreciate the transparency in pricing. No hidden fees with Kyekyeku-Tech!",
+        name: "- User202"
+    },
+    {
+        img: "https://i.pravatar.cc/",
+        quote: "Kyekyeku-Tech's internet bundles are perfect for my business needs. Highly reliable!",
+        name: "- User308"
+    },
+    {
+        img: "https://i.pravatar.cc/",
+        quote: "I love the flexibility of choosing different internet bundles. Great service!",
+        name: "- User001"
+    },
+    {
+        img: "support1.png",
+        quote: "Kyekyeku-Tech has made my online experience so much better. Highly recommend!",
+        name: "- Andy Nimoh"
+    },
+    {
+        img: "https://i.pravatar.cc/",
+        quote: "The customer support is always ready to help. I feel valued as a customer!",
+        name: "- User003"
+    },
+    {
+        img: "https://i.pravatar.cc/",
+        quote: "Kyekyeku-Tech's internet bundles are the best in the market. I won't switch!",
+        name: "- User011"
+    },
+    {
+        img: "https://i.pravatar.cc/",
+        quote: "I love how easy it is to purchase internet bundles online. So convenient!",
+        name: "- User045"
+    },
+    {
+        img: "https://i.pravatar.cc/",
+        quote: "Kyekyeku-Tech has transformed my internet experience. Fast and reliable!",
+        name: "- User067"
+    },
+    {
+        img: "assets/images/avatar-3.png",
+        quote: "I appreciate the regular updates on new internet bundles. Always something new!",
+        name: "- Afia Kwarteng"
+    },
+    {
+        img: "finance.jpg",
+        quote: "Kyekyeku-Tech's internet bundles are perfect for my gaming needs. No lag!",
+        name: "- Ohene Nana Yamoah"
+    },
+    {
+        img: "assets/images/my-avatar.png",
+        quote: "I love the user-friendly website. Makes purchasing internet bundles a breeze!",
+        name: "- Safo"
+    },
+    {
+        img: "https://i.pravatar.cc/",
+        quote: "Kyekyeku-Tech's internet bundles are always reliable. I trust their service!",
+        name: "- User089"
+    },
+    {
+        img: "https://i.pravatar.cc/",
+        quote: "I love the community feel of Kyekyeku-Tech. They really care about their customers!",
+        name: "- User234"
+    }
+];
+
+const testimonialEl = document.getElementById('testimonial');
+const imgEl = testimonialEl.querySelector('img');
+const quoteEl = testimonialEl.querySelector('blockquote');
+const nameEl = testimonialEl.querySelector('p');
+
+function showRandomTestimonial() {
+    const random = testimonialData[Math.floor(Math.random() * testimonialData.length)];
+
+    // Fade out
+    testimonialEl.classList.add('fade-out');
+
+    setTimeout(() => {
+        // Change content after fade out
+        imgEl.src = random.img;
+        quoteEl.textContent = random.quote;
+        nameEl.textContent = random.name;
+
+        // Fade back in
+        testimonialEl.classList.remove('fade-out');
+    }, 1000); // matches CSS transition time
+}
+
+// Initial load
+showRandomTestimonial();
+
+// Change every 10 seconds
+setInterval(showRandomTestimonial, 6000);
+
+      const cards = document.querySelectorAll('.team-card');
+
+// 3D Tilt effect
+cards.forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = (y - centerY) / 10;
+    const rotateY = (centerX - x) / 10;
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+  });
+});
+
+// Particles background
+const canvas = document.getElementById("bgCanvas");
+const ctx = canvas.getContext("2d");
+let particlesArray;
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener('resize', function(){
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  init();
+});
+
+function Particle(){
+  this.x = Math.random() * canvas.width;
+  this.y = Math.random() * canvas.height;
+  this.size = Math.random() * 2 + 0.5;
+  this.speedX = Math.random() * 1 - 0.5;
+  this.speedY = Math.random() * 1 - 0.5;
+  this.color = '#0ff';
+
+  this.update = function(){
+    this.x += this.speedX;
+    this.y += this.speedY;
+    if(this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+    if(this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+  }
+
+  this.draw = function(){
+    ctx.fillStyle = this.color;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+function init(){
+  particlesArray = [];
+  for(let i = 0; i < 100; i++){
+    particlesArray.push(new Particle());
+  }
+}
+
+function animate(){
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for(let i = 0; i < particlesArray.length; i++){
+    particlesArray[i].update();
+    particlesArray[i].draw();
+  }
+  requestAnimationFrame(animate);
+}
+
+init();
+animate();
+            
+  </script>
+</body>
+</html>
+            
