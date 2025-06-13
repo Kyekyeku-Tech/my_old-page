@@ -11,10 +11,10 @@ body {
     min-height: 100vh;
 }
 #paymentForm {
-    background-color: rgba(22, 1, 1, 0.582);
+    background-color: rgb(2, 1, 10);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(250, 204, 1, 0.925);
+    box-shadow: 0 0 20px #290114;
     max-width: 400px;
     width: 100%;
     text-align: center;

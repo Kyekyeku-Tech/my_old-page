@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>kyekyeku tech</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/logo-3-color.png">
-    <style>
-     /* General Styles */
-body {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flyer Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+      body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    
 }
 
 /* Form Container */
@@ -100,29 +96,6 @@ body {
     transform: scale(1.05);
 }
 
-/* WhatsApp Widget */
-.whatsapp-widget {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-}
-
-.whatsapp-widget img {
-    width: 35px;
-}
-
-.whatsapp-widget:hover {
-    transform: scale(1.1);
-}
 
 /* Animations */
 @keyframes fadeIn {
@@ -138,135 +111,373 @@ body {
     }
 }
 
+    input, textarea {
+      width: 90%;
+      padding: 12px;
+      margin-top: 6px;
+      border-radius: 10px;
+      border: 2px solid #fc0303;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
 
-    </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    button {
+      margin-top: 30px;
+      padding: 14px;
+      width: 100%;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #0056b3, #0099cc);
+    }
+
+    #flyerCanvas {
+      display: block;
+      margin: 0 auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      border: 5px solid white;
+    }
+
+   
+
+  a.download-link {
+  display: block;
+  text-align: center;
+  margin: 20px auto 40px;
+  width: 500px; /* match preview canvas width */
+  font-size: 18px;
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+
+    a.download-link:hover {
+      text-decoration: underline;
+    }
+    /* Shrink preview display only */
+#flyerCanvas.preview {
+  transform: scale(0.46); /* makes it around 500px wide */
+  transform-origin: top center;
+  display: block;
+  margin: 0 auto;
+}
+
+  </style>
 </head>
 <body>
-
-    <div class="form-container">
+  <div class="form-container">
         <img src="my-logo.png" id="containerimge">
-        <h2>Instant Generator</h2>
-        
-        <form id="flyerForm">
-            
-            <label for="flyerTitle">Company Name:</label>
-            <input type="text" id="flyerTitle" name="flyerTitle" placeholder="KYEKYEKU-TECH OFFERS" required>
-            <label for="phoneNumber">Phone Number:</label>
-            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="e.g., 0241234567" required>
-            <label for="pricelist">Select Package</label>
-            <select id="pricelist" name="pricelist" required>
-                <option value="mtn">MTN Flyer</option>
-                <option value="tigo">AirtelTigo</option>
-            </select>
-            <button type="submit">Generate Flyer</button><br>
-            <a href="premiumflyer.html" class="btm">No I Want premiumflyer</a>
-        </form>
+  
+    <h2>🧾 Free Instant Flyer</h2>
+    <form id="flyerForm">
+      <label for="businessName">Business Name</label>
+      <input type="text" id="businessName" name="businessName" required>
+
+      <label for="mobileNumber">📞 Mobile Number</label>
+      <input type="text" id="mobileNumber" name="mobileNumber" required>
+
+      <label for="accountName">🏦 Account Name</label>
+      <input type="text" id="accountName" name="accountName" required>
+
+      <label for="afaPrice">💳 AFA Registration Price (GHS)</label>
+      <input type="text" id="afaPrice" name="afaPrice" value="20.00" required>
+
+      <label for="mtnList">📡 MTN Prices</label>
+      <textarea id="mtnList" rows="3"></textarea>
+
+      <label for="atList">📶 AT Prices</label>
+      <textarea id="atList" rows="3"></textarea>
+
+      <label for="telecelList">📲 Telecel Prices</label>
+      <textarea id="telecelList" rows="3"></textarea>
+
+      <button type="button" id="previewBtn">🖼 Preview Flyer</button></form>
+
+      <a href="premiumflyer.html" class="btm">No I Want premiumflyer</a>
     </div>
+<canvas id="flyerCanvas" width="1080" height="1080" style="display: none;"></canvas>
 
-    <script>
-        const mtnPricelist = {
-            "1": 7,
-            "2": 13,
-            "3": 19,
-            "4": 25,
-            "5": 29,
-            "6": 35,
-            "8": 44,
-            "10": 54,
-            "12": 65,
-            "15": 72,
-            "20": 100,
-            "25": 124,
-            "30": 133,
-            "40": 179,
-            "50": 192,
-            "100": 365,
-        };
+  </form>
+</div>
+  <script>
+    const canvas = document.getElementById('flyerCanvas');
+    const ctx = canvas.getContext('2d');
 
-        const tigoPricelist = {
-            "1": 5,
-            "2": 10,
-            "3": 15,
-            "4": 19,
-            "5": 22,
-            "6": 25,
-            "7": 28,
-            "8": 32,
-            "10": 37,
-            "15": 50,
-            "20": 67,
-            "25": 81,
-            "30": 96,
-            "50": 155,
-            "100": 310 
-        };
+    function drawCircularLogo(ctx, imgSrc, centerX, centerY, size = 70) {
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.src = imgSrc;
+      img.onload = () => {
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, size / 2, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.clip();
+        ctx.drawImage(img, centerX - size / 2, centerY - size / 2, size, size);
+        ctx.restore();
 
-        document.getElementById('flyerForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const flyerTitle = document.getElementById('flyerTitle').value;
-            const phoneNumber = document.getElementById('phoneNumber').value;
-            const pricelistSelection = document.getElementById('pricelist').value;
-            const pricelist = pricelistSelection === 'mtn' ? mtnPricelist : tigoPricelist;
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, size / 2 + 3, 0, Math.PI * 2);
+        ctx.strokeStyle = "white";
+        ctx.lineWidth = 4;
+        ctx.stroke();
+      };
+    }
 
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
+    function drawSection(title, list, x, color, logoSrc) {
+      const startY = 250;
+      const boxWidth = 260;
+      const boxHeight = 500;
+      const boxX = x;
+      const boxY = startY;
 
-            let primaryColor, secondaryColor, titleColor, textColor;
-            if (pricelistSelection === 'mtn') {
-                primaryColor = [255, 208, 0]; // MTN Yellow
-                secondaryColor = [0, 0, 0]; // Black
-                textColor = [0, 0, 0]; // Black
-                titleColor = [255, 0, 0]; // Red
-            } else {
-                primaryColor = [0, 0, 255]; // Tigo Blue
-                secondaryColor = [255, 255, 255]; // White
-                textColor = [0, 0, 0]; // Black
-                titleColor = [255, 0, 0]; // Red
-            }
+      // Background box
+      ctx.save();
+      ctx.shadowColor = "rgba(0, 0, 0, 0.2)";
+      ctx.shadowBlur = 15;
+      ctx.shadowOffsetX = 4;
+      ctx.shadowOffsetY = 4;
+      ctx.fillStyle = "black";
+      ctx.beginPath();
+      const radius = 25;
+      ctx.moveTo(boxX + radius, boxY);
+      ctx.lineTo(boxX + boxWidth - radius, boxY);
+      ctx.quadraticCurveTo(boxX + boxWidth, boxY, boxX + boxWidth, boxY + radius);
+      ctx.lineTo(boxX + boxWidth, boxY + boxHeight - radius);
+      ctx.quadraticCurveTo(boxX + boxWidth, boxY + boxHeight, boxX + boxWidth - radius, boxY + boxHeight);
+      ctx.lineTo(boxX + radius, boxY + boxHeight);
+      ctx.quadraticCurveTo(boxX, boxY + boxHeight, boxX, boxY + boxHeight - radius);
+      ctx.lineTo(boxX, boxY + radius);
+      ctx.quadraticCurveTo(boxX, boxY, boxX + radius, boxY);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
 
-            doc.setFillColor(...primaryColor);
-            doc.rect(0, 0, doc.internal.pageSize.width, doc.internal.pageSize.height, 'F');
+      drawCircularLogo(ctx, logoSrc, boxX + boxWidth / 2, boxY - 50);
 
-            doc.setTextColor(...titleColor);
-            doc.setFontSize(25);
-            doc.text(flyerTitle, 20, 20);
+      ctx.fillStyle = color;
+      ctx.font = "bold 22px Poppins";
+      ctx.textAlign = "center";
+      ctx.fillText(title, boxX + boxWidth / 2, boxY + 40);
 
-            doc.setTextColor(...textColor);
-            doc.setFontSize(12);
-            doc.text(`Phone Number: ${phoneNumber}`, 20, 30);
+      const lines = list.split("\n");
+      ctx.font = "16px monospace";
+ctx.fillStyle = "#fff";
+ctx.textAlign = "center"; // center text
+let y = boxY + 80;
+const centerX = boxX + boxWidth / 2;
+for (let i = 0; i < lines.length; i++) {
+  ctx.fillText(lines[i].trim(), centerX, y);
+  y += 30;
+}
+    }
 
-            doc.setTextColor(...textColor);
-            doc.setFontSize(12);
-            doc.text('Price List:', 20, 40);
+   function drawFlyer(data) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            const tableData = [];
-            for (const [size, price] of Object.entries(pricelist)) {
-                tableData.push([`${size}GB`, `GHS ${price.toFixed(2)}`]);
-            }
+ // Modern layered background
+ctx.fillStyle = "#1d1f27"; // Deep base color
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            doc.autoTable({
-                startY: 50,
-                head: [['Data Plan', 'Price']],
-                body: tableData,
-                useCss: false,
-                styles: {
-                    fillColor: [...primaryColor],
-                    textColor: [...textColor],
-                },
-                headStyles: {
-                    fillColor: [...secondaryColor],
-                    textColor: [...primaryColor],
-                }
-            });
+// Gradient overlay
+const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+gradient.addColorStop(0, "#ff6a00");
+gradient.addColorStop(0.5, "#ee0979");
+gradient.addColorStop(1, "#3c3b3f");
+ctx.globalAlpha = 0.7;
+ctx.fillStyle = gradient;
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+ctx.globalAlpha = 1;
 
-            doc.save(`${flyerTitle}.pdf`);
-        });
-    </script>
-    
-    <div class="whatsapp-widget" onclick="window.location.href='https://wa.me/+233545454000'">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </div>
+// Abstract circles
+function drawCircle(x, y, r, color) {
+  ctx.beginPath();
+  ctx.arc(x, y, r, 0, Math.PI * 2);
+  ctx.fillStyle = color;
+  ctx.fill();
+}
+
+drawCircle(200, 200, 150, "rgba(255, 255, 255, 0.06)");
+drawCircle(880, 300, 100, "rgba(255, 255, 255, 0.08)");
+drawCircle(540, 800, 120, "rgba(255, 255, 255, 0.04)");
+
+
+  // Business name in blue
+  ctx.fillStyle = "#007bff";
+  ctx.font = "bold 42px Poppins";
+  ctx.textAlign = "center";
+  ctx.fillText(data.businessName.toUpperCase(), canvas.width / 2, 100);
+
+  ctx.font = "20px Poppins";
+  ctx.fillStyle = "#fff";
+  ctx.fillText("Affordable Data & AFA Subscriptions", canvas.width / 2, 140);
+
+  // Draw 3 telecom sections
+  drawSection("MTN", data.mtnList, 90, "#f1c40f", "https://i.imgur.com/8yGv37J.png");
+
+drawSection("AT", data.atList, 410, "#2c3e50", "https://i.imgur.com/8yGv37J.png");
+
+drawSection("Telecel", data.telecelList, 730, "#e74c3c", "https://i.imgur.com/8yGv37J.png"); // Example base64 or CDN URL
+
+  // Blue banner
+  ctx.fillStyle = "#007bff";
+  ctx.fillRect(180, 840, 720, 50);
+  ctx.fillStyle = "#ffffff";
+  ctx.font = "bold 22px Poppins";
+  ctx.fillText("🚀 Fast Delivery Plus Trusted Service", canvas.width / 2, 875);
+
+  // AFA Registration
+  // AFA REGISTRATION
+ctx.fillStyle = "#ff0";
+ctx.font = "bold 26px Poppins";
+ctx.textAlign = "center";
+ctx.fillText(`AFA REGISTRATION: GHS ${data.afaPrice}`, canvas.width / 2, 930);
+
+// Payment Details container
+const paymentX = 180;
+const paymentY = 960;
+const paymentWidth = 720;
+const paymentHeight = 110;
+const radius = 20;
+
+// Background container
+ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+ctx.beginPath();
+ctx.moveTo(paymentX + radius, paymentY);
+ctx.lineTo(paymentX + paymentWidth - radius, paymentY);
+ctx.quadraticCurveTo(paymentX + paymentWidth, paymentY, paymentX + paymentWidth, paymentY + radius);
+ctx.lineTo(paymentX + paymentWidth, paymentY + paymentHeight - radius);
+ctx.quadraticCurveTo(paymentX + paymentWidth, paymentY + paymentHeight, paymentX + paymentWidth - radius, paymentY + paymentHeight);
+ctx.lineTo(paymentX + radius, paymentY + paymentHeight);
+ctx.quadraticCurveTo(paymentX, paymentY + paymentHeight, paymentX, paymentY + paymentHeight - radius);
+ctx.lineTo(paymentX, paymentY + radius);
+ctx.quadraticCurveTo(paymentX, paymentY, paymentX + radius, paymentY);
+ctx.closePath();
+ctx.fill();
+
+// Payment Details Heading
+ctx.fillStyle = "#00c6ff";
+ctx.font = "bold 22px Poppins";
+ctx.fillText("💰 Payment Details", canvas.width / 2, paymentY + 30);
+
+// Business name & number
+ctx.fillStyle = "#fff";
+ctx.font = "18px Poppins";
+ctx.fillText(`📞 ${data.mobileNumber}`, canvas.width / 2, paymentY + 65);
+ctx.fillText(`💼 Account: ${data.accountName}`, canvas.width / 2, paymentY + 95);
+
+  // Download link creation
+  const existing = document.querySelector(".download-link");
+  if (existing) existing.remove();
+
+  const link = document.createElement("a");
+  link.download = "flyer.png";
+  link.href = canvas.toDataURL();
+  link.textContent = "⬇️ Download Flyer";
+  link.className = "download-link";
+  document.body.appendChild(link);
+}
+
+
+
+    document.getElementById("flyerForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const data = {
+    businessName: document.getElementById("businessName").value,
+    mobileNumber: document.getElementById("mobileNumber").value,
+    accountName: document.getElementById("accountName").value,
+    afaPrice: document.getElementById("afaPrice").value,
+    mtnList: document.getElementById("mtnList").value,
+    atList: document.getElementById("atList").value,
+    telecelList: document.getElementById("telecelList").value,
+  };
+  drawFlyer(data);
+
+  // 👉 Hide the form and show download only
+  document.querySelector(".form-container").style.display = "none";
+});
+document.getElementById("previewBtn").addEventListener("click", function () {
+  const data = {
+    businessName: document.getElementById("businessName").value,
+    mobileNumber: document.getElementById("mobileNumber").value,
+    accountName: document.getElementById("accountName").value,
+    afaPrice: document.getElementById("afaPrice").value,
+    mtnList: document.getElementById("mtnList").value,
+    atList: document.getElementById("atList").value,
+    telecelList: document.getElementById("telecelList").value,
+  };
+
+  drawFlyer(data);
+
+  // 👇 Hide the form
+  document.querySelector(".form-container").style.display = "none";
+
+  // 👇 Show canvas and download link
+  const flyerCanvas = document.getElementById("flyerCanvas");
+
+flyerCanvas.classList.add("preview"); // Add preview class for scaling
+
+  const link = document.getElementById("downloadLink");
+  link.href = canvas.toDataURL();
+  link.download = "flyer.png";
+  
+});
+
+
+
+
+    // Default values
+    // Default values (formatted line by line for easy editing)
+document.getElementById("mtnList").value = 
+  "1GB - 7.00\n" +
+  "2GB - 13.50\n" +
+  "3GB - 19.00\n" +
+  "4GB - 25.00\n" +
+  "5GB - 29.00\n" +
+  "6GB - 35.00\n" +
+  "8GB - 48.00\n" +
+  "10GB - 54.00\n" +
+  "15GB - 78.00\n" +
+  "20GB - 98.00\n" +
+  "25GB - 124.00\n" +
+  "30GB - 140.00\n" +
+  "40GB - 190.00\n";
+
+document.getElementById("atList").value = 
+  "1GB - 5.00\n" +
+  "2GB - 10.00\n" +
+  "3GB - 15.00\n" +
+  "4GB - 20.00\n" +
+  "5GB - 25.00\n" +
+  "6GB - 30.00\n" +
+  "8GB - 40.00\n" +
+  "10GB - 48.00\n" +
+  "15GB - 68.00\n" +
+  "20GB - 80.00\n" +
+  "25GB - 95.00\n" +
+  "30GB - 110.00\n" +
+  "50GB - 180.00";
+
+document.getElementById("telecelList").value = 
+  "5GB - 26.00\n" +
+  "10GB - 40.50\n" +
+  "15GB - 63.00\n" +
+  "20GB - 80.00\n" +
+  "25GB - 93.00\n" +
+  "30GB - 110.00\n" +
+  "50GB - 180.00\n" +
+  "100GB - 340.00";
+  </script>
 </body>
 </html>
