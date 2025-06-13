@@ -6,42 +6,117 @@
   <title>Flyer Generator</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f0f2f5;
-      padding: 20px;
-      margin: 0;
-    }
+      body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
 
+/* Form Container */
+.form-container {
+    width: 90%;
+    max-width: 450px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 12px 4px rgba(0, 0, 0, 0.973);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.form-container h2 {
+    color: #fc0505;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.form-container img {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+}
+
+.form-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Form Inputs */
+.form-container label {
+    display: block;
+    text-align: left;
+    color: rgb(5, 42, 250);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.form-container input,
+.form-container select,
+.form-container button {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid red;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-container input,
+.form-container select {
+
+    font-weight: 500;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    border-color: #ffd000;
+    outline: none;
+}
+
+/* Button */
+.form-container button {
+    background: linear-gradient(45deg, #000, #0905f7);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-container button:hover {
+    background: linear-gradient(45deg, #0905f7, #000);
+    transform: scale(1.05);
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
     .form-container {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 16px;
-      max-width: 700px;
-      margin: 0 auto 40px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 95%;
+        padding: 20px;
     }
-
-    h2 {
-      text-align: center;
-      color: #222;
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    label {
-      display: block;
-      margin-top: 20px;
-      font-weight: 600;
-      color: #333;
-    }
+}
 
     input, textarea {
-      width: 100%;
+      width: 90%;
       padding: 12px;
       margin-top: 6px;
       border-radius: 10px;
-      border: 1px solid #ccc;
+      border: 2px solid #fc0303;
       font-size: 16px;
       box-sizing: border-box;
     }
@@ -85,11 +160,20 @@
     a.download-link:hover {
       text-decoration: underline;
     }
+    #flyerCanvas {
+      display: block;
+      margin: 0 auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      border: 5px solid white;
+    }
   </style>
 </head>
 <body>
   <div class="form-container">
-    <h2>🧾 Flyer Generator</h2>
+        <img src="my-logo.png" id="containerimge">
+  
+    <h2>🧾 Free Instant Flyer</h2>
     <form id="flyerForm">
       <label for="businessName">Business Name</label>
       <input type="text" id="businessName" name="businessName" required>
@@ -112,12 +196,16 @@
       <label for="telecelList">📲 Telecel Prices</label>
       <textarea id="telecelList" rows="3"></textarea>
 
-      <button type="submit">🎨 Generate Flyer</button>
+      <button type="button" id="previewBtn">🖼 Preview Flyer</button>
+    
+      <canvas id="flyerCanvas" width="1080" height="1080" style="display: none;"></canvas>
+
+<a id="downloadLink" class="download-link" style="display: none;">⬇️ Download Flyer</a>
+
+    
     </form>
   </div>
-
-  <canvas id="flyerCanvas" width="1080" height="1080"></canvas>
-
+  
   <script>
     const canvas = document.getElementById('flyerCanvas');
     const ctx = canvas.getContext('2d');
@@ -315,6 +403,31 @@ ctx.fillText(`💼 Account: ${data.accountName}`, canvas.width / 2, paymentY + 9
   // 👉 Hide the form and show download only
   document.querySelector(".form-container").style.display = "none";
 });
+document.getElementById("previewBtn").addEventListener("click", function () {
+  const data = {
+    businessName: document.getElementById("businessName").value,
+    mobileNumber: document.getElementById("mobileNumber").value,
+    accountName: document.getElementById("accountName").value,
+    afaPrice: document.getElementById("afaPrice").value,
+    mtnList: document.getElementById("mtnList").value,
+    atList: document.getElementById("atList").value,
+    telecelList: document.getElementById("telecelList").value,
+  };
+
+  drawFlyer(data);
+
+  // 👇 Hide the form
+  document.querySelector(".form-container").style.display = "none";
+
+  // 👇 Show canvas and download link
+  document.getElementById("flyerCanvas").style.display = "block";
+  const link = document.getElementById("downloadLink");
+  link.href = canvas.toDataURL();
+  link.download = "flyer.png";
+  link.style.display = "block";
+});
+
+
 
 
     // Default values
