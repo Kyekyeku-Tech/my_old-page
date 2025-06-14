@@ -195,10 +195,10 @@
     <img src="my-logo.png" id="containerimge">
     <h1>Flyer Generator</h1>
     <form id="flyerForm">
-      <input type="text" id="businessName" placeholder="Business Name" required><br><br>
-      <input type="text" id="mobileNumber" placeholder="Mobile Number" required><br><br>
-      <input type="text" id="accountName" placeholder="Account Name" required><br><br>
-      <input type="text" id="afaPrice" placeholder="AFA Registration Price" required><br><br>
+      <input type="text" id="businessName" placeholder="Business Name" ><br><br>
+      <input type="text" id="mobileNumber" placeholder="Mobile Number" ><br><br>
+      <input type="text" id="accountName" placeholder="Account Name" ><br><br>
+      <input type="text" id="afaPrice" placeholder="AFA Registration Price" ><br><br>
       <label for="mtnList" style="color: #ffa600;">MTN List (You can Edit):</label>
       <textarea id="mtnList" placeholder="MTN List"></textarea><br><br>
       <label for="atList">AT List (You can Edit):</label>
@@ -243,32 +243,47 @@
     const canvas = document.getElementById("flyerCanvas");
   const ctx = canvas.getContext("2d");
 
-  function drawSection(ctx, title, list, x, color) {
-    const boxY = 200;
-    const boxWidth = 280;
-    const boxHeight = 600;
+ function drawSection(ctx, title, list, x, color, logoUrl) {
+  const boxY = 200;
+  const lineCount = list.split("\n").length;
+  const lineHeight = 28;
+  const boxWidth = 280;
+  const boxHeight = 130 + (lineCount * lineHeight); // Dynamically based on content
 
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.moveTo(x + 20, boxY);
-    ctx.lineTo(x + boxWidth - 20, boxY);
-    ctx.quadraticCurveTo(x + boxWidth, boxY, x + boxWidth, boxY + 20);
-    ctx.lineTo(x + boxWidth, boxY + boxHeight - 20);
-    ctx.quadraticCurveTo(x + boxWidth, boxY + boxHeight, x + boxWidth - 20, boxY + boxHeight);
-    ctx.lineTo(x + 20, boxY + boxHeight);
-    ctx.quadraticCurveTo(x, boxY + boxHeight, x, boxY + boxHeight - 20);
-    ctx.lineTo(x, boxY + 20);
-    ctx.quadraticCurveTo(x, boxY, x + 20, boxY);
-    ctx.closePath();
-    ctx.fill();
+  // Draw background box
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.moveTo(x + 20, boxY);
+  ctx.lineTo(x + boxWidth - 20, boxY);
+  ctx.quadraticCurveTo(x + boxWidth, boxY, x + boxWidth, boxY + 20);
+  ctx.lineTo(x + boxWidth, boxY + boxHeight - 20);
+  ctx.quadraticCurveTo(x + boxWidth, boxY + boxHeight, x + boxWidth - 20, boxY + boxHeight);
+  ctx.lineTo(x + 20, boxY + boxHeight);
+  ctx.quadraticCurveTo(x, boxY + boxHeight, x, boxY + boxHeight - 20);
+  ctx.lineTo(x, boxY + 20);
+  ctx.quadraticCurveTo(x, boxY, x + 20, boxY);
+  ctx.closePath();
+  ctx.fill();
+  ctx.strokeStyle = "#000";
+  ctx.lineWidth = 2;
+  ctx.stroke();
 
+   // Draw logo if provided
+   if (logoUrl) {
+     const img = new Image();
+     img.onload = function() {
+       ctx.drawImage(img, x + 20, boxY + 20, 50, 50);
+     };
+     img.src = logoUrl;
+   }
+  // Draw section title
    ctx.fillStyle = "#fff";
-ctx.font = "bold 22px Poppins";
+ctx.font = "bold 24px Poppins";
 ctx.textAlign = "center";
 ctx.fillText(title, x + boxWidth / 2, boxY + 40);
 
 const lines = list.split("\n");
-ctx.font = "18px Poppins";
+ctx.font = "20px Poppins";
 
 // Set text color based on section title
 ctx.fillStyle = (title === "MTN") ? "#000" : "#fff";
@@ -287,7 +302,7 @@ for (let line of lines) {
     ctx.textAlign = "center";
     ctx.fillText(data.businessName.toUpperCase(), canvas.width / 2, 100);
 
-    ctx.font = "italic 24px Poppins";
+    ctx.font = "italic 28px Poppins";
     ctx.fillStyle = "#fff";
     ctx.fillText("Data, and AFA subscriptions", canvas.width / 2, 140);
 
@@ -298,26 +313,26 @@ for (let line of lines) {
     ctx.fillStyle = "#0033cc";
     ctx.fillRect(200, 840, canvas.width, 50);
     ctx.fillStyle = "#fff";
-    ctx.font = "bold 24px Poppins";
+    ctx.font = "bold 30px Poppins";
     ctx.fillText("🚀Fast Delivery Plus Trusted Service", canvas.width / 2, 870);
 
     ctx.fillStyle = "#001f3f";
-    ctx.fillRect(70, 890, canvas.width, 60);
+    ctx.fillRect(120, 890, canvas.width, 60);
     ctx.fillStyle = "red";
     ctx.beginPath();
     ctx.arc(230, 920, 8, 0, Math.PI * 2);
     ctx.fill();
     ctx.fillStyle = "#fff";
-    ctx.font = "20px monospace";
-    ctx.fillText("💰Payment Details - 🚨", 350, 920);
-    ctx.fillText(`${data.mobileNumber} ${data.accountName}`, canvas.width / 2 + 100, 925);
+    ctx.font = "30px monospace";
+    ctx.fillText("Payment Details - 🚨", 320, 920);
+    ctx.fillText(`${data.mobileNumber} ${data.accountName}`, canvas.width / 2 + 140, 925);
 
     ctx.fillStyle = "#fff";
     ctx.fillRect(0, 960, 400, 50);
     ctx.fillStyle = "#000";
-    ctx.font = "bold 22px Poppins";
-    ctx.fillText("🖥️📞", 40, 990);
-    ctx.fillText(data.mobileNumber, 150, 995);
+    ctx.font = "bold 32px Poppins";
+    ctx.fillText("🖥️📞", 80, 990);
+    ctx.fillText(data.mobileNumber, 230, 995);
 
     ctx.fillStyle = "#ff0";
     ctx.font = "bold 24px Poppins";
