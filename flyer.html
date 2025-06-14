@@ -201,7 +201,7 @@
 
     let handler = PaystackPop.setup({
       key: 'pk_live_fb405d2702a00868ba424f73b9148b7aad07b2b0',
-      email: 'safooppong121@gmail.com',
+      email: 'user@kyekyeku.tech',
       amount: 20,
       currency: 'GHS',
       ref: 'KYEKYEKU-' + Math.floor(Math.random() * 1000000000 + 1),
@@ -212,29 +212,32 @@
           value: phoneNumber
         }]
       },
-     callback: function(response) {
-  alert("Payment successful! Loading your premium flyer...");
+       callback: function(response) {
+      alert("Payment successful! Loading your premium flyer...");
 
-  // Fill receipt fields
-  document.getElementById("receiptAmount").innerText = "GHS 7.00";
-  document.getElementById("receiptRef").innerText = response.reference;
-  document.getElementById("receiptPhone").innerText = phoneNumber;
-  document.getElementById("receiptEmail").innerText = "safooppong121@gmail.com";
-  document.getElementById("receiptDate").innerText = new Date().toLocaleString();
+      // Fill receipt fields
+      document.getElementById("receiptAmount").innerText = "GHS 7.00";
+      document.getElementById("receiptRef").innerText = response.reference;
+      document.getElementById("receiptPhone").innerText = phoneNumber;
+      document.getElementById("receiptEmail").innerText = "user@kyekyeku.tech";
+      document.getElementById("receiptDate").innerText = new Date().toLocaleString();
 
-  // Automatically generate and download PDF
-  downloadReceiptPDF();
+      // Hide selection UI and show receipt
+      document.querySelector('.container').style.display = 'none';
+      document.getElementById("receipt").style.display = "block";
 
-  // Hide the selection UI
-  document.querySelector('.container').style.display = 'none';
+      // Generate and download PDF
+      downloadReceiptPDF();
 
-  // Show flyer and load content
-  document.getElementById("premiumFlyerContainer").style.display = "block";
-  loadContent("premiumflyer.html");
-},
-        onClose: function() {
-            alert('Payment window closed. Please try again.');
-        }
+      // Delay redirect
+      setTimeout(() => {
+        window.location.href = "premiumflyer.html";
+      }, 2000);
+    },
+
+    onClose: function() {
+      alert('Payment window closed. Please try again.');
+    }
     });
 
     handler.openIframe();
