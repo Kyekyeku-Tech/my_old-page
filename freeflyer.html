@@ -7,11 +7,8 @@
   <style>
       body {
     font-family: 'Poppins', sans-serif;
-    html, body {
     margin: 0;
     padding: 0;
-    background: transparent !important;
-  }
     display: flex;
     justify-content: center;
     align-items: center;
@@ -196,7 +193,7 @@
 <body>
   <div class="form-container">
     <img src="my-logo.png" id="containerimge">
-    <h1>Flyer Generator</h1>
+    <h1>Free Mode</h1>
     <form id="flyerForm">
       <input type="text" id="businessName" placeholder="Business Name" ><br><br>
       <input type="text" id="mobileNumber" placeholder="Mobile Number" ><br><br>
@@ -209,12 +206,11 @@
       <label for="telecelList" style="color: #fc0303;">Telecel List (You can Edit):</label>
       <textarea id="telecelList" placeholder="Telecel List"></textarea><br><br>
     
-<label for="bgType">🖼️ Select Background Type:</label>
+<label for="bgType">Choose Background Type:</label>
 <select id="bgType">
   <option value="gradient">Gradient Background</option>
-  <option value="image">Upload Image Background</option>
 </select><br><br>
-
+<label for="bgType">Choose Your Colors:</label>
 <div id="gradientOptions">
   <label>🎨 Start Color:</label>
   <input type="color" id="startColor" value="#ffd700"><br><br>
@@ -312,6 +308,11 @@ for (let line of lines) {
     drawSection(ctx, "MTN", data.mtnList, 50, "#ffc800");
     drawSection(ctx, "AT", data.atList, 400, "#0c0c9c");
     drawSection(ctx, "Telecel", data.telecelList, 750, "#d00000");
+        // Footer attribution
+ctx.fillStyle = "white"; // Semi-transparent white
+ctx.font = "italic 28px Poppins";
+ctx.textAlign = "center";
+ctx.fillText("Generated from https://Kyekyeku.tech/flyer", canvas.width / 2, canvas.height  - 280); 
 
     ctx.fillStyle = "#0033cc";
     ctx.fillRect(200, 840, canvas.width, 50);
@@ -340,6 +341,7 @@ for (let line of lines) {
     ctx.fillStyle = "#ff0";
     ctx.font = "bold 24px Poppins";
     ctx.fillText(`AFA REGISTRATION\n GHS ${data.afaPrice}`, 850, 990);
+
 
     const imageDataUrl = canvas.toDataURL();
 const filename = `${data.businessName}_flyer.png`;
@@ -410,7 +412,6 @@ setTimeout(() => {
       drawFlyerContent(data);
     }
   });
-  
      document.getElementById("mtnList").value = 
   "1GB - 7.00\n" +
   "2GB - 13.50\n" +
@@ -450,7 +451,6 @@ document.getElementById("telecelList").value =
   "30GB - 110.00\n" +
   "50GB - 180.00\n" +
   "100GB - 340.00";
-  
   document.getElementById("bgType").addEventListener("change", function () {
   const gradientOptions = document.getElementById("gradientOptions");
   const imageOptions = document.getElementById("imageOptions");
@@ -482,7 +482,6 @@ if (direction === "horizontal") {
 }
 gradient.addColorStop(0, startColor);
 gradient.addColorStop(1, endColor);
-
  </script>
 </body>
 </html>
