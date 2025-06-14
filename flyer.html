@@ -262,18 +262,23 @@
     ctx.closePath();
     ctx.fill();
 
-    ctx.fillStyle = "#fff";
-    ctx.font = "bold 22px Poppins";
-    ctx.textAlign = "center";
-    ctx.fillText(title, x + boxWidth / 2, boxY + 40);
+   ctx.fillStyle = "#fff";
+ctx.font = "bold 22px Poppins";
+ctx.textAlign = "center";
+ctx.fillText(title, x + boxWidth / 2, boxY + 40);
 
-    const lines = list.split("\n");
-    ctx.font = "18px Poppins";
-    let y = boxY + 80;
-    for (let line of lines) {
-      ctx.fillText(line, x + boxWidth / 2, y);
-      y += 30;
-    }
+const lines = list.split("\n");
+ctx.font = "18px Poppins";
+
+// Set text color based on section title
+ctx.fillStyle = (title === "MTN") ? "#000" : "#fff";
+
+let y = boxY + 80;
+for (let line of lines) {
+  ctx.fillText(line, x + boxWidth / 2, y);
+  y += 30;
+}
+
   }
 
   function drawFlyerContent(data) {
@@ -282,7 +287,7 @@
     ctx.textAlign = "center";
     ctx.fillText(data.businessName.toUpperCase(), canvas.width / 2, 100);
 
-    ctx.font = "20px Poppins";
+    ctx.font = "italic 24px Poppins";
     ctx.fillStyle = "#fff";
     ctx.fillText("Data, and AFA subscriptions", canvas.width / 2, 140);
 
