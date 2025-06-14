@@ -338,8 +338,24 @@ for (let line of lines) {
     ctx.font = "bold 24px Poppins";
     ctx.fillText(`AFA REGISTRATION\n GHS ${data.afaPrice}`, 850, 990);
 
-    document.getElementById("downloadLink").href = canvas.toDataURL();
-    document.getElementById("downloadLink").download = `${data.businessName}_flyer.png`;
+    const imageDataUrl = canvas.toDataURL();
+const filename = `${data.businessName}_flyer.png`;
+
+setTimeout(() => {
+  const confirmDownload = confirm("Do you want to download your flyer?");
+  if (confirmDownload) {
+    const a = document.createElement("a");
+    a.href = imageDataUrl;
+    a.download = filename;
+    a.click();
+  } else {
+    // Go back to editing
+    document.getElementById("flyerForm").style.display = "block";
+    canvas.style.display = "none";
+    document.getElementById("downloadLink").style.display = "none";
+  }
+}, 300); // Give a tiny delay so rendering completes before asking
+
   }
 
   document.getElementById("flyerForm").addEventListener("submit", function (e) {
