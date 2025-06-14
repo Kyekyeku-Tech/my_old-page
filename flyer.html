@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Flyer Generator</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kyekyeku Tech Flyer Generator</title>
   <style>
       body {
     font-family: 'Poppins', sans-serif;
@@ -15,8 +14,8 @@
     align-items: center;
     
 }
-
-/* Form Container */
+ 
+    /* Form Container */
 .form-container {
     width: 90%;
     max-width: 450px;
@@ -95,8 +94,6 @@
     background: linear-gradient(45deg, #0905f7, #000);
     transform: scale(1.05);
 }
-
-
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
@@ -111,15 +108,17 @@
     }
 }
 
-    input, textarea {
+   input, textarea {
       width: 90%;
-      padding: 12px;
-      margin-top: 6px;
+      padding: 1px;
+      margin-top: 2px;
       border-radius: 10px;
       border: 2px solid #fc0303;
       font-size: 16px;
       box-sizing: border-box;
-    }
+      resize: none; /* Optional: prevent manual resizing */
+      overflow-y: hidden; /
+   }
 
     button {
       margin-top: 30px;
@@ -138,308 +137,241 @@
     button:hover {
       background: linear-gradient(135deg, #0056b3, #0099cc);
     }
-
-    #flyerCanvas {
-      display: block;
+    canvas {
+      display: none;
+      margin: 20px auto;
+      border: 2px solid #000;
+      background: url('');
+      background-size: cover;
+    }
+    .form-container {
+      max-width: 600px;
       margin: 0 auto;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      border: 5px solid white;
     }
-
-   
-
-  a.download-link {
-  display: block;
-  text-align: center;
-  margin: 20px auto 40px;
-  width: 500px; /* match preview canvas width */
-  font-size: 18px;
-  color: #007bff;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-
-
-    a.download-link:hover {
-      text-decoration: underline;
+    .download-link {
+      display: none;
+      margin-top: 20px;
+      font-size: 18px;
+      color: #00c6ff;
+      font-weight: bold;
+      text-decoration: none;
     }
-    /* Shrink preview display only */
-#flyerCanvas.preview {
-  transform: scale(0.46); /* makes it around 500px wide */
-  transform-origin: top center;
-  display: block;
-  margin: 0 auto;
-}
+    #gradientOptions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff3cd;
+    border: 2px dashed #ffcc00;
+    border-radius: 12px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+  }
 
+  #gradientOptions  label {
+    margin: 0 10px;
+    font-weight: 600;
+  }
+
+  #gradientOptions  input[type="color"] {
+    width: 50px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+
+  }input[type="file"] {
+    border: 2px dashed #999;
+    padding: 8px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    cursor: pointer;
+  }
   </style>
 </head>
 <body>
   <div class="form-container">
-        <img src="my-logo.png" id="containerimge">
-  
-    <h2>🧾 Free Instant Flyer</h2>
+    <img src="my-logo.png" id="containerimge">
+    <h1>Flyer Generator</h1>
     <form id="flyerForm">
-      <label for="businessName">Business Name</label>
-      <input type="text" id="businessName" name="businessName" required>
+      <input type="text" id="businessName" placeholder="Business Name" required><br><br>
+      <input type="text" id="mobileNumber" placeholder="Mobile Number" required><br><br>
+      <input type="text" id="accountName" placeholder="Account Name" required><br><br>
+      <input type="text" id="afaPrice" placeholder="AFA Registration Price" required><br><br>
+      <label for="mtnList" style="color: #ffa600;">MTN List (You can Edit):</label>
+      <textarea id="mtnList" placeholder="MTN List"></textarea><br><br>
+      <label for="atList">AT List (You can Edit):</label>
+      <textarea id="atList" placeholder="AT List"></textarea><br><br>
+      <label for="telecelList" style="color: #fc0303;">Telecel List (You can Edit):</label>
+      <textarea id="telecelList" placeholder="Telecel List"></textarea><br><br>
+    
+<label for="bgType">🖼️ Select Background Type:</label>
+<select id="bgType">
+  <option value="gradient">Gradient Background</option>
+  <option value="image">Upload Image Background</option>
+</select><br><br>
 
-      <label for="mobileNumber">📞 Mobile Number</label>
-      <input type="text" id="mobileNumber" name="mobileNumber" required>
-
-      <label for="accountName">🏦 Account Name</label>
-      <input type="text" id="accountName" name="accountName" required>
-
-      <label for="afaPrice">💳 AFA Registration Price (GHS)</label>
-      <input type="text" id="afaPrice" name="afaPrice" value="20.00" required>
-
-      <label for="mtnList">📡 MTN Prices</label>
-      <textarea id="mtnList" rows="3"></textarea>
-
-      <label for="atList">📶 AT Prices</label>
-      <textarea id="atList" rows="3"></textarea>
-
-      <label for="telecelList">📲 Telecel Prices</label>
-      <textarea id="telecelList" rows="3"></textarea>
-
-      <button type="button" id="previewBtn">🖼 Preview Flyer</button></form>
-
-      <a href="premiumflyer.html" class="btm">No I Want premiumflyer</a>
-    </div>
-<canvas id="flyerCanvas" width="1080" height="1080" style="display: none;"></canvas>
-
-  </form>
+<div id="gradientOptions">
+  <label>🎨 Start Color:</label>
+  <input type="color" id="startColor" value="#ffd700"><br><br>
+  <label>🎨 End Color:</label>
+  <input type="color" id="endColor" value="#000000"><br><br>
 </div>
+
+<div id="imageOptions" style="display: none;">
+  <label>📁 Upload Background Image:</label>
+  <input type="file" id="bgImage" accept="image/*"><br><br>
+</div>
+
+
+<label>Background Direction:</label>
+<select id="gradientDirection">
+  <option value="vertical">Top to Bottom</option>
+  <option value="horizontal">Left to Right</option>
+  <option value="diagonal">Top Left to Bottom Right</option>
+</select><br><br>
+
+      <button type="submit">Generate Flyer</button>
+    </form>
+  </div>
+  <canvas id="flyerCanvas" width="1080" height="1080"></canvas>
+  <a id="downloadLink" class="download-link">⬇️ Download Flyer</a>
+
   <script>
-    const canvas = document.getElementById('flyerCanvas');
-    const ctx = canvas.getContext('2d');
+    
+    const canvas = document.getElementById("flyerCanvas");
+  const ctx = canvas.getContext("2d");
 
-    function drawCircularLogo(ctx, imgSrc, centerX, centerY, size = 70) {
-      const img = new Image();
-      img.crossOrigin = "anonymous";
-      img.src = imgSrc;
-      img.onload = () => {
-        ctx.save();
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, size / 2, 0, Math.PI * 2);
-        ctx.closePath();
-        ctx.clip();
-        ctx.drawImage(img, centerX - size / 2, centerY - size / 2, size, size);
-        ctx.restore();
+  function drawSection(ctx, title, list, x, color) {
+    const boxY = 200;
+    const boxWidth = 280;
+    const boxHeight = 600;
 
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, size / 2 + 3, 0, Math.PI * 2);
-        ctx.strokeStyle = "white";
-        ctx.lineWidth = 4;
-        ctx.stroke();
-      };
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.moveTo(x + 20, boxY);
+    ctx.lineTo(x + boxWidth - 20, boxY);
+    ctx.quadraticCurveTo(x + boxWidth, boxY, x + boxWidth, boxY + 20);
+    ctx.lineTo(x + boxWidth, boxY + boxHeight - 20);
+    ctx.quadraticCurveTo(x + boxWidth, boxY + boxHeight, x + boxWidth - 20, boxY + boxHeight);
+    ctx.lineTo(x + 20, boxY + boxHeight);
+    ctx.quadraticCurveTo(x, boxY + boxHeight, x, boxY + boxHeight - 20);
+    ctx.lineTo(x, boxY + 20);
+    ctx.quadraticCurveTo(x, boxY, x + 20, boxY);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.fillStyle = "#fff";
+    ctx.font = "bold 22px Poppins";
+    ctx.textAlign = "center";
+    ctx.fillText(title, x + boxWidth / 2, boxY + 40);
+
+    const lines = list.split("\n");
+    ctx.font = "18px Poppins";
+    let y = boxY + 80;
+    for (let line of lines) {
+      ctx.fillText(line, x + boxWidth / 2, y);
+      y += 30;
     }
+  }
 
-    function drawSection(title, list, x, color, logoSrc) {
-      const startY = 250;
-      const boxWidth = 260;
-      const boxHeight = 500;
-      const boxX = x;
-      const boxY = startY;
+  function drawFlyerContent(data) {
+    ctx.fillStyle = "#007bff";
+    ctx.font = "bold 48px Poppins";
+    ctx.textAlign = "center";
+    ctx.fillText(data.businessName.toUpperCase(), canvas.width / 2, 100);
 
-      // Background box
-      ctx.save();
-      ctx.shadowColor = "rgba(0, 0, 0, 0.2)";
-      ctx.shadowBlur = 15;
-      ctx.shadowOffsetX = 4;
-      ctx.shadowOffsetY = 4;
-      ctx.fillStyle = "black";
-      ctx.beginPath();
-      const radius = 25;
-      ctx.moveTo(boxX + radius, boxY);
-      ctx.lineTo(boxX + boxWidth - radius, boxY);
-      ctx.quadraticCurveTo(boxX + boxWidth, boxY, boxX + boxWidth, boxY + radius);
-      ctx.lineTo(boxX + boxWidth, boxY + boxHeight - radius);
-      ctx.quadraticCurveTo(boxX + boxWidth, boxY + boxHeight, boxX + boxWidth - radius, boxY + boxHeight);
-      ctx.lineTo(boxX + radius, boxY + boxHeight);
-      ctx.quadraticCurveTo(boxX, boxY + boxHeight, boxX, boxY + boxHeight - radius);
-      ctx.lineTo(boxX, boxY + radius);
-      ctx.quadraticCurveTo(boxX, boxY, boxX + radius, boxY);
-      ctx.closePath();
-      ctx.fill();
-      ctx.restore();
+    ctx.font = "20px Poppins";
+    ctx.fillStyle = "#fff";
+    ctx.fillText("Data, and AFA subscriptions", canvas.width / 2, 140);
 
-      drawCircularLogo(ctx, logoSrc, boxX + boxWidth / 2, boxY - 50);
+    drawSection(ctx, "MTN", data.mtnList, 50, "#ffc800");
+    drawSection(ctx, "AT", data.atList, 400, "#0c0c9c");
+    drawSection(ctx, "Telecel", data.telecelList, 750, "#d00000");
 
-      ctx.fillStyle = color;
-      ctx.font = "bold 22px Poppins";
-      ctx.textAlign = "center";
-      ctx.fillText(title, boxX + boxWidth / 2, boxY + 40);
+    ctx.fillStyle = "#0033cc";
+    ctx.fillRect(200, 840, canvas.width, 50);
+    ctx.fillStyle = "#fff";
+    ctx.font = "bold 24px Poppins";
+    ctx.fillText("🚀Fast Delivery Plus Trusted Service", canvas.width / 2, 870);
 
-      const lines = list.split("\n");
-      ctx.font = "16px monospace";
-ctx.fillStyle = "#fff";
-ctx.textAlign = "center"; // center text
-let y = boxY + 80;
-const centerX = boxX + boxWidth / 2;
-for (let i = 0; i < lines.length; i++) {
-  ctx.fillText(lines[i].trim(), centerX, y);
-  y += 30;
-}
-    }
+    ctx.fillStyle = "#001f3f";
+    ctx.fillRect(70, 890, canvas.width, 60);
+    ctx.fillStyle = "red";
+    ctx.beginPath();
+    ctx.arc(230, 920, 8, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = "#fff";
+    ctx.font = "20px monospace";
+    ctx.fillText("💰Payment Details - 🚨", 350, 920);
+    ctx.fillText(`${data.mobileNumber} ${data.accountName}`, canvas.width / 2 + 100, 925);
 
-   function drawFlyer(data) {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(0, 960, 400, 50);
+    ctx.fillStyle = "#000";
+    ctx.font = "bold 22px Poppins";
+    ctx.fillText("🖥️📞", 40, 990);
+    ctx.fillText(data.mobileNumber, 150, 995);
 
- // Modern layered background
-ctx.fillStyle = "#1d1f27"; // Deep base color
-ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#ff0";
+    ctx.font = "bold 24px Poppins";
+    ctx.fillText(`AFA REGISTRATION\n GHS ${data.afaPrice}`, 850, 990);
 
-// Gradient overlay
-const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-gradient.addColorStop(0, "#ff6a00");
-gradient.addColorStop(0.5, "#ee0979");
-gradient.addColorStop(1, "#3c3b3f");
-ctx.globalAlpha = 0.7;
-ctx.fillStyle = gradient;
-ctx.fillRect(0, 0, canvas.width, canvas.height);
-ctx.globalAlpha = 1;
+    document.getElementById("downloadLink").href = canvas.toDataURL();
+    document.getElementById("downloadLink").download = `${data.businessName}_flyer.png`;
+  }
 
-// Abstract circles
-function drawCircle(x, y, r, color) {
-  ctx.beginPath();
-  ctx.arc(x, y, r, 0, Math.PI * 2);
-  ctx.fillStyle = color;
-  ctx.fill();
-}
-
-drawCircle(200, 200, 150, "rgba(255, 255, 255, 0.06)");
-drawCircle(880, 300, 100, "rgba(255, 255, 255, 0.08)");
-drawCircle(540, 800, 120, "rgba(255, 255, 255, 0.04)");
-
-
-  // Business name in blue
-  ctx.fillStyle = "#007bff";
-  ctx.font = "bold 42px Poppins";
-  ctx.textAlign = "center";
-  ctx.fillText(data.businessName.toUpperCase(), canvas.width / 2, 100);
-
-  ctx.font = "20px Poppins";
-  ctx.fillStyle = "#fff";
-  ctx.fillText("Affordable Data & AFA Subscriptions", canvas.width / 2, 140);
-
-  // Draw 3 telecom sections
-  drawSection("MTN", data.mtnList, 90, "#f1c40f", "https://i.imgur.com/8yGv37J.png");
-
-drawSection("AT", data.atList, 410, "#2c3e50", "https://i.imgur.com/8yGv37J.png");
-
-drawSection("Telecel", data.telecelList, 730, "#e74c3c", "https://i.imgur.com/8yGv37J.png"); // Example base64 or CDN URL
-
-  // Blue banner
-  ctx.fillStyle = "#007bff";
-  ctx.fillRect(180, 840, 720, 50);
-  ctx.fillStyle = "#ffffff";
-  ctx.font = "bold 22px Poppins";
-  ctx.fillText("🚀 Fast Delivery Plus Trusted Service", canvas.width / 2, 875);
-
-  // AFA Registration
-  // AFA REGISTRATION
-ctx.fillStyle = "#ff0";
-ctx.font = "bold 26px Poppins";
-ctx.textAlign = "center";
-ctx.fillText(`AFA REGISTRATION: GHS ${data.afaPrice}`, canvas.width / 2, 930);
-
-// Payment Details container
-const paymentX = 180;
-const paymentY = 960;
-const paymentWidth = 720;
-const paymentHeight = 110;
-const radius = 20;
-
-// Background container
-ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
-ctx.beginPath();
-ctx.moveTo(paymentX + radius, paymentY);
-ctx.lineTo(paymentX + paymentWidth - radius, paymentY);
-ctx.quadraticCurveTo(paymentX + paymentWidth, paymentY, paymentX + paymentWidth, paymentY + radius);
-ctx.lineTo(paymentX + paymentWidth, paymentY + paymentHeight - radius);
-ctx.quadraticCurveTo(paymentX + paymentWidth, paymentY + paymentHeight, paymentX + paymentWidth - radius, paymentY + paymentHeight);
-ctx.lineTo(paymentX + radius, paymentY + paymentHeight);
-ctx.quadraticCurveTo(paymentX, paymentY + paymentHeight, paymentX, paymentY + paymentHeight - radius);
-ctx.lineTo(paymentX, paymentY + radius);
-ctx.quadraticCurveTo(paymentX, paymentY, paymentX + radius, paymentY);
-ctx.closePath();
-ctx.fill();
-
-// Payment Details Heading
-ctx.fillStyle = "#00c6ff";
-ctx.font = "bold 22px Poppins";
-ctx.fillText("💰 Payment Details", canvas.width / 2, paymentY + 30);
-
-// Business name & number
-ctx.fillStyle = "#fff";
-ctx.font = "18px Poppins";
-ctx.fillText(`📞 ${data.mobileNumber}`, canvas.width / 2, paymentY + 65);
-ctx.fillText(`💼 Account: ${data.accountName}`, canvas.width / 2, paymentY + 95);
-
-  // Download link creation
-  const existing = document.querySelector(".download-link");
-  if (existing) existing.remove();
-
-  const link = document.createElement("a");
-  link.download = "flyer.png";
-  link.href = canvas.toDataURL();
-  link.textContent = "⬇️ Download Flyer";
-  link.className = "download-link";
-  document.body.appendChild(link);
-}
-
-
-
-    document.getElementById("flyerForm").addEventListener("submit", function (e) {
+  document.getElementById("flyerForm").addEventListener("submit", function (e) {
   e.preventDefault();
-  const data = {
-    businessName: document.getElementById("businessName").value,
-    mobileNumber: document.getElementById("mobileNumber").value,
-    accountName: document.getElementById("accountName").value,
-    afaPrice: document.getElementById("afaPrice").value,
-    mtnList: document.getElementById("mtnList").value,
-    atList: document.getElementById("atList").value,
-    telecelList: document.getElementById("telecelList").value,
-  };
-  drawFlyer(data);
 
-  // 👉 Hide the form and show download only
-  document.querySelector(".form-container").style.display = "none";
-});
-document.getElementById("previewBtn").addEventListener("click", function () {
-  const data = {
-    businessName: document.getElementById("businessName").value,
-    mobileNumber: document.getElementById("mobileNumber").value,
-    accountName: document.getElementById("accountName").value,
-    afaPrice: document.getElementById("afaPrice").value,
-    mtnList: document.getElementById("mtnList").value,
-    atList: document.getElementById("atList").value,
-    telecelList: document.getElementById("telecelList").value,
-  };
-
-  drawFlyer(data);
-
-  // 👇 Hide the form
-  document.querySelector(".form-container").style.display = "none";
-
-  // 👇 Show canvas and download link
-  const flyerCanvas = document.getElementById("flyerCanvas");
-
-flyerCanvas.classList.add("preview"); // Add preview class for scaling
-
-  const link = document.getElementById("downloadLink");
-  link.href = canvas.toDataURL();
-  link.download = "flyer.png";
-  
-});
+  // Hide the form and show the canvas
+  document.getElementById("flyerForm").style.display = "none";
+  canvas.style.display = "block";
+  document.getElementById("downloadLink").style.display = "block";
 
 
+    const data = {
+      businessName: document.getElementById("businessName").value,
+      mobileNumber: document.getElementById("mobileNumber").value,
+      accountName: document.getElementById("accountName").value,
+      afaPrice: document.getElementById("afaPrice").value,
+      mtnList: document.getElementById("mtnList").value,
+      atList: document.getElementById("atList").value,
+      telecelList: document.getElementById("telecelList").value,
+    };
 
+    const bgType = document.getElementById("bgType").value;
 
-    // Default values
-    // Default values (formatted line by line for easy editing)
-document.getElementById("mtnList").value = 
+    if (bgType === "image") {
+      const bgImageInput = document.getElementById("bgImage");
+      if (bgImageInput.files && bgImageInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const img = new Image();
+          img.onload = function () {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            drawFlyerContent(data);
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(bgImageInput.files[0]);
+      } else {
+        alert("Please upload a background image.");
+      }
+    } else {
+      const startColor = document.getElementById("startColor").value;
+      const endColor = document.getElementById("endColor").value;
+      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      gradient.addColorStop(0, startColor);
+      gradient.addColorStop(1, endColor);
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      drawFlyerContent(data);
+    }
+  });
+     document.getElementById("mtnList").value = 
   "1GB - 7.00\n" +
   "2GB - 13.50\n" +
   "3GB - 19.00\n" +
@@ -478,6 +410,37 @@ document.getElementById("telecelList").value =
   "30GB - 110.00\n" +
   "50GB - 180.00\n" +
   "100GB - 340.00";
-  </script>
+  document.getElementById("bgType").addEventListener("change", function () {
+  const gradientOptions = document.getElementById("gradientOptions");
+  const imageOptions = document.getElementById("imageOptions");
+  if (this.value === "image") {
+    gradientOptions.style.display = "none";
+    imageOptions.style.display = "block";
+  } else {
+    gradientOptions.style.display = "block";
+    imageOptions.style.display = "none";
+  }
+});
+
+  function autoResize(textarea) {
+      textarea.style.height = "auto"; // Reset the height
+      textarea.style.height = textarea.scrollHeight + "px"; // Set it to content height
+    }
+
+    // Optional: trigger resize on page load if there's pre-filled content
+    document.querySelectorAll('textarea').forEach(t => autoResize(t));
+    const direction = document.getElementById("gradientDirection").value;
+let gradient;
+
+if (direction === "horizontal") {
+  gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+} else if (direction === "diagonal") {
+  gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+} else {
+  gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+}
+gradient.addColorStop(0, startColor);
+gradient.addColorStop(1, endColor);
+ </script>
 </body>
 </html>
