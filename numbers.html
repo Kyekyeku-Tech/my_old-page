@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Number Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #222;
+      color: white;
+    }
+    .status-select {
+      padding: 4px;
+    }
+    .active {
+      color: green;
+      font-weight: bold;
+    }
+    .dormant {
+      color: goldenrod;
+      font-weight: bold;
+    }
+    .terminated {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>My Numbers Overview</h2>
+  <table id="numbersTable">
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Type</th>
+        <th>Mobile Money</th>
+        <th>Payment ID</th>
+        <th>Biometric Captured</th>
+        <th>Document</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Content will be injected here by JavaScript -->
+    </tbody>
+  </table>
+
+  <script>
+    const data = [
+      ["545454000", "-", "Momo", "P ID 150835", "B CAP YES", "GHANA CARD"],
+      ["593225000", "-", "Momo", "-", "B CAP YES", "GHANA CARD"],
+      ["240494637", "-", "Momo", "-", "B CAP YES", "GHANA CARD"],
+      ["591327676", "T-sim", "Momo", "-", "B CAP YES", "GHANA CARD"],
+      ["559620248", "T-sim", "Momo", "-", "B CAP YES", "GHANA CARD"],
+      ["557324062", "-", "Momo", "-", "B CAP YES", "GHANA CARD"],
+      ["248454705", "-", "Momo", "-", "B CAP YES", "GHANA CARD"],
+      ["559808060", "T-sim", "Momo", "-", "B CAP YES", "GHANA CARD"],
+      ["257100002", "-", "Momo", "-", "B CAP YES", "GHANA CARD"],
+      ["543063171", "T-sim", "Momo", "-", "", ""],
+      ["559619113", "T-sim", "Momo", "-", "B CAP YES", "GHANA CARD"],
+      ["555784981", "Merchant", "Momo", "P ID 370570", "B CAP YES", "GHANA CARD"],
+      ["544040839", "Merchant", "Momo", "", "B CAP YES", "KYEKYEKU TECH SOLUTIONS"],
+      ["244123652", "Merchant", "Momo", "P ID 513711", "B CAP YES", "BORGAYEREBA OPPONG VENTURES"],
+      ["573633997", "-", "POS", "-", "B CAP YES", "GHANA CARD"],
+      ["266366224", "-", "ATM", "-", "B CAP YES", "GHANA CARD"],
+      ["541363333", "Agent", "Momo", "-", "B CAP YES", "BORGAYEREBA OPPONG VENTURES"],
+      ["597866600", "Agent", "Momo", "-", "B CAP YES", "BORGAYEREBA OPPONG VENTURES"],
+      ["595377574", "-", "Momo", "-", "B CAP YES", ""],
+      ["241527012", "Agent", "Momo", "-", "B CAP YES", "WESTERN SOUTH MOMO AGENT"],
+      ["539745010", "Agent", "Momo", "-", "B CAP YES", "KYEKYEKU TECH SOLUTIONS"],
+      ["0551905730", "D", "No", "", "", "Link"]
+    ];
+
+    const statusColors = {
+      Active: "active",
+      Dormant: "dormant",
+      Terminated: "terminated"
+    };
+
+    function loadStatuses() {
+      return JSON.parse(localStorage.getItem("numberStatuses") || "{}");
+    }
+
+    function saveStatuses(statuses) {
+      localStorage.setItem("numberStatuses", JSON.stringify(statuses));
+    }
+
+    function renderTable() {
+      const tbody = document.querySelector("#numbersTable tbody");
+      tbody.innerHTML = "";
+      const statuses = loadStatuses();
+
+      data.forEach(([number, evd, momo, pid, bio, doc]) => {
+        const row = document.createElement("tr");
+
+        const status = statuses[number] || "Active";
+
+        row.innerHTML = `
+          <td class="${statusColors[status]}">${number}</td>
+          <td>${evd}</td>
+          <td>${momo}</td>
+          <td>${pid}</td>
+          <td>${bio}</td>
+          <td>${doc}</td>
+          <td>
+            <select class="status-select">
+              <option value="Active" ${status === "Active" ? "selected" : ""}>Active</option>
+              <option value="Dormant" ${status === "Dormant" ? "selected" : ""}>Dormant</option>
+              <option value="Terminated" ${status === "Terminated" ? "selected" : ""}>Terminated</option>
+            </select>
+          </td>
+        `;
+
+        const select = row.querySelector("select");
+        select.addEventListener("change", () => {
+          statuses[number] = select.value;
+          saveStatuses(statuses);
+          renderTable(); // Re-render to apply new color
+        });
+
+        tbody.appendChild(row);
+      });
+    }
+
+    renderTable();
+  </script>
+</body>
+</html>

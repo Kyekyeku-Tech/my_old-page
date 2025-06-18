@@ -286,7 +286,7 @@ ctx.textAlign = "center";
 ctx.fillText(title, x + boxWidth / 2, boxY + 40);
 
 const lines = list.split("\n");
-ctx.font = "20px Poppins";
+ctx.font = "28px Poppins";
 
 // Set text color based on section title
 ctx.fillStyle = (title === "MTN") ? "#000" : "#fff";
@@ -328,7 +328,7 @@ for (let line of lines) {
     ctx.fillStyle = "#fff";
     ctx.font = "30px monospace";
     ctx.fillText("Payment Details - 🚨", 320, 920);
-    ctx.fillText(`${data.mobileNumber} ${data.accountName}`, canvas.width / 2 + 140, 925);
+    ctx.fillText(`${data.mobileNumber} ${data.accountName}`, canvas.width / 2 + 170, 925);
 
     ctx.fillStyle = "#fff";
     ctx.fillRect(0, 960, 400, 50);
